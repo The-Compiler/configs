@@ -149,6 +149,4 @@ bindkey -k F2 next
   termcap xterm 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
   terminfo xterm 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
 
-  screen -t irc irssi
-  screen -t sys htop
-  screen -t fb /home/florian/infobot/infobot
+#  screen -t sys htop
