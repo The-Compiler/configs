@@ -5,7 +5,7 @@
 #                on the file of the grml-team (grml.org), (c) Michael Prokop <mika@grml.org>
 # Bug-Reports:   <me@the-compiler.org>
 # License:       This file is licensed under the GPL v2.
-# Latest change: Sat Mar 21 14:03:00 CEST 2009 [The Compiler]
+# Latest change: Fri Mar 11 19:05:00 CEST 2010 [The Compiler]
 ################################################################################
 # PLEASE READ FIRST BEFORE DOING ANYTHING:
 ################################################################################
@@ -15,7 +15,7 @@
 # system info
 # ===========
 #
-#  - Download sysinfo.sh from www.the-compiler.org/downloads/dotfiles/sysinfo.sh
+#  - Download sysinfo.sh from http://git.the-compiler.org/configs/plain/sysinfo.sh
 #  - Place it into /usr/local/bin
 #  - Do a "chmod a+x /usr/local/bin/sysinfo.sh" as root
 #
