@@ -1,0 +1,168 @@
+## Port to listen for proxy connections
+## default: 8080
+Port = 8080
+
+## Defines the file where to dump the daemon PID number.
+## If unspecified, will dump the PID to stdout (legacy behavior) and
+## you will be unable to stop the daemon invoking 'ziproxy -k'.
+## If you run two or more instances of Ziproxy simultaneously,
+## you will need to set this to different names (for obvious reasons).
+##
+## default: unspecified (dumps PID to stdout)
+PIDFile = "/var/run/ziproxy.pid"
+
+## Run daemon as `RunAsUser` user.
+## Switch from current user (in this case, typically `root`)
+## to a less privileged one, as a security measure.
+##
+## default: unspecified (does not change user)
+RunAsUser = "ziproxy"
+
+## Run daemon as `RunAsGroup` group.
+## Switch from current group (in this case, typically `root`)
+## to a less privileged one, as a security measure.
+##
+## default: unspecified (does not change group)
+RunAsGroup = "ziproxy"
+
+## File to be used as access log.
+## If undefined, there will be no access logging at all.
+## Log format:
+##	TIME (unix time as seconds.msecs)
+##	PROCESS_TIME (ms)
+##	[USER@]ADDRESS (address with daemon mode only)
+##	FLAGS
+##	ORIGINAL_SIZE
+##	SIZE_AFTER_(RE)COMPRESSION
+##	METHOD
+##	URL
+## where FLAGS may be:
+## 	P (a request as proxy)
+##	T (a request as transparent proxy)
+##	S (CONNECT method, usually HTTPS data)
+##	Z (transfer timeoutted - see ConnTimeout)
+##	B (interrupted transfer - either by user or by remote http host)
+##	W (content type was supposed to load into memory, but it had no content-size and, in the end, it was bigger than MaxSize. so it was streamed instead)
+##	N (URL not processed. See: URLNoProcessing config option)
+##	R (data was replaced)
+##	Q (TOS was changed). See: URLReplaceData config option)
+##	K (image too expansive. See: MaxUncompressedImageRatio config option)
+##	G (stream gunzip too expansive. See: MinUncompressedGzipStreamEval, MaxUncompressedGzipRatio)
+##	1 (SIGSEGV received)
+##	2 (SIGFPE received)
+##	3 (SIGILL received)
+##	4 (SIGBUS received)
+##	5 (SIGSYS received)
+##	X (SIGTERM received - also happens when interrupting the daemon while transferring)
+## Disabled by default.
+AccessLog = "/var/log/ziproxy/access.log"
+
+## Authentication mode to be used for proxy access:
+## 0: none (no authentication required)
+## 1: plain text file
+## 2: SASL (auxprop, see /etc/ziproxy/sasl/ziproxy.conf)
+##
+## Notes:
+## a) SASL support is optional (enabled during compilation time).
+## b) SASL authentication does not require external SASL daemon
+##    configuration/invocation, just Ziproxy's SASL configuration.
+##
+## Default: 0 (no authentication required)
+## See also: AuthPasswdFile, AuthSASLConfPath
+AuthMode = 1
+
+## Plain text file containing authentication data.
+## Should contain user:pass pairs, lines no longer than 128 chars.
+## Password is unencrypted.
+## Used only when AuthMode=1
+##
+## Default: (undefined)
+## See also: AuthMode
+AuthPasswdFile = "/etc/ziproxy/http.passwd"
+
+## Forward everything to another proxy server.
+## Modifications/compression is still applied.
+## Default: none (disabled)
+NextProxy="localhost"
+
+## TCP port to be used by NextProxy.
+## Default: 8080
+NextPort=8118
+
+## Whether to try to optimize HTML, CSS and Javascript, thus reducing their size
+## ProcessHTML: text/html
+## ProcessCSS:  text/css
+## ProcessJS:   application/[x-]javascript)
+## Although such data may be Gzipped too, optimizing prior to Gzipping normally
+## reduces the data size even further.
+## The final size depends much on how unoptimal is the coding of such data;
+## some sites already present HTML pre-optimized so, in such cases, there won't
+## be much gain.
+## Note: Due to the higher complexity of such optimization, there's some risk of a page
+## being corrupted.
+## ****** THESE OPTIONS ARE EXPERIMENTAL ******
+##
+# ProcessHTML = true ### breaks AJAX? ###
+ProcessHTML = false
+ProcessCSS = true
+ProcessJS = false
+
+## Options for fine-tuning text/html optimization.
+## Only used when ProcessHTML=true
+## Certain optimizations may be disabled as quick 'fix' when a text data
+## gets currupted after being optimized.
+## Note: CSS and JS switches apply _only_ to such data when embedded into HTML data,
+##       for JS, CSS-only data, see ProcessJS and ProcessCSS options.
+##
+# ProcessHTML_CSS = true
+# ProcessHTML_JS = true
+# ProcessHTML_tags = true
+# ProcessHTML_text = true
+# ProcessHTML_PRE = true
+# ProcessHTML_NoComments = true
+# ProcessHTML_TEXTAREA = true
+
+## Preemptive Name Resolution
+## If enabled, tries to resolve hostnames present in the processed HTML files
+## for speeding up things (no delay for name resolution).
+## One extra process + (max)PreemptNameResMax threads will run for each HTML request.
+## PreemptNameResMax is the max hostnames it will try to resolve per HTML file.
+## PreemptNameResBC "bogus check", ignore names whose domains are not .nnnn, .nnn or .nn
+##
+## WARNING: This option makes sense _only_ if you have a caching DNS or
+## a name cache of some sort (like: PDNSD).
+## == THIS OPTION WILL INCREASE BY MANY TIMES THE REQUESTS TO THE DNS ==
+##
+PreemptNameRes = false
+PreemptNameResMax = 50
+PreemptNameResBC = true
+
+## Image quality for JPG (JPEG) compression.
+## Image quality is specified in integers between 100 (best) and 0 (worst).
+ImageQuality = {30,25,25,20}
+
+## Whether to try to (re)compress incoming data originally in
+## the JP2 format (true) or not (false)
+## Note: This option is not required to be enabled in order to convert
+## _to_ JP2 format.
+## default: false
+ProcessJP2 = true
+
+## Whether to try to compress a image to JP2K (JPEG 2000)
+## Even when enabled, other formats may sill be tried.
+## Web browsers' support vary and an external plugin may be required
+## in order to display JP2K pictures.
+## If "ForceOutputNoJP2 = true", this option will be overrided
+## and stay disabled.
+## default: false
+ProcessToJP2 = true
+
+## "JP2 Output Requires Explicit Capability"
+## When enabled (and when JP2 output is enabled) will only compress to JP2 to
+## clients which explicity support for that -- that means Ziproxy with
+## AnnounceJP2Capability = true.
+## This option is useful when you want to compress to JP2 only for clients
+## behind a local Ziproxy with ForceOutputNoJP2 = true, but at the same time
+## you have clients connecting directly and those do not support JP2.
+## default: false (does not make such discrimination for JP2 output)
+JP2OutRequiresExpCap = true

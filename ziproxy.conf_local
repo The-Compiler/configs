@@ -1,0 +1,139 @@
+## Port to listen for proxy connections
+## default: 8080
+Port = 9001
+
+## Accepts conections only from that address.
+## WARNING: Remember to restrict the access to Ziproxy
+## if your machine is directly connected to the Internet.
+OnlyFrom = "127.0.0.1"
+
+## Defines the file where to dump the daemon PID number.
+## If unspecified, will dump the PID to stdout (legacy behavior) and
+## you will be unable to stop the daemon invoking 'ziproxy -k'.
+## If you run two or more instances of Ziproxy simultaneously,
+## you will need to set this to different names (for obvious reasons).
+##
+## default: unspecified (dumps PID to stdout)
+PIDFile = "/var/run/ziproxy.pid"
+
+## Run daemon as `RunAsUser` user.
+## Switch from current user (in this case, typically `root`)
+## to a less privileged one, as a security measure.
+##
+## default: unspecified (does not change user)
+RunAsUser = "ziproxy"
+
+## Run daemon as `RunAsGroup` group.
+## Switch from current group (in this case, typically `root`)
+## to a less privileged one, as a security measure.
+##
+## default: unspecified (does not change group)
+RunAsGroup = "ziproxy"
+
+## File to be used as access log.
+## If undefined, there will be no access logging at all.
+## Log format:
+##	TIME (unix time as seconds.msecs)
+##	PROCESS_TIME (ms)
+##	[USER@]ADDRESS (address with daemon mode only)
+##	FLAGS
+##	ORIGINAL_SIZE
+##	SIZE_AFTER_(RE)COMPRESSION
+##	METHOD
+##	URL
+## where FLAGS may be:
+## 	P (a request as proxy)
+##	T (a request as transparent proxy)
+##	S (CONNECT method, usually HTTPS data)
+##	Z (transfer timeoutted - see ConnTimeout)
+##	B (interrupted transfer - either by user or by remote http host)
+##	W (content type was supposed to load into memory, but it had no content-size and, in the end, it was bigger than MaxSize. so it was streamed instead)
+##	N (URL not processed. See: URLNoProcessing config option)
+##	R (data was replaced)
+##	Q (TOS was changed). See: URLReplaceData config option)
+##	K (image too expansive. See: MaxUncompressedImageRatio config option)
+##	G (stream gunzip too expansive. See: MinUncompressedGzipStreamEval, MaxUncompressedGzipRatio)
+##	1 (SIGSEGV received)
+##	2 (SIGFPE received)
+##	3 (SIGILL received)
+##	4 (SIGBUS received)
+##	5 (SIGSYS received)
+##	X (SIGTERM received - also happens when interrupting the daemon while transferring)
+## Disabled by default.
+AccessLog = "/var/log/ziproxy/access.log"
+
+## Forward everything to another proxy server.
+## Modifications/compression is still applied.
+## Default: none (disabled)
+NextProxy="46.4.192.51"
+
+## TCP port to be used by NextProxy.
+## Default: 8080
+NextPort=8080
+
+## Enable/disable the internal gzip decompression by Ziproxy.
+## This decompression is needed when the remote server sends data already gzipped,
+## but further processing is desired (like HTMLopt, PreemptDNS etc).
+## Disabling this will save some processing load, and reduce some latency since
+## Ziproxy will directly stream that data to the client.
+## - But processing features (htmlopt, preemptdns...) WILL NOT work with such data.
+##
+## Attention:
+## If you disable this, but configure Ziproxy to advertise as a gzip-supporting
+## client to the remote server: While using a non-gzip-supporting client, the client
+## may receive gzip-encoded data and it won't know how to deal with that
+## (== it will receive useless garbage).
+##
+## Enabled by default.
+DecompressIncomingGzipData = false
+
+## Whether to try to apply lossless compression with gzip.
+## This option concerns traffic between Ziproxy and the client only.
+## This optimization is not limited by MaxSize.
+##
+## Gzip compression applies only to content-types specified with
+## the parameter LosslessCompressCT.
+##
+## See also: LosslessCompressCT
+## Default: true
+Gzip = false
+
+## Whether to try to (re)compress incoming data originally in
+## the following formats (true) or not (false)
+## default: true
+ProcessJPG = false
+ProcessPNG = false
+ProcessGIF = false
+
+## Image quality for JPG (JPEG) compression.
+## Image quality is specified in integers between 100 (best) and 0 (worst).
+ImageQuality = {100,100,100,100}
+
+## Whether to try to (re)compress incoming data originally in
+## the JP2 format (true) or not (false)
+## Note: This option is not required to be enabled in order to convert
+## _to_ JP2 format.
+## default: false
+ProcessJP2 = true
+
+## When enabled, this option forces the conversion of all incoming
+## JP2K images to another format (usually JPEG).
+## JP2K images with unsupported internal data will be forwarded unmodified.
+## One may use this option to create "JP2K-compressed tunnels" between
+## two Ziproxies with narrow bandwidth in between and serve clients
+## which otherwise do not support JP2K while still taking advantage of that
+## format. In such scenario, if the clients and their Ziproxy share a LAN,
+## for best image quality it is recommended to set a very low (highest quality)
+## _local_ output compression.
+## This option requires "ProcessJP2 = true" in order to work.
+## default: false
+ForceOutputNoJP2 = true
+
+## When enabled, every request as a client will include an extra header "X-Ziproxy-Flags"
+## announcing it as a Ziproxy with JP2 support enabled.
+## This option makes sense when chaining to another Ziproxy.
+## Note: when the request is intercepted by another Ziproxy,
+##       the extra header won't be sent further.
+## See also: JP2OutRequiresExpCap
+## default: false
+AnnounceJP2Capability = true
