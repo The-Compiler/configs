@@ -4238,6 +4238,9 @@ export DEVKITPRO=~/devkitPro  #this will need to change if your devkitPro folder
 export DEVKITARM=$DEVKITPRO/devkitARM
 export PAPATH=$DEVKITPRO/PAlib/lib
 
+if [ "$TERM" != "screen" ] && [ "$SSH_CONNECTION" != "" ]; then
+    scr
+fi
 
 ## END OF FILE #################################################################
 # vim:filetype=zsh foldmethod=marker autoindent expandtab shiftwidth=4
