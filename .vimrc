@@ -10,12 +10,16 @@
 " be no-compatible with vi
   set nocp
 " turn these ON:
-  set ek hidden ruler sc vb wmnu nu incsearch hlsearch smartindent
+  set ek hidden ruler sc vb wmnu number incsearch hlsearch smartindent ignorecase smartcase autoindent 
+
+  set mouse=a
 " set digraph
 " turn these OFF ("no" prefix):
   set nodigraph noeb noet nosol
 " non-toggles:
-  set bs=2 fo=cqrt ls=2 shm=at ww=<,>,h,l background=light
+  set bs=2 fo=cqrt ls=2 shm=at ww=<,>,h,l background=light enc=utf-8
+" Tabs
+  set tabstop=8 shiftwidth=4 softtabstop=4 expandtab
 " set bs=2 fo=cqrt ls=2 shm=at tw=72 ww=<,>,h,l
   set comments=b:#,:%,fb:-,n:>,n:)
 "  set list listchars=tab:»·,trail:·
@@ -26,14 +30,15 @@
   if has("gui_running")
 	  set guifont=Terminus\ 8
   endif
-  colorscheme desert
+  set t_Co=256                " number of colors
+  colorscheme xoria256
 
 " autocommands:
 " when the file type is "mail" then set the textwidth to "70":
-"  au FileType mail   set tw=70
+  au FileType mail   set tw=70
 " When editing a file, always jump to the last cursor position
 "  au BufReadPost * if line("'\"") | exe "'\"" | endif
-"  autocmd BufReadPost * if line("'\"") && line("'\"") <= line("$") | exe "normal `\"" | endif
+  autocmd BufReadPost * if line("'\"") && line("'\"") <= line("$") | exe "normal `\"" | endif
 
 " some colors - as an example "white on black" [use bold fonts]:
  " hi normal   ctermfg=white  ctermbg=black guifg=white  guibg=black
@@ -41,7 +46,6 @@
   if has("syntax")
      syn on
   endif
-" set t_Co=256                " number of colors
 
 " some useful mappings:
   set pastetoggle=<f11>
@@ -91,6 +95,22 @@
      source $HOME/.vimrc.local
   endif
 
+  function! MyTabOrComplete()
+  	let col = col('.')-1  
+	if !col || getline('.')[col-1] !~ '\k'
+		return "\<tab>"
+	else
+		return "\<C-N>"
+	endif
+  endfunction
+
+  imap <C-F> <ESC>:r!/home/florian/bin/goobook-query.sh <cword><CR><ESC>
+
+  inoremap <Tab> <C-R>=MyTabOrComplete()<CR>
+  noremap <S-F> :FufFile<Enter>
+  noremap <S-B> :FufBuffer<Enter>
+  noremap <S-R> :FufMruFile<Enter>
+
 " Vim 7 brings cool new features - see ':he version7'!
 " The coolest features of Vim7 by mika
 " ====================================
@@ -134,30 +154,23 @@ if version >= 700
 
   " set maximum number of suggestions listed to top 10 items:
   set sps=best,10
-
   " highlight matching parens:
   " set matchpairs=(:),[:],{:},< :>
   " let loaded_matchparen = 1
   " highlight MatchParen term=reverse   ctermbg=7   guibg=cornsilk
 
   " highlight the cursor line and column:
-  " set cursorline
-  " highlight CursorLine   term=reverse   ctermbg=7   guibg=#333333
-  " highlight CursorColumn guibg=#333333
-
-  " change inner tag - very useful e.g. within HTML-code!
-  " ci" will remove the text between quotes, also works for ' and `
-  imap <F12> <C-O>cit
+   set cursorline
+   " highlight CursorLine   term=reverse   ctermbg=7   guibg=#333333
+    "highlight CursorColumn guibg=#333333
 
   " use the popup menu also when there is only one match:
   " set completeopt=menuone 
   " determine the maximum number of items to show in the popup menu for:
-  set pumheight=7
-  " set completion highlighting:
-  highlight Pmenu      ctermbg=13     guifg=Black   guibg=#BDDFFF              " normal item
-  highlight PmenuSel   ctermbg=7      guifg=Black   guibg=Orange               " selected item
-  highlight PmenuSbar  ctermbg=7      guifg=#CCCCCC guibg=#CCCCCC              " scrollbar
-  highlight PmenuThumb cterm=reverse  gui=reverse guifg=Black   guibg=#AAAAAA  " thumb of the scrollbar
+  set pumheight=20 
+
 
 endif
+
+noremap <F12> :!make<Enter>
 "# END OF FILE #################################################################
