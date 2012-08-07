@@ -7,15 +7,6 @@ Port = 9001
 ## if your machine is directly connected to the Internet.
 OnlyFrom = "127.0.0.1"
 
-## Defines the file where to dump the daemon PID number.
-## If unspecified, will dump the PID to stdout (legacy behavior) and
-## you will be unable to stop the daemon invoking 'ziproxy -k'.
-## If you run two or more instances of Ziproxy simultaneously,
-## you will need to set this to different names (for obvious reasons).
-##
-## default: unspecified (dumps PID to stdout)
-PIDFile = "/var/run/ziproxy.pid"
-
 ## Run daemon as `RunAsUser` user.
 ## Switch from current user (in this case, typically `root`)
 ## to a less privileged one, as a security measure.
@@ -28,48 +19,20 @@ RunAsUser = "ziproxy"
 ## to a less privileged one, as a security measure.
 ##
 ## default: unspecified (does not change group)
-RunAsGroup = "ziproxy"
-
-## File to be used as access log.
-## If undefined, there will be no access logging at all.
-## Log format:
-##	TIME (unix time as seconds.msecs)
-##	PROCESS_TIME (ms)
-##	[USER@]ADDRESS (address with daemon mode only)
-##	FLAGS
-##	ORIGINAL_SIZE
-##	SIZE_AFTER_(RE)COMPRESSION
-##	METHOD
-##	URL
-## where FLAGS may be:
-## 	P (a request as proxy)
-##	T (a request as transparent proxy)
-##	S (CONNECT method, usually HTTPS data)
-##	Z (transfer timeoutted - see ConnTimeout)
-##	B (interrupted transfer - either by user or by remote http host)
-##	W (content type was supposed to load into memory, but it had no content-size and, in the end, it was bigger than MaxSize. so it was streamed instead)
-##	N (URL not processed. See: URLNoProcessing config option)
-##	R (data was replaced)
-##	Q (TOS was changed). See: URLReplaceData config option)
-##	K (image too expansive. See: MaxUncompressedImageRatio config option)
-##	G (stream gunzip too expansive. See: MinUncompressedGzipStreamEval, MaxUncompressedGzipRatio)
-##	1 (SIGSEGV received)
-##	2 (SIGFPE received)
-##	3 (SIGILL received)
-##	4 (SIGBUS received)
-##	5 (SIGSYS received)
-##	X (SIGTERM received - also happens when interrupting the daemon while transferring)
-## Disabled by default.
-AccessLog = "/var/log/ziproxy/access.log"
+RunAsGroup = "proxy"
 
 ## Forward everything to another proxy server.
 ## Modifications/compression is still applied.
 ## Default: none (disabled)
-NextProxy="46.4.192.51"
+NextProxy="harry.the-compiler.org"
 
 ## TCP port to be used by NextProxy.
 ## Default: 8080
 NextPort=8080
+
+## Use these DNS name servers to resolve hostnames
+## instead of the ones configured in /etc/resolv.conf
+#Nameservers = { "8.8.8.8", "8.8.4.4" }
 
 ## Enable/disable the internal gzip decompression by Ziproxy.
 ## This decompression is needed when the remote server sends data already gzipped,
@@ -85,7 +48,7 @@ NextPort=8080
 ## (== it will receive useless garbage).
 ##
 ## Enabled by default.
-DecompressIncomingGzipData = false
+DecompressIncomingGzipData = true
 
 ## Whether to try to apply lossless compression with gzip.
 ## This option concerns traffic between Ziproxy and the client only.
