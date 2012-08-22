@@ -1,0 +1,67 @@
+!black.normal     : xoria256.LineNr.guibg
+!black.bright     : black.normal.rgb - 8
+URxvt.color0      : #121212
+URxvt.color8      : #0a0a0a
+
+!red.normal       : red.bright.r - 8
+!red.bright       : xoria256.Special.guifg
+URxvt.color1      : #d78787
+URxvt.color9      : #df8787
+
+!green.normal     : green.bright.g - 8
+!green.bright     : xoria256.PreProc.guifg
+URxvt.color2      : #afd787
+URxvt.color10     : #afdf87
+
+!yellow.normal    : yellow.bright.rg - 8
+!yellow.bright    : xoria256.Special.guifg
+URxvt.color3      : #f7f7af
+URxvt.color11     : #ffffaf
+
+!blue.normal      : blue.bright.b - 8
+!blue.bright      : xoria256.Statement.guifg
+URxvt.color4      : #87afd7
+URxvt.color12     : #87afdf
+
+!magenta.normal   : magenta.bright.rb - 8
+!magenta.bright   : xoria256.Identifier.guifg
+URxvt.color5      : #d7afd7
+URxvt.color13     : #dfafdf
+
+!cyan.normal      : cyan.bright.gb - 8
+!cyan.bright      : green.bright + blue.bright
+URxvt.color6      : #afd7d7
+URxvt.color14     : #afdfdf
+
+!white.normal     : white.bright.rgb - 8
+!white.bright     : xoria256.Folded.guifg
+URxvt.color7      : #e6e6e6
+URxvt.color15     : #eeeeee
+
+!foreground       : xoria256.Normal.guifg
+!background       : xoria256.Normal.guibg
+!cursor           : xoria256.Cursor.guibg
+URxvt.foreground  : #d0d0d0
+URxvt.background  : #1c1c1c
+URxvt.cursorColor : #ffaf00
+
+!bold             : xoria256.Type.guifg
+!underline        : xoria256.htmlValue.guifg
+URxvt.colorBD     : #afafdf
+URxvt.colorUL     : #dfdfaf
+
+URxvt*depth: 32
+
+URxvt*font: -*-proggytiny-*-*-*-*-10-*-*-*-*-*-*-*
+
+URxvt*scrollBar: True
+URxvt*scrollBar_right: True
+URxvt*scrollstyle:plain
+URxvt*scrollTtyOutput: False
+URxvt*scrollTtyKeypress: True
+URxvt*secondaryScroll: True
+URxvt*saveLines: 8000
+URxvt*termName: rxvt-256color
+URxvt*perl-ext-common:  default
+
+Xcursor.theme: OpenZone_White_Slim
