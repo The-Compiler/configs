@@ -1,0 +1,27 @@
+auto-reload yes
+confirm-exit yes
+reload-time 5
+reload-threads 4
+
+
+# vimlike bindings
+unbind-key ^B
+bind-key ^B pageup
+unbind-key ^F
+bind-key ^F pagedown
+bind-key k up
+bind-key j down
+bind-key h quit
+unbind-key l
+bind-key l open
+bind-key L toggle-show-read-feeds
+
+color background color252 color234
+color listnormal color252 color234
+color listfocus color252 color237
+color info color15 color239
+color article color252 color234
+
+notify-screen yes
+notify-xterm yes
+notify-beep yes
