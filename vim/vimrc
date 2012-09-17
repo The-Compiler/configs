@@ -172,5 +172,30 @@ if version >= 700
 
 endif
 
-noremap <F12> :!make<Enter>
+"noremap <F12> :!make<Enter>
+noremap <F12> :make<Enter>:cw<Enter>
+
+ fun! RangerChooser()
+   exec "silent !ranger --choosefile=/tmp/chosenfile " . expand("%:p:h")
+   if filereadable('/tmp/chosenfile')
+     exec 'edit ' . system('cat /tmp/chosenfile')
+     call system('rm /tmp/chosenfile')
+   endif
+   redraw!
+ endfun
+ map ,r :call RangerChooser()<CR>
+
+" make invisible errors, very visible
+"
+" no trailing whitespacing, no spaces at the begging of the line.
+" and no tabs after spaces.
+syn match WrongWhitespace /\s\+$\|^ \+\| \+\t/
+highlight WrongWhitespace ctermbg=red guibg=red
+   
+" Filetype-specific plugins
+autocmd FileType py source ~/.vim/filetypes/py.vim
+autocmd FileType cs source ~/.vim/filetypes/cs.vim
+autocmd BufNewFile *.py 0r ~/.vim/skeletons/py.py
+autocmd BufNewFile *.cs 0r ~/.vim/skeletons/cs.cs
 "# END OF FILE #################################################################
+
