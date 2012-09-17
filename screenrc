@@ -5,7 +5,7 @@
 #                on the file of the grml-team (grml.org), (c) Michael Prokop <mika@grml.org>
 # Bug-Reports:   <me@the-compiler.org>
 # License:       This file is licensed under the GPL v2.
-# Latest change: Fri Mar 11 19:05:00 CEST 2010 [The Compiler]
+# Latest change: Sat Mar 21 14:03:00 CEST 2009 [The Compiler]
 ################################################################################
 # PLEASE READ FIRST BEFORE DOING ANYTHING:
 ################################################################################
@@ -15,7 +15,7 @@
 # system info
 # ===========
 #
-#  - Download sysinfo.sh from http://git.the-compiler.org/configs/plain/sysinfo.sh
+#  - Download sysinfo.sh from www.the-compiler.org/downloads/dotfiles/sysinfo.sh
 #  - Place it into /usr/local/bin
 #  - Do a "chmod a+x /usr/local/bin/sysinfo.sh" as root
 #
@@ -38,18 +38,18 @@
   defutf8         on
 
   defnonblock     5
-  idle            300 lockscreen
+  idle            3600 lockscreen
 # caption-stuff
   backtick        1 5 5 /usr/local/bin/sysinfo.sh mem
   backtick        2 5 5 /usr/local/bin/sysinfo.sh hd
-  backtick        3 0 0 /usr/local/bin/sysinfo.sh hilights
+  backtick        3 300 300 whoami
   backtick        6 60 60 /usr/local/bin/sysinfo.sh uptime
-  backtick        7 5 5 /usr/local/bin/sysinfo.sh who
 
-  caption         always         "%{yr}[%<%{k}%3`%{y}%=][%{k}%l%{y}][%{k}%6`%{y}][%{k}%2`G%{y}][%{k}%1`%{y}][%{k}%7`%{y}][%{k}%c%{y}]"
-  hardstatus      alwayslastline "%{= yr}[ %=%{k}%?%-Lw%?%{r}(%{k}%n*%f %t%?(%u)%?%{r})%{k}%?%+Lw%?%= %{r}]"
-# no idea what that exactly does
-  deflogin         on
+#  caption         always         "%{yr}[%{k}%l%{y}][%{k}%6`%{y}][%{k}%2`G%{y}][%{k}%1`%{y}][%{k}%7`%{y}][%{k}%c%{y}]"
+  #hardstatus      alwayslastline "%{= dg} %=%{g}%?%-Lw%?%{r}%n*%f %t%?(%u)%?%{g}%?%+Lw%?%="
+  caption      always "%{= dg} %=%{y}%3`@%H%=%{g}%?%-Lw%?%{r}%n*%f %t%?(%u)%?%{g}%?%+Lw%?%=%{= db} %=%l | %6` | %2`G | %1` | %c%="
+# don't login for 'who'
+  deflogin         off
 # Funny nethack messages, please!
   nethack          on
 # don't display the silly copyright page
@@ -63,9 +63,9 @@
 # Set the hardcopy dir
   hardcopydir      HOME/.hardcopy
 # change it to /bin/bash if you're using bash
-  shell            /usr/bin/zsh
+  shell            /bin/zsh
 # set the colors for the "messages" and "text marking" to red/orange
-  sorendition      10 ry
+  sorendition      10 kg
 # use %n to display the window number and %t for its title:
   activity         "activity in %n %t"
 # pass on the "beep" (CTRL-G) by adding a '~':
@@ -75,12 +75,6 @@
 
 # Message shown when the "virtual bell" rings.
   vbell_msg        " *beep* "
-
-# Key bindings
-# Remove some default key bindings by binding them to "nothing" (empty right-hand-side):
-  bind .
-  bind ^\
-  bind \\
 
 # To be able to select windows with n > 9 press "C-a - #" instead of just "C-a #"
   bind - command -c select_1n
@@ -126,27 +120,34 @@ bindkey -k F2 next
   bind 'O' login off
   bind '}' history
 
-# Open elinks/alpine/vi with ctrl+a G/P/V
-  bind G screen -t 'elinks'    elinks
-  bind P screen -t 'alpine'    alpine
-  bind V screen -t 'vi'        vi
-
 # X - a fast way to lock the current screen.
   bind X lockscreen
 
-# Workaround for stupid machines without xmodmap ;-)
-  bind *a stuff "ä"
-  bind *A stuff "Ä"
-  bind *o stuff "ö"
-  bind *O stuff "Ö"
-  bind *u stuff "ü"
-  bind *U stuff "Ü"
-  bind *s stuff "ß"
+# Make the xterm scroller work in screen, also works
+# with mouse scrollwheel
+termcapinfo xterm*|rxvt* ti@:te@
+termcapinfo xterm*|rxvt* 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007' 
+termcapinfo xterm*|rxvt*|kterm*|Eterm* hs:ts=\E]0;:fs=\007:ds=\E]0;\007
+termcapinfo xterm*|linux*|rxvt*|Eterm* OP
+termcap  xterm|rxvt hs@:cs=\E[%i%d;%dr:im=\E[4h:ei=\E[4l
+terminfo xterm|rxvt hs@:cs=\E[%i%p1%d;%p2%dr:im=\E[4h:ei=\E[4l
+termcapinfo  xterm*|rxvt* Z0=\E[?3h:Z1=\E[?3l:is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l
+termcapinfo xterm* OL=100
+termcapinfo xterm|rxvt 'VR=\E[?5h:VN=\E[?5l'
+termcapinfo xterm|rxvt 'k1=\E[11~:k2=\E[12~:k3=\E[13~:k4=\E[14~'
+termcapinfo xterm|rxvt 'kh=\EOH:kI=\E[2~:kD=\E[3~:kH=\EOF:kP=\E[5~:kN=\E[6~'
+termcapinfo xterm|rxvt 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
+termcapinfo xterm|rxvt 'vi=\E[?25l:ve=\E[34h\E[?25h:vs=\E[34l'
+termcapinfo xterm|rxvt 'XC=K%,%\E(B,[\304,\\\\\326,]\334,{\344,|\366,}\374,~\337'
 
-# Get screen to add lines to xterm's scrollback buffer
-  termcapinfo xterm|xterms|xs|rxvt ti@:te@
+# 256color support
+  attrcolor b ".I"
+  termcapinfo xterm|rxvt 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+  term screen-256color
 
-  termcap xterm 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
-  terminfo xterm 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
+  altscreen on
 
-#  screen -t sys htop
+screen -t irc weechat-curses
+screen -t mutt mutt
+screen -t rss newsbeuter
+screen -t htop htop
