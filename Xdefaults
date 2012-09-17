@@ -53,6 +53,7 @@ URxvt.colorUL     : #dfdfaf
 URxvt*depth: 32
 
 URxvt*font: -*-proggytiny-*-*-*-*-10-*-*-*-*-*-*-*
+#URxvt*font: -*-profont-*-*-*-*-11-*-*-*-*-*-*-*
 
 URxvt*scrollBar: True
 URxvt*scrollBar_right: True
