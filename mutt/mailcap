@@ -1,0 +1,29 @@
+# html
+text/html; elinks -force-html %s; needsterminal;
+#text/html; elinks -dump -dump-charset UTF-8 -dump-color-mode 0 -force-html %s; copiousoutput;
+text/html; elinks -dump  %s; copiousoutput;
+# pdf
+application/pdf; pdftotext -layout -l 10 -nopgbrk /dev/stdin -; copiousoutput
+content/pdf; pdftotext -layout -l 10 -nopgbrk /dev/stdin -; copiousoutput
+# word
+application/msword;             antiword %s; copiousoutput
+application/vnd.msword;         antiword %s; copiousoutput
+# excel
+application/excel;              xls2csv %s; copiousoutput
+application/msexcel;            xls2csv %s; copiousoutput
+application/vnd.ms-excel;       xls2csv %s; copiousoutput
+application/x-excel;            xls2csv %s; copiousoutput
+application/x-msexcel;          xls2csv %s; copiousoutput
+application/ms-Excel;           xls2csv %s; copiousoutput
+# powerpoint
+application/vnd.ms-powerpoint;  catppt %s; copiousoutput
+application/x-mspowerpoint;     catppt %s; copiousoutput
+application/ppt;                catppt %s; copiousoutput
+# images
+image/*;			cacaview %s; needsterminal
+image/*;			img2txt --gamma=0.6 -f ansi -W $COLUMNS %s; copiousoutput
+# audio
+audio/*;			mediainfo %s; copiousoutput
+# videos
+video/*;			mediainfo %s; copiousoutput
+video/*;			mplayer -vo caca %s; needsterminal
