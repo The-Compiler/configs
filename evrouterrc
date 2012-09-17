@@ -1,0 +1,2 @@
+"ThinkPad Extra Buttons" "/dev/input/by-path/platform-thinkpad_acpi-event" none sw/1/1 "Shell//home/florian/bin/tabletswitch tablet"
+"ThinkPad Extra Buttons" "/dev/input/by-path/platform-thinkpad_acpi-event" none sw/1/0 "Shell//home/florian/bin/tabletswitch normal"
