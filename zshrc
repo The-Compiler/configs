@@ -4240,17 +4240,19 @@ fortune
 export DEVKITPRO=~/devkitPro  #this will need to change if your devkitPro folder is elsewhere
 export DEVKITARM=$DEVKITPRO/devkitARM
 export PAPATH=$DEVKITPRO/PAlib/lib
-export PATH=/home/florian/perl5/lib/perl5/auto/share/dist/Cope:$PATH
 
 if [ "$TERM" != "screen" ] && [ "$SSH_CONNECTION" != "" ]; then
     scr
 fi
 
+## END OF FILE #################################################################
+# vim:filetype=zsh foldmethod=marker autoindent expandtab shiftwidth=4
+
 export PERL_LOCAL_LIB_ROOT="/home/florian/perl5";
 export PERL_MB_OPT="--install_base /home/florian/perl5";
 export PERL_MM_OPT="INSTALL_BASE=/home/florian/perl5";
 export PERL5LIB="/home/florian/perl5/lib/perl5/x86_64-linux-thread-multi:/home/florian/perl5/lib/perl5";
-export PATH="/home/florian/perl5/bin:$PATH";
+#export PATH="/home/florian/perl5/bin:/home/florian/perl5/lib/perl5/auto/share/dist/Cope:/opt/android-sdk/platform-tools:$PATH";
 
-## END OF FILE #################################################################
-# vim:filetype=zsh foldmethod=marker autoindent expandtab shiftwidth=4
+export _humblebundle4key=EXXwF42fxYNK
+[[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]] && startx
