@@ -30,6 +30,7 @@ export VISUAL="$EDITOR"
 export PAGER="vimpager"
 export MANPAGER="less"
 export PATH="$PATH:$HOME/bin"
+export VIEW_PDF="evince" # for latex-makefile
 
 ### Colors for ls ###
 [[ -f ~/.dircolors ]] && eval $(dircolors ~/.dircolors) || eval $(dircolors)
