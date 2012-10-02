@@ -35,12 +35,15 @@ export VIEW_PDF="evince" # for latex-makefile
 ### Colors for ls ###
 [[ -f ~/.dircolors ]] && eval $(dircolors ~/.dircolors) || eval $(dircolors)
 
-### keybindings (rxvt) ###
+### keybindings ###
 # vi mode
 bindkey -v
-# home/end
+# home/end (urxvt)
 bindkey "\e[7~" beginning-of-line
 bindkey "\e[8~" end-of-line
+# home/end (xterm)
+bindkey "\e[1~" beginning-of-line
+bindkey "\e[4~" end-of-line
 # Shift=Tab (completion)
 bindkey "\e[Z" reverse-menu-complete
 # insert
