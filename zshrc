@@ -93,3 +93,46 @@ zstyle ':completion:*' verbose true
 setopt listtypes
 
 ### Prompt ###
+setopt prompt_subst
+autoload -Uz vcs_info
+precmd() { vcs_info; }
+zstyle ':vcs_info:*' stagedstr '%F{green}•'
+zstyle ':vcs_info:*' unstagedstr '%F{red}•'
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b:%r'
+zstyle ':vcs_info:*' enable git svn bzr hg
+zstyle ':vcs_info:*' formats '──[%F{red}%s/%b%c%u%m%F{blue}]'
+
+setprompt() {
+    local reset="%{$reset_color%}"
+    local upper_start='%F{blue}╭─['
+    local lower_start='%F{blue}╰'
+    local other_start='%F{blue}┄─['
+    local other_end=']─╼ ${reset}'
+    local userhost='%F{green}%n@%m'
+    local sep='%F{blue}]──['
+    local startsep='%F{blue}──['
+    local endsep='%F{blue}]'
+    local fade='%F{blue}────┄'
+    local dir='%F{red}%~'
+    local date='%F{yellow}%D'
+    local dtime='%F{yellow}%T'
+    local job="%(1j.${startsep}%F{red}%j job.)%(2j.s.)%(1j.${endsep}.)"
+    local vcs='${vcs_info_msg_0_}'
+    local rootwarn='%(!.%F{blue}(%F{red}!%F{blue}).)'
+    local promptchar='%F{blue}─╼ '
+    local n=$'\n'
+    local rstatus='%(?..%F{red}╾─[%F{blue}$?%F{red}]──┄)'
+
+    PROMPT="${upper_start}${userhost}${sep}${dir}${sep}${date}${sep}"
+    PROMPT+="${dtime}${endsep}${job}${vcs}${fade}$n"
+
+    PROMPT+="${lower_start}${rootwarn}${promptchar}${reset}"
+
+    PROMPT2="${other_start}%_${other_end}"
+    PROMPT3="${other_start}?${other_end}"
+    PROMPT4="${other_start}%N:%i${other_end}"
+    RPROMPT="${rstatus}${reset}"
+}
+
+setprompt
