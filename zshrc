@@ -98,7 +98,6 @@ setopt listtypes
 ### Prompt ###
 setopt prompt_subst
 autoload -Uz vcs_info
-precmd() { vcs_info; }
 zstyle ':vcs_info:*' stagedstr '%F{green}•'
 zstyle ':vcs_info:*' unstagedstr '%F{red}•'
 zstyle ':vcs_info:*' check-for-changes true
@@ -139,3 +138,15 @@ setprompt() {
 }
 
 setprompt
+
+### Hooks ###
+preexec() { # Gets run before a command gets executed
+    # Set screen window title
+    [[ $TERM == screen* ]] && echo -ne "\ek$1\e\\"
+}
+precmd() { # gets run after a command before the prompt
+    # Reset screen window title
+    [[ $TERM == screen* ]] && echo -ne "\ekzsh\e\\"
+    # Generate vcs_info
+    vcs_info
+}
