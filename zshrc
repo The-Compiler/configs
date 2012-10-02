@@ -7,6 +7,8 @@ setopt longlistjobs
 setopt notify
 # don't kill background jobs
 setopt nohup
+# pkgfile command_not_found handler
+source /usr/share/doc/pkgfile/command-not-found.zsh
 
 ### History ###
 # Path to the history file
