@@ -1,8 +1,6 @@
 ### General options ###
 # Report time if command runs >2s
 REPORTTIME=2
-# Ask for corrections for misspelled commands
-setopt correctall
 # display PID when suspending processes
 setopt longlistjobs
 # report status of background jobs
