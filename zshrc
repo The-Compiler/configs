@@ -9,6 +9,8 @@ setopt notify
 setopt nohup
 # pkgfile command_not_found handler
 source /usr/share/doc/pkgfile/command-not-found.zsh
+# easy color names in this config
+autoload -U colors && colors
 
 ### History ###
 # Path to the history file
@@ -70,12 +72,12 @@ zstyle ':completion:*' menu select=5
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 # use groups for completion
 zstyle ':completion:*:descriptions' format \
-    $'%{\e[0;31m%}completing %B%d%b%{\e[0m%}'
+    "%{$fg[red]%}completing %B%d%b%{$reset_color%}"
 zstyle ':completion:*:matches' group 'yes'
 zstyle ':completion:*' group-name ''
 # warn if there are no matches
 zstyle ':completion:*:warnings' format \
-    $'%{\e[0;31m%}No matches for:%{\e[0m%} %d'
+    "%{$fg[red]%}No matches for:%{$reset_color%} %d"
 # display all processes for killall/...
 zstyle ':completion:*:processes-names' command \
     'ps c -u ${USER} -o command | uniq'
