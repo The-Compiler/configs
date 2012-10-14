@@ -50,19 +50,14 @@ URxvt.cursorColor : #ffaf00
 URxvt.colorBD     : #afafdf
 URxvt.colorUL     : #dfdfaf
 
-URxvt*depth: 32
-
 URxvt*font: -*-proggytiny-*-*-*-*-10-*-*-*-*-*-*-*
-#URxvt*font: -*-profont-*-*-*-*-11-*-*-*-*-*-*-*
 
-URxvt*scrollBar: True
-URxvt*scrollBar_right: True
-URxvt*scrollstyle:plain
-URxvt*scrollTtyOutput: False
-URxvt*scrollTtyKeypress: True
-URxvt*secondaryScroll: True
-URxvt*saveLines: 8000
-URxvt*termName: rxvt-256color
-URxvt*perl-ext-common:  default
+URxvt.scrollBar: False
+URxvt.scrollTtyOutput: False
+URxvt.scrollTtyKeypress: True
+URxvt.secondaryScroll: False
+URxvt.saveLines: 8000
+URxvt.termName: rxvt-256color
+URxvt.perl-ext-common:  default
 
 Xcursor.theme: OpenZone_White_Slim
