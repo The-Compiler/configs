@@ -150,3 +150,8 @@ precmd() { # gets run after a command before the prompt
     # Generate vcs_info
     vcs_info
 }
+
+### Autorun screen ###
+if [[ "$TERM" != "screen"* && "$SSH_CONNECTION" != "" ]]; then
+    /usr/bin/screen -d -R # -S autoscreen -d -R #&& exit
+fi
