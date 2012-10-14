@@ -66,6 +66,10 @@ alias nano='nano --nowrap'
 alias scr='screen -U -xRR'
 alias s='ssh'
 alias m='mosh'
+alias yu='yaourt -Suya; sudo abs; sudo pkgfile -u; sudo pacdiffviewer'
+alias yi='yaourt -S'
+alias yq='yaourt -Si'
+alias yl='yaourt -Ql'
 
 ### completion ###
 # init completion
