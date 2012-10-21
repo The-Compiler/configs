@@ -60,7 +60,7 @@ bindkey -M vicmd '/' history-incremental-search-backward
 
 ### aliases ###
 alias ls='ls --color --escape --classify'
-alias grep='grep --color'
+alias grep='grep --color=auto'
 alias less=$PAGER
 alias zless=$PAGER
 alias nano='nano --nowrap'
