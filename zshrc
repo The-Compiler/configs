@@ -169,3 +169,12 @@ precmd() { # gets run after a command before the prompt
 if [[ "$TERM" != "screen"* && "$SSH_CONNECTION" != "" ]]; then
     /usr/bin/screen -d -R # -S autoscreen -d -R #&& exit
 fi
+
+### Syntax highlighting ###
+source /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=magenta
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=magenta
+ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=fg=red
+ZSH_HIGHLIGHT_STYLES[path]='bold'
