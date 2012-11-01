@@ -51,6 +51,7 @@ URxvt.colorBD     : #afafdf
 URxvt.colorUL     : #dfdfaf
 
 URxvt*font: -*-proggytiny-*-*-*-*-10-*-*-*-*-*-*-*
+#URxvt*font: xft:Terminus:12
 
 URxvt.scrollBar: False
 URxvt.scrollTtyOutput: False
