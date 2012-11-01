@@ -187,6 +187,11 @@ color body red color234 '[-=+#_*~]{3,}.*' # lines
 # Attribution lines
 color body magenta default "\\* [^<]+ <[^>]+> \\[[^]]+\\]:" 
 color body magenta default "(^|[^[:alnum:]])on [a-z0-9 ,]+( at [a-z0-9:,. +-]+)? wrote:"
+# PGP
+color body green default "^gpg: Good signature .*"
+color body brightwhite red "^gpg: BAD signature from.*"
+color body yellow default "^gpg: WARNING.*"
+color body yellow default "^gpg: no valid OpenPGP data found.*"
 
 # Hooks
 source ~/.mutt/hooks
