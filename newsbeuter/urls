@@ -21,6 +21,14 @@ http://feeds2.feedburner.com/gbo-zitate
 http://blog.fefe.de/rss.xml?html
 http://ticker.gulli.com/rss
 http://forum.doozan.com/feed.php?6,replies=1,type=rss
+http://www.flugschreiber.ch/feeds/posts/default
+http://events.ccc.de/feed/
+http://www1.orange.ch/de/common/about-orange/media-press/press-releases/feed/
+http://community.orange.ch/orangech/rss/Category?category.id=de&interaction.style=forum&feeds.replies=true
+http://community.orange.ch/orangech/rss/Category?category.id=de&interaction.style=tkb&feeds.replies=true
+http://community.orange.ch/orangech/rss/Category?category.id=de&interaction.style=blog&feeds.replies=true
+http://community.orange.ch/orangech/rss/Category?category.id=en&interaction.style=forum&feeds.replies=true
+
 
 http://code.bitlbee.org/lh/bitlbee/atom
 https://github.com/claudehohl/Stikked/commits/master.atom 
