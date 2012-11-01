@@ -76,6 +76,8 @@ my_hdr Accept-Language: de, en
 my_hdr X-URL: http://www.the-compiler.org/
 my_hdr X-Operating-System: Arch Linux, Kernel `uname -r | sed 's/-.*$//'`
 my_hdr X-Editor: vim `vim --version | sed -n '1s/[^0-9]* \([^ ]*\).*/\1/p'`
+my_hdr X-PGP-Key: http://www.the-compiler.org/pubkey.asc
+my_hdr OpenPGP: id=FD55A072\; url=http://www.the-compiler.org/pubkey.asc\; preference=sign
 
 # Editing
 set editor="vim -c 'set filetype=mail' -c 'set fileencodings=' -c 'set fileencoding=' -c 'set nohlsearch' '+:silent+?^$' " 
