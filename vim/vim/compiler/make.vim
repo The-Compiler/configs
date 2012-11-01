@@ -14,4 +14,4 @@ if exists(":CompilerSet") != 2		" older Vim always used :setlocal
 endif
 
 CompilerSet errorformat=
-CompilerSet makeprg=make
+CompilerSet makeprg=make\ NO_COLOR=1\ NO_COLOUR=1\ COLOR=0\ COLOUR=0
