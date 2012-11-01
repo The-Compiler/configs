@@ -146,6 +146,15 @@ ignore X-Launchpad-Bug-Reporter: X-Launchpad-Bug-Modifier:
 ignore X-Launchpad-Message-Rationale: X-Generated-By: X-Launchpad-Hash:
 ignore X-Google-Sender-Auth: X-Forwarded-Message-Id: X-Con-Id: X-Con-U:
 ignore X-Forefront-Antispam-Report: X-SpamScore: X-BigFish:
+ignore X-SA-Exim-Connect-IP: X-SA-Exim-Mail-From: X-SA-Exim-Version:
+ignore X-SA-Exim-Scanned: X-Original-Authentication-Results:
+ignore X-Google-Group-ID: X-MIME-Autoconverted:
+ignore X-Bugzilla-Reason: X-Bugzilla-Type: X-Bugzilla-Watch-Reason:
+ignore X-Bugzilla-Product: X-Bugzilla-Component: X-Bugzilla-Keywords:
+ignore X-Bugzilla-Severity: X-Bugzilla-Who: X-Bugzilla-Status:
+ignore X-Bugzilla-Priority: X-Bugzilla-Assigned-To:
+ignore X-Bugzilla-Target-Milestone: X-Bugzilla-Changed-Fields: X-Bugzilla-URL:
+ignore X-twfbl: X-mailstream: X-Rocket-MIMEInfo:
 #ignore X-PHP-Script: X-Source: X-Source-Args: X-Source-Dir:
 hdr_order Date: From: List-Id: To: Cc: User-Agent: X-Mailer: Subject:
 
