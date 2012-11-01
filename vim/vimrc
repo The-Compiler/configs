@@ -189,7 +189,7 @@ noremap <F12> :make<Enter>:cw<Enter>
 "
 " no trailing whitespacing, no spaces at the begging of the line.
 " and no tabs after spaces.
-syn match WrongWhitespace /\s\+$\|^ \+\| \+\t/
+syn match WrongWhitespace /\s\+$\| \+\t/
 highlight WrongWhitespace ctermbg=red guibg=red
    
 " Filetype-specific plugins
