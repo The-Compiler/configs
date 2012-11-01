@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function hc() { herbstclient "$@" ;}
+hc() { herbstclient "$@" ;}
 
 Mod=Mod4
 feh --bg-center /home/florian/.config/herbstluftwm/wallpaper.png
