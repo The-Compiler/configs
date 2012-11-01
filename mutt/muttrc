@@ -190,4 +190,10 @@ color body magenta default "(^|[^[:alnum:]])on [a-z0-9 ,]+( at [a-z0-9:,. +-]+)?
 
 # Hooks
 source ~/.mutt/hooks
+
+# GPG
 source /etc/Muttrc.gpg.dist
+set pgp_sign_as=0xFD55A072
+set pgp_timeout=60
+set crypt_replysign
+set crypt_verify_sig=yes
