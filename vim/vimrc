@@ -197,5 +197,6 @@ autocmd FileType py source ~/.vim/filetypes/py.vim
 autocmd FileType cs source ~/.vim/filetypes/cs.vim
 autocmd BufNewFile *.py 0r ~/.vim/skeletons/py.py
 autocmd BufNewFile *.cs 0r ~/.vim/skeletons/cs.cs
+compiler make
 "# END OF FILE #################################################################
 
