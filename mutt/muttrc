@@ -184,6 +184,9 @@ color body color174 color234 '\w+://[a-z0-9.~_/%;@#?+&=-]+' # URL
 color body color174 color234 "www\\.[-.a-z0-9]+\\.[a-z]{2,3}[a-z0-9;.~_/%@#?+ +&=-]*"  # URL
 color body color229 color234 "[a-z0-9.+-]+@[a-z0-9.-]+\\.[a-z]{2,4}" # email
 color body red color234 '[-=+#_*~]{3,}.*' # lines
+# Attribution lines
+color body magenta default "\\* [^<]+ <[^>]+> \\[[^]]+\\]:" 
+color body magenta default "(^|[^[:alnum:]])on [a-z0-9 ,]+( at [a-z0-9:,. +-]+)? wrote:"
 
 # Hooks
 source ~/.mutt/hooks
