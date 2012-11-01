@@ -72,6 +72,15 @@ alias yi='yaourt -S'
 alias yq='yaourt -Si'
 alias yl='yaourt -Ql'
 
+rd_lupin() {
+    local as_pid
+    autossh -M 20000 -N -L 9000:localhost:9000 lupin &
+    as_pid=$!
+    sleep 2
+    rdesktop localhost:9000
+    kill "$as_pid"
+}
+
 ### completion ###
 # init completion
 autoload -U compinit && compinit
