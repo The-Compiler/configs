@@ -69,6 +69,8 @@ set move = no
 set nobeep
 set quit = ask-yes
 set confirmappend = no
+set abort_nosubject = yes
+
 push <show-version>
 my_hdr Accept-Language: de, en
 my_hdr X-URL: http://www.the-compiler.org/
