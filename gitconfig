@@ -27,3 +27,6 @@ untracked = cyan
 
 [merge]
 tool = vimdiff
+
+[alias]
+	lg = log --oneline --decorate --all --graph --date=relative 
