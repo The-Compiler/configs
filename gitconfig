@@ -1,6 +1,8 @@
 [user]
 email = git@the-compiler.org
 name = Florian Bruhin
+editor = vim
+signingkey = FD55A072
 
 [color]
 branch = auto
