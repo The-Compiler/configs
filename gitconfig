@@ -32,3 +32,6 @@ tool = vimdiff
 	lg = log --oneline --decorate --all --graph --date=relative 
 	stat = diff --stat
 	br = branch -avv
+
+[rebase]
+	autosquash = true
