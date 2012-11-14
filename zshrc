@@ -29,6 +29,7 @@ export EDITOR="vim"
 export VISUAL="$EDITOR"
 export PAGER="vimpager"
 export MANPAGER="less"
+export GIT_PAGER="less"
 export PATH="$PATH:$HOME/bin"
 export VIEW_PDF="evince" # for latex-makefile
 
