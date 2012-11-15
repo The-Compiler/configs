@@ -172,8 +172,10 @@ if [[ "$TERM" != "screen"* && "$SSH_CONNECTION" != "" ]]; then
 fi
 
 ### Syntax highlighting ###
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlight/zsh-syntax-highlighting.zsh
+for d in zsh-syntax-highlight{,ing}; do
+    f="/usr/share/zsh/plugins/$d/zsh-syntax-highlighting.zsh"
+    [[ -f "$f" ]] && source "$f"
+done
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan'
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=magenta
