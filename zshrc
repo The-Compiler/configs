@@ -205,7 +205,7 @@ for d in zsh-syntax-highlight{,ing}; do
     f="/usr/share/zsh/plugins/$d/zsh-syntax-highlighting.zsh"
     [[ -f "$f" ]] && source "$f" && highlight=true
 done
-if [[ "$highlight" ]]; then
+if [[ -n "$highlight" ]]; then
     ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
     ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan'
     ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=magenta
