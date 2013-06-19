@@ -186,3 +186,4 @@ ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=magenta
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=magenta
 ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=fg=red
 ZSH_HIGHLIGHT_STYLES[path]='bold'
+[[ -f ~/.humblebundle ]] && source ~/.humblebundle
