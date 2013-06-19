@@ -73,6 +73,9 @@ alias yu='yaourt -Suya; sudo abs; sudo pkgfile -u; sudo pacdiffviewer'
 alias yi='yaourt -S'
 alias yq='yaourt -Si'
 alias yl='yaourt -Ql'
+alias clock='watch -t -n 1 "date +%T | toilet -f bigascii12"'
+alias pymath='bpython -i <(echo "from math import *")'
+alias newx='xinit /usr/bin/urxvt -- :1'
 
 rd_lupin() {
     local as_pid
