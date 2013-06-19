@@ -77,15 +77,6 @@ alias clock='watch -t -n 1 "date +%T | toilet -f bigascii12"'
 alias pymath='bpython -i <(echo "from math import *")'
 alias newx='xinit /usr/bin/urxvt -- :1'
 
-rd_lupin() {
-    local as_pid
-    autossh -M 20000 -N -L 9000:localhost:9000 lupin &
-    as_pid=$!
-    sleep 2
-    rdesktop localhost:9000
-    kill "$as_pid"
-}
-
 ### completion ###
 # init completion
 autoload -U compinit && compinit
