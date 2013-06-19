@@ -167,14 +167,17 @@ if [[ "$TERM" != "screen"* && "$SSH_CONNECTION" != "" ]]; then
 fi
 
 ### Syntax highlighting ###
+highlight=
 for d in zsh-syntax-highlight{,ing}; do
     f="/usr/share/zsh/plugins/$d/zsh-syntax-highlighting.zsh"
-    [[ -f "$f" ]] && source "$f"
+    [[ -f "$f" ]] && source "$f" && highlight=true
 done
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
-ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan'
-ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=magenta
-ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=magenta
-ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=fg=red
-ZSH_HIGHLIGHT_STYLES[path]='bold'
+if [[ "$highlight" ]]; then
+    ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+    ZSH_HIGHLIGHT_STYLES[globbing]='fg=cyan'
+    ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=magenta
+    ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=magenta
+    ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=fg=red
+    ZSH_HIGHLIGHT_STYLES[path]='bold'
+fi
 [[ -f ~/.humblebundle ]] && source ~/.humblebundle
