@@ -180,4 +180,6 @@ if [[ "$highlight" ]]; then
     ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=fg=red
     ZSH_HIGHLIGHT_STYLES[path]='bold'
 fi
+
+### Humble bundle key ###
 [[ -f ~/.humblebundle ]] && source ~/.humblebundle
