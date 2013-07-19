@@ -1,7 +1,1 @@
-##
-## Arch Linux repository mirrorlist
-## Sorted by mirror score from mirror status page
-## Generated on 2012-09-07
-##
-
 Server = http://mirror.de.leaseweb.net/archlinux/$repo/os/$arch
