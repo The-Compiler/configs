@@ -35,6 +35,7 @@ hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK)' manage=off # Don't 
 hc rule class=Cellwriter manage=off # Don't manage cellwriter
 hc rule class=Onboard manage=off
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on # Pseudotile dialogs and splashes
+hc rule windowrole=GtkFileChooserDialog pseudotile=off # Don't pseudotile file chooser dialogs
 
 # Settings which draw to the screen finished
 hc unlock
