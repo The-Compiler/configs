@@ -25,6 +25,8 @@ hc set raise_on_focus 0
 hc set raise_on_click 1
 hc set smart_frame_surroundings 1
 hc set smart_window_borders 1
+hc set tree_style '╾│ ├╰╼─╮'
+hc set swap_monitors_to_get_tag 0
 
 # Rules
 hc unrule -F
