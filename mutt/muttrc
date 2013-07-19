@@ -157,7 +157,12 @@ ignore X-Bugzilla-Severity: X-Bugzilla-Who: X-Bugzilla-Status:
 ignore X-Bugzilla-Priority: X-Bugzilla-Assigned-To:
 ignore X-Bugzilla-Target-Milestone: X-Bugzilla-Changed-Fields: X-Bugzilla-URL:
 ignore X-twfbl: X-mailstream: X-Rocket-MIMEInfo:
+ignore X-Roundup-issue-status: X-Roundup-issue-type: X-Roundup-issue-severity:
+ignore X-Roundup-issue-versions: X-Roundup-issue-resolution:
+ignore X-Roundup-issue-priority: X-Roundup-issue-components: X-Roundup-Name:
+ignore X-Roundup-Loop: X-Roundup-Version:
 #ignore X-PHP-Script: X-Source: X-Source-Args: X-Source-Dir:
+ignore X-Received: X-DH-MailerID: X-Abuse-Info: X-Bulkmail: X-UI-Filterresults:
 hdr_order Date: From: List-Id: To: Cc: User-Agent: X-Mailer: Subject:
 
 # Colors
