@@ -23,7 +23,7 @@
 #SYNCSERVER=""
 
 # AUR
-#AURURL="http://aur.archlinux.org"
+#AURURL="https://aur.archlinux.org"
 AURCOMMENT=10
 #AURDEVELONLY=0
 #AURSEARCH=1
@@ -46,10 +46,11 @@ PU_NOCONFIRM=1     # Add --noconfirm to $PACMAN -U
 
 # Output
 #USECOLOR=1
+#USEPAGER=0
 #DETAILUPGRADE=1
 #SHOWORPHANS=1
 #TERMINALTITLE=1
 
 # Command
-PACMAN="pacman-color"
+#PACMAN="pacman"
 #DIFFEDITCMD="vimdiff"
