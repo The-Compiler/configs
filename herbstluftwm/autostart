@@ -54,7 +54,6 @@ for i in ${!tag_names[@]} ; do
     fi
 done
 
-hc load 1 '(clients grid :0)' # FIXME
 
 # Autorun
 /home/florian/scripts/autorun.sh &
