@@ -230,3 +230,10 @@ send-hook \"(~t \1)\" \"set pgp_autoencrypt\"/gip' | \
 sort -u >~/.mutt/autoencrypt)`)" 'set pgp_autoencrypt'
 
 source ~/.mutt/autoencrypt
+
+# Eww, mail printing
+set print_command="muttprint"
+set print_split
+macro index p "<display-toggle-weed> <print-message> <display-toggle-weed> <exit>"
+macro pager p "<display-toggle-weed> <print-message> <display-toggle-weed>"
+set print="yes"
