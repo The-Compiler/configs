@@ -30,8 +30,8 @@ alternative_order text/enriched text/plain text/html
 # GMail-like shortcuts
 macro index,pager Y "<save-message>=[Gmail]/All<quote-char> Mail<enter><enter>" "Archive"
 macro index,pager x "<delete-message><sync-mailbox>" "Delete and expunge"
-macro index,pager S "<save-message>=[Gmail]/Spam<enter><enter>" "Spam"
-macro index,pager I "<save-message>=INBOX<enter><enter>" "Inbox"
+macro index,pager S "<save-message>=[Gmail]/Spam<enter>" "Spam"
+macro index,pager I "<save-message>=INBOX<enter>" "Inbox"
 macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
 macro index ga "<change-folder>=[Gmail]/All<quote-char> Mail<enter>" "Go to all mail"
 macro index gt "<change-folder>=[Gmail]/Sent<quote-char> Mail<enter>" "Go to sent Mail"
