@@ -151,3 +151,5 @@ screen -t irc weechat-curses
 screen -t mutt mutt
 screen -t rss newsbeuter
 screen -t htop htop
+screen -t hnb hnb
+screen -t log journalctl -fb
