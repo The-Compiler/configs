@@ -1,8 +1,8 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.19 for florian on Fri Sep 14 08:11:15 2012.
+# Written by xscreensaver-demo 5.21 for florian on Tue Apr  2 18:11:04 2013.
 # http://www.jwz.org/xscreensaver/
 
-timeout:	0:10:00
+timeout:	12:00:00
 cycle:		0:10:00
 lock:		False
 lockTimeout:	0:00:00
@@ -24,24 +24,24 @@ fadeTicks:	20
 captureStderr:	True
 ignoreUninstalledPrograms:False
 font:		*-medium-r-*-140-*-m-*
-dpmsEnabled:	True
+dpmsEnabled:	False
 dpmsQuickOff:	False
-dpmsStandby:	0:05:00
-dpmsSuspend:	0:05:00
-dpmsOff:	0:05:00
+dpmsStandby:	2:00:00
+dpmsSuspend:	2:00:00
+dpmsOff:	4:00:00
 grabDesktopImages:  True
 grabVideoFrames:    False
 chooseRandomImages: False
 imageDirectory:	
 
 mode:		blank
-selected:	87
+selected:	-1
 
 textMode:	file
 textLiteral:	XScreenSaver
 textFile:	
 textProgram:	fortune
-textURL:	http://twitter.com/statuses/public_timeline.atom
+textURL:	http://en.wikipedia.org/w/index.php?title=Special:NewPages&feed=rss
 
 programs:								      \
 				maze -root				    \n\
