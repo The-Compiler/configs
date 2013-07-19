@@ -4,7 +4,6 @@ fs=1
 heartbeat-cmd="xscreensaver-command -deactivate >&- 2>&- &"
 msgcolor=1
 msgmodule=1
-vo=xv
 ao=alsa
 lavdopts=threads=2
 cache=8192
