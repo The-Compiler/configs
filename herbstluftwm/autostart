@@ -128,3 +128,6 @@ hc keybind Mod4-y spawn ~/scripts/utf8select.sh
 
 # Fix java
 hc setenv _JAVA_AWT_WM_NONREPARENTING 1
+
+# Xojtex
+hc keybind Mod4-t spawn ~/bin/xojtex
