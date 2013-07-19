@@ -1,202 +1,436 @@
-" Filename:      .vimrc
-" Purpose:       configuration file for editor vim
-" Authors:       grml-team (grml.org), (c) Michael Prokop <mika@grml.org>
-" Bug-Reports:   see http://grml.org/bugs/
-" License:       This file is licensed under the GPL v2.
-"###############################################################################
-" Thanks to Sven Guckes for his template!
-"###############################################################################
+"" After starting the first time, ignore colorscheme warning and
+"" run :NeoBundleInstall to install plugins, then restart
 
-" be no-compatible with vi
-  set nocp
-" turn these ON:
-  set ek hidden ruler sc vb wmnu number incsearch hlsearch smartindent ignorecase smartcase autoindent 
+"""""" Options
+set nocompatible                " Turn off vim compability mode
+set esckeys                     " Arrow keys, etc. in insert mode
+set hidden                      " Support hidden unsaved buffers
+set ruler                       " Display line/column in bottom right
+set visualbell                  " Blink screen instead of beeping
+set noerrorbells                " Don't ring bell for errors
+set number                      " Line numbering
+set incsearch                   " Search while typing
+set hlsearch                    " Highlight search results
+set autoindent                  " Auto-indent new lines
+set ignorecase                  " Only be case-sensitive with uppercase chars
+set smartcase                   " ...
+set nostartofline               " Don't move cursor to line start
+set showmode                    " Show the mode we're in
+set smarttab                    " Insert tabs according to shiftwidth
+set expandtab                   " Use 4 spaces as tab
+set cursorline                  " Highlight cursor line
+set title                       " Set terminal title
+set showcmd                     " Show command at lower right
+set ttyfast                     " Always on a fast tty
+set backspace=indent,eol,start  " Allow backspace to delete any char
+set formatoptions=cqrt          " Formatting options, see :h fo-table
+set laststatus=2                " Always display a status line
+set shortmess=at                " Short messages in statusline
+set whichwrap=<,>,h,l           " Allow cursor keys and h/l to wrap lines
+set background=dark             " For dark terminals
+set termencoding=utf-8          " UTF8 as default encoding
+set encoding=utf-8              " ...
+set tabstop=4                   " Tab options
+set shiftwidth=4                " ...
+set softtabstop=4               " ...
+set completeopt=menuone,preview " Also show completion menu with one item
+set pumheight=20                " Show max 20 entries in completion
+set scrolloff=4                 " Always show 4 lines before/after cursor
+set virtualedit=block           " Allow extending after EOL in block selection
+set nrformats=hex               " Don't allow octal numbers for CTRL-A/CTRL+X
+set switchbuf=useopen           " Switch to already open buffers from quickfix
+set undolevels=1000             " Save many undo steps
+set undofile                    " ...
+set undodir=~/.vim/undo         " Keep persistent undo file
+set numberwidth=5               " Width of number column
+set updatetime=100              " Run autocmds all 100ms
+if has("gui_running") | set guifont=ProggyTinyTT\ 12 | endif
+if has("mouse") | set mouse=a | endif " Mouse support
+if has("smartindent") | set smartindent | endif " Smart indenting
+if has("wildmenu") | set wildmenu | endif " Visual tab completion
+" Ignore some files for tab menu
+if has("wildignore") | set wildignore=*.swp,*.bak,*.pyc,*/.git/*,*/.hg/*,*/.svn/* | endif
+" Limits for .viminfo
+set viminfo=%,'50,\"100,:100,!,n~/.viminfo
+" Locations for tag file
+set tags=./tags,./TAGS,tags,TAGS,../tags,../../tags,../../../tags,../../../../tags
+filetype plugin on              " Automatically load filetype-specific plugins
+filetype indent on              " Automatically load filetype-specific indents
+let mapleader=","               " Use , as leader instead of \
 
-  set mouse=a
-" set digraph
-" turn these OFF ("no" prefix):
-  set nodigraph noeb noet nosol
-" non-toggles:
-  set bs=2 fo=cqrt ls=2 shm=at ww=<,>,h,l background=light enc=utf-8
-" Tabs
-  set tabstop=8 shiftwidth=4 softtabstop=4 expandtab
-" set bs=2 fo=cqrt ls=2 shm=at tw=72 ww=<,>,h,l
-  set comments=b:#,:%,fb:-,n:>,n:)
-"  set list listchars=tab:»·,trail:·
-  set listchars=eol:$,precedes:«,extends:»,tab:»·,trail:·
-  set viminfo=%,'50,\"100,:100,n~/.viminfo
-  set tags=./tags,./TAGS,tags,TAGS,../tags,../../tags,../../../tags,../../../../tags
+"""""" Plugins
+""" NeoBundle - plugin management
+if has('vim_starting')
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+call neobundle#rc(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
 
-  if has("gui_running")
-	  set guifont=Terminus\ 8
-  endif
-  set t_Co=256                " number of colors
-  colorscheme xoria256
+""" Vimproc - needed for NeoBundle
+NeoBundle 'Shougo/vimproc', {
+   \ 'build' : {
+   \     'windows' : 'make -f make_mingw32.mak',
+   \     'cygwin'  : 'make -f make_cygwin.mak',
+   \     'mac'     : 'make -f make_mac.mak',
+   \     'unix'    : 'make -f make_unix.mak',
+   \    },
+   \ }
 
-" autocommands:
-" when the file type is "mail" then set the textwidth to "70":
-  au FileType mail   set tw=70
-" When editing a file, always jump to the last cursor position
-"  au BufReadPost * if line("'\"") | exe "'\"" | endif
-  autocmd BufReadPost * if line("'\"") && line("'\"") <= line("$") | exe "normal `\"" | endif
+""" xoria256 - colorscheme
+set t_Co=256             " Number of terminal colors
+NeoBundle 'xoria256.vim' " Color scheme
+colorscheme xoria256     " ...
+if has("syntax") | syn on | endif
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " highlight conflict markers
 
-" some colors - as an example "white on black" [use bold fonts]:
- " hi normal   ctermfg=white  ctermbg=black guifg=white  guibg=black
-"  hi nontext  ctermfg=blue   ctermbg=black guifg=blue   guibg=black
-  if has("syntax")
-     syn on
-  endif
+""" Repeat - repeation for plugins
+NeoBundle 'tpope/vim-repeat'
 
-" some useful mappings:
-  set pastetoggle=<f11>
+""" Tabular - easy aligning of lines
+NeoBundle 'godlygeek/tabular'
+nnoremap <leader><tab> :Tab /
+vnoremap <leader><tab> :Tab /
 
-" with F7 copy all current buffer to clipboard, or a selection.
-" with shift-F7, paste all clipboard contents
-" see: http://www.vim.org/tips/tip.php?tip_id=964
-  map   <F7>  :w !xclip<CR><CR>
-  vmap  <F7>  "*y
-  map <S-F7>  :r!xclip -o<CR>
+""" MinBufExpl - buffer list on top
+NeoBundle 'techlivezheng/vim-plugin-minibufexpl'
+let g:miniBufExplUseSingleClick = 1           " Use single-click to go to buf
+let g:miniBufExplorerAutoStart = 1            " Open buffer list automatically
+let g:miniBufExplBuffersNeeded = 1            " Always show list
+let g:miniBufExplStatusLineText = "%#Normal#" " Nearly hide statusline
+let g:did_minibufexplorer_syntax_inits = 1    " Custom colors
+highlight MBENormal               ctermfg=247 guifg=#9e9e9e
+highlight MBEChanged              ctermfg=247 guifg=#9e9e9e
+highlight MBEVisibleNormal        ctermfg=247 guifg=#9e9e9e cterm=reverse gui=reverse
+highlight MBEVisibleChanged       ctermfg=247 guifg=#9e9e9e cterm=reverse gui=reverse
+highlight MBEVisibleActiveNormal  ctermfg=150 guifg=#9e9e9e cterm=reverse gui=reverse
+highlight MBEVisibleActiveChanged ctermfg=150 guifg=#9e9e9e cterm=reverse gui=reverse
 
-" remove/delete trailing whitespace:
-  nmap ;tr :%s/\s\+$//
-  vmap ;tr  :s/\s\+$//
+""" Ctrl-P - fuzzy finder for files and more
+NeoBundle 'kien/ctrlp.vim'
+let g:ctrpl_extensions =  ['buffertag', 'line']      " Plugins to use
+let g:ctrlp_map = ''                                 " No default mapping
+let g:ctrlp_match_window = 'bottom,order:ttb,max:30' " 30 entries in window
+let g:ctrlp_root_markers = ['NEWS', 'AUTHORS', 
+                          \ 'BUGS', 'README.md']     " Project root markers
+let g:ctrlp_clear_cache_on_exit = 0                  " Persistent cache
+let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'   " ...
+let g:ctrlp_show_hidden = 1                          " Show hidden files
+let g:ctrlp_follow_symlinks = 1                      " Follow symlinks
+" <leader>f[ftbl] for files/tags/buffers/lines
+nnoremap <leader>ff :CtrlP<cr>
+nnoremap <leader>ft :CtrlPBufTagAll<cr>
+nnoremap <leader>fb :CtrlPBuffer<cr>
+nnoremap <leader>fl :CtrlPLine<cr>
 
-" execute the command in the current line (minus the first word, which
-" is intended to be a shell prompt) and insert the output in the buffer
-  map ,e ^wy$:r!"
+""" showmarks - shows marks in SignColumn
+NeoBundle 'ShowMarks'
+" Hide special marks
+let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+let showmarks_textupper = "\t" " Don't display mark markers
+let showmarks_textlower = "\t" " ...
+let showmarks_textother = "\t" " ...
+" <leader>[mM] to clear one/all marks
+nnoremap <leader>m :ShowMarksClearMark<cr>
+nnoremap <leader>M :ShowMarksClearAll<cr>
+highlight ShowMarksHLl ctermfg=150 guifg=#afdf87 ctermbg=239 guibg=#4e4e4e
+highlight ShowMarksHLu ctermfg=150 guifg=#afdf87 ctermbg=239 guibg=#4e4e4e
+highlight ShowMarksHLo ctermfg=150 guifg=#afdf87 ctermbg=239 guibg=#4e4e4e
+highlight ShowMarksHLm ctermfg=174 guifg=#df8787 ctermbg=239 guibg=#4e4e4e
 
-" update timestamp
-  iab YDATE <C-R>=strftime("%a %b %d %T %Z %Y")<CR>
-  map ,L  1G/Latest change:\s*/e+1<CR>CYDATE<ESC>
-
-" the shell in a box mode. found in posting by Stefan `Sec` Zehl
-" in newsgroup de.alt.sysadmin.recovery, msg­id:  <df7lhe$2hup$1@ice.42.org>
-" Requires zsh for "print -P $PS1" / replace if needed.
-" Your prompt should end in > (and only contain one)
-" so run something like:
-"   % export PS1='%n@%m > '
-" in your zsh, press ',l' and <enter> for running commands, end mode via <esc>
-  map __start :imap <C-V><C-M> <C-O>__cmd<C-V>\|imap <C-V><ESC> <C-V><ESC>__end<C-M>
-  noremap __end :iunmap <C-V><CR>\|iunmap <C-V><ESC><C-M>:"Vish ended.<C-M>
-  noremap __cmd 0<ESC>f>ly$:r !<C-R>";print -P $PS1<C-M>A
-  noremap __scmd :r !print -P $PS1<c-M>A
-  map ,l __start__scmd
-
-" Kill quote spaces (when quoting a quote)
-  map ,kqs mz:%s/^> >/>>/<cr>
-
-" Interface to Mercurial Version Control
-  if filereadable( "/usr/share/doc/mercurial/examples/vim/hg-menu.vim" )
-    source /usr/share/doc/mercurial/examples/vim/hg-menu.vim
-  endif
-
-" source local configuration file
-  if filereadable(expand("$HOME/.vimrc.local"))
-     source $HOME/.vimrc.local
-  endif
-
-  function! MyTabOrComplete()
-  	let col = col('.')-1  
-	if !col || getline('.')[col-1] !~ '\k'
-		return "\<tab>"
-	else
-		return "\<C-N>"
-	endif
-  endfunction
-
-  imap <C-F> <ESC>:r!/home/florian/bin/goobook-query.sh <cword><CR><ESC>
-
-  inoremap <Tab> <C-R>=MyTabOrComplete()<CR>
-  noremap <S-F> :FufFile<Enter>
-  noremap <S-B> :FufBuffer<Enter>
-  noremap <S-R> :FufMruFile<Enter>
-
-" Vim 7 brings cool new features - see ':he version7'!
-" The coolest features of Vim7 by mika
-" ====================================
-"  1) omni/intellisense completion: use CTRL-X CTRL-O in insert mode to start it [:he compl-omni]
-"  2) internal grep: vimgrep foo bar [:he vimgrep]
-"  3) tab pages: vim -p file1 file2 - then use the :tab command [:he tabpage]
-"     gt -> next tab
-"     gT -> previous tab
-"  4) undo branches: :undolist / :earlier 2h / :later 2h
-"     instead of using u (undo) and CTRL-R (redo), you might experiment with g-
-"     and g+ to move through the text state [:he undolist]
-"  5) browse remote directories via scp using netrw plugin: :edit scp://host//path/to/ [:he netrw.vim]
-"  6) start editing the filename under the cursor and jump to the line
-"     number following the file name: press gF [:he gF]
-"  7) press 'CTRL-W F' to start editing the filename under the cursor in a new
-"     window and jump to the line number following the file name. [:he CTRL-W_F]
-"  8) spelling correction (see later for its configuration) [:he spell]:
-"      ]s  -> Move to next misspelled word after the cursor.
-"      zg  -> Add word under the cursor as a good word to the first name in 'spellfile'
-"      zw  -> Like "zg" but mark the word as a wrong (bad) word.
-"      z=  -> For the word under/after the cursor suggest correctly spelled words. 
-" 9)  highlight active cursor line using 'set cursorline' [:he cursorline]
-" 10) delete inner quotes inside HTML-code using <C-O>cit (see its mapping later) [:he tag-blocks]
-"
-if version >= 700
-  " Thanks for some ideas to Christian 'strcat' Schneider and Julius Plenz
-  " turn spelling on by default:
-  "  set spell
-  " toggle spelling with F12 key:
-    map <F10> :set spell!<CR><Bar>:echo "Spell Check: " . strpart("OffOn", 3 * &spell, 3)<CR>
-    set spellfile=~/.vim/spellfile.add
-  " change language -  get spell files from http://ftp.vim.org/pub/vim/runtime/spell/ =>
-  " cd ~/.vim/spell && wget http://ftp.vim.org/pub/vim/runtime/spell/de.{latin1,utf-8}.spl
-  " change to german:
-  "  set spelllang=de
-  " highlight spelling correction:
-  "  highlight SpellBad    term=reverse   ctermbg=12 gui=undercurl guisp=Red       " badly spelled word 
-  "  highlight SpellCap    term=reverse   ctermbg=9  gui=undercurl guisp=Blue      " word with wrong caps
-  "  highlight SpellRare   term=reverse   ctermbg=13 gui=undercurl guisp=Magenta   " rare word
-  "  highlight SpellLocale term=underline ctermbg=11 gui=undercurl guisp=DarkCyan  " word only exists in other region
-
-  " set maximum number of suggestions listed to top 10 items:
-  set sps=best,10
-  " highlight matching parens:
-  " set matchpairs=(:),[:],{:},< :>
-  " let loaded_matchparen = 1
-  " highlight MatchParen term=reverse   ctermbg=7   guibg=cornsilk
-
-  " highlight the cursor line and column:
-   set cursorline
-   " highlight CursorLine   term=reverse   ctermbg=7   guibg=#333333
-    "highlight CursorColumn guibg=#333333
-
-  " use the popup menu also when there is only one match:
-  " set completeopt=menuone 
-  " determine the maximum number of items to show in the popup menu for:
-  set pumheight=20 
-
-
+""" Gundo - graphical undo tree
+if has("python")
+    NeoBundle 'http://bitbucket.org/sjl/gundo.vim'
+    let g:gundo_preview_bottom = 1                   " Bigger preview window
+    let g:gundo_close_on_revert = 1                  " Autoclose
+    let g:gundo_tree_statusline = "Gundo tree"       " Nicer statuslines
+    let g:gundo_preview_statusline = "Gundo preview" " ...
+    " <leader>u to toggle undo tree
+    noremap <leader>u :GundoToggle<cr><cr>
 endif
 
-"noremap <F12> :!make<Enter>
+""" YankRing - clipboard management
+NeoBundle 'YankRing.vim'
+" <leader>p to toggle paste list
+nnoremap <leader>p :YRShow<cr>
+" history file location
+let g:yankring_history_dir = expand('$HOME') . "/.vim/bundle/YankRing.vim"
+
+""" Surround - easily surround text by braces
+NeoBundle 'tpope/vim-surround'
+
+""" Scratch - scratchpad
+NeoBundle 'scratch.vim'
+let g:scratchpad_shown = 0
+function! ScratchpadToggle()
+    if (g:scratchpad_shown == 0)
+        let g:scratchpad_shown = 1
+        Sscratch
+    else
+        let g:scratchpad_shown = 0
+        bdelete "__Scratch__"
+    endif
+endfunction
+" <leader>s to toggle scratchpad
+nnoremap <leader>s :call ScratchpadToggle()<cr>
+
+""" NERDtree - file manager
+NeoBundle 'scrooloose/nerdtree'
+let NERDTreeShowHidden=1          " Show hidden files
+let NERDTreeHighlightCursorline=1 " Highlight the selected entry in the tree
+let NERDTreeMouseMode=3           " Use single-click
+let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
+            \ '\.o$', '\.so$', '\.egg$', '^\.git$' ]
+" <leader>n to toggle NERDtree
+nnoremap <leader>n :NERDTreeToggle<cr>
+
+""" NERDcommenter - easy commenting
+" does own keybindings :(
+NeoBundle 'scrooloose/nerdcommenter'
+let NERDSpaceDelims=1 " Use spaces around comment chars
+
+""" fugitive - git integration
+NeoBundle 'tpope/vim-fugitive'
+" gd: git diff (as text)
+nnoremap <leader>gd :Gvsplit! diff<cr>
+" gv: visual diff
+nnoremap <leader>gv :Gdiff<cr>
+" gV: (attempt to) close visual diff
+nnoremap <leader>gV <C-w>h:q<cr><C-^>
+" ge: Prompt to edit file
+nnoremap <leader>ge :Gedit<Space>
+" gb: Blame
+nnoremap <leader>gb :Gblame<cr>
+" gm: Prompt to move
+nnoremap <leader>gm :Gmove<Space>
+" gm: Prompt to remove
+nnoremap <leader>gr :Gremove<Space>
+" gm: Prompt to grep
+nnoremap <leader>gg :Ggrep<Space>
+" gl: Show git log
+nnoremap <leader>gl :Glog<cr><cr>:cw<cr>
+" gr: (read) checkout --
+nnoremap <leader>gr :Gread<cr>
+" gx: prompt to eXecute git command
+nnoremap <leader>gx :Git<Space>
+" gc: git commit
+nnoremap <leader>gc :Gcommit<cr>
+" gC: git commit --amend
+nnoremap <leader>gC :Gcommit --amend<cr>
+" gp: git commit --patch
+nnoremap <leader>gp :Gcommit --patch<cr>
+" gs: git status
+nnoremap <leader>gs :Gstatus<cr>
+
+""" EasyTags (automatical tag generation) / tag bar (tag sidebar)
+NeoBundle 'xolox/vim-misc'                  " Needed by easytags
+NeoBundle 'xolox/vim-easytags'
+let g:easytags_include_members = 1          " Include struct members
+let g:easytags_dynamic_files = 1            " Reuse project-specific files
+let g:easytags_by_filetype = "~/.vim/.tags" " Use tags per filetype
+let g:easytags_updatetime_warn = 0          " Don't warn about fast updatetime
+let g:easytags_resolve_links = 1            " Resolve symbolic links
+let g:easytags_auto_highlight = 0           " Don't highlight tags
+let g:easytags_events = ['BufWritePost', 'BufRead'] " Update on reading/saving
+NeoBundle 'majutsushi/tagbar'
+" <leader>t: toggle tagbar
+nnoremap <leader>t :TagbarToggle<cr>
+
+""" YouCompleteMe (good autocompletion)
+"if has("python")
+"    " no build section; build manually because it takes too long
+"    NeoBundle 'Valloric/YouCompleteMe'
+"    let g:ycm_allow_changing_updatetime = 0           " Don't mess with updatetime
+"    let g:ycm_collect_identifiers_from_tags_files = 0 " Use tags file
+"    let g:ycm_seed_identifiers_with_syntax = 0        " Complete syntax elements
+"    let g:ycm_key_invoke_completion = ''              " No semantic completion
+"    let g:ycm_autoclose_preview_window_after_completion = 1 " Autoclose preview
+"    let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
+"endif
+
+""" Syntastic (error highlighting)
+"NeoBundle 'scrooloose/syntastic'
+"let g:syntastic_mode_map = { 'mode': 'active',
+"    \ 'active_filetypes': [],
+"    \ 'passive_filetypes': [] }
+
+""" Pyclewn (gdb integration)
+if has("netbeans_intg")
+    " Installed systemwide, no loading necessary
+    let g:pyclewn_args="-b DarkGreen,DarkRed,Black -g async" " Color settings
+    " db: break on current line
+    nnoremap <expr> <leader>db ":Cbreak " . expand("%:p") . ":" . line(".") . "\<cr>"
+    " dB: custom break
+    nnoremap <leader>dB :Cbreak<space>
+    " dg: clear breakpoint on current line
+    nnoremap <expr> <leader>dg ":Cclear " . expand("%:p") . ":" . line(".") . "\<cr>"
+    " dt: temp break on current line
+    nnoremap <expr> <leader>dt ":Ctbreak " . expand("%:p") . ":" . line(".") . "\<cr>"
+    " dp: print var
+    nnoremap <leader>dp :Cprint<space>
+    " dG: clear all breakpoints
+    nnoremap <leader>dG :Cclear all<space>
+    " dib: info breakpoints
+    nnoremap <leader>dib :Cinfo breakpoints<cr>
+    " dil: info locals
+    nnoremap <leader>dil :Cinfo locals<cr>
+    " dia: info args
+    nnoremap <leader>dia :Cinfo args<cr>
+    " ds: step
+    nnoremap <leader>ds :Cstep<cr>
+    " dn: next
+    nnoremap <leader>dn :Cnext<cr>
+    " df: finish
+    nnoremap <leader>df :Cfinish<cr>
+    " dr: run
+    nnoremap <leader>dr :Crun<cr>
+    " dc: cont
+    nnoremap <leader>dc :Ccontinue<cr>
+    " dx: foldvar on current line
+    nnoremap <expr> <leader>dx ":Cfoldvar " . line(".") . "\<cr>"
+    " dw: dbgvar (watch)
+    function! CCgetvar() " Get C variable under cursor, including * and []
+        let oldisk = &iskeyword
+        set iskeywword="48-57,_,a-z,A-Z,[,],*"
+        return expand("<cword>")
+        let &iskeyword = oldisk
+    endfunction
+    nnoremap <expr> <leader>dw ":Cdbgvar " . CCgetvar() . "\<cr>"
+    " dW: custom dbgvar
+    nnoremap <leader>dW :Cdbgvar<space>
+    " dI: init
+    " nnoremap <leader>dI :Pyclewn<cr>:Cfile<Space>
+    function! CCinit(file)
+        nnoremap <F5> :Cstep<cr>
+        nnoremap <F6> :Cnext<cr>
+        nnoremap <F8> :Cfinish<cr>
+        MBEClose
+        Pyclewn
+        sleep 100 m
+        execute ':Cfile ' . a:file
+        sleep 100 m
+        execute ':Cset remote exec-file ' . a:file
+        sleep 100 m
+        Ctarget extended-remote localhost:11111
+        sleep 100 m
+        Cbreak main
+        sleep 100 m
+        Crun
+        sleep 100 m
+        Ccontinue
+    endfunction
+    "command! CCinit -nargs=* call CCinit(<args>)
+    command! -nargs=1 -complete=file CCinit call CCinit(<f-args>)
+    nnoremap <leader>dI :CCinit<space>
+endif
+
+"""""" Statusline
+if has("statusline")
+    function! Gitstatus()
+      if !exists('b:git_dir')
+        return ''
+      endif
+      return ' ' . fugitive#head(7) . ' '
+    endfunction
+    " Git branch (red)
+    highlight User1 ctermbg=174 ctermfg=235 guibg=#df8787 guifg=#262626
+    " file name / cwd (green)
+    highlight User2 ctermbg=150 ctermfg=235 guibg=#afdf87 guifg=#262626
+    " encoding / percentage
+    highlight User3 ctermbg=247 ctermfg=235 guibg=#9e9e9e guifg=#262626
+    " CRLF / lines
+    highlight User4 ctermbg=245 ctermfg=235 guibg=#8a8a8a guifg=#262626
+    " filetype / columns
+    highlight User5 ctermbg=243 ctermfg=235 guibg=#767676 guifg=#262626
+    " flags / tab
+    highlight User6 ctermbg=241 ctermfg=235 guibg=#626262 guifg=#262626
+    set statusline=
+    set statusline+=%1*
+    set statusline+=%{Gitstatus()}                      " git branch
+    set statusline+=%2*
+    set statusline+=\ %t                                " filename
+    set statusline+=\ %3*
+    set statusline+=\ %{strlen(&fenc)?&fenc:'none'}     " file encoding
+    set statusline+=\ %4*
+    set statusline+=\ %{&ff}                            " file format
+    set statusline+=\ %5*
+    set statusline+=\ %{strlen(&ft)?&ft:'plain'}        " filetype
+    set statusline+=\ %6*
+    set statusline+=\ %{&mod?'M':'m'}                   " modified flag
+    set statusline+=%{&ro?'R':'r'}                      " read only flag
+    set statusline+=%{&paste?'P':'p'}                   " paste flag
+    set statusline+=\ %*
+    set statusline+=\ %a                                " argument list
+    set statusline+=%=                                  " left/right separator
+    set statusline+=%6*
+    set statusline+=\ %{strlen(&et)?&sts.'\ spc':'tab'} " space/tab indicator
+    set statusline+=\ %5*
+    set statusline+=\ C:%2c/%2{len(getline('.'))}       " cursor column
+    set statusline+=\ %4*
+    set statusline+=\ L:%3l/%3L                         " cursor line/total lines
+    set statusline+=\ %3*
+    set statusline+=\ %P                                " percent through file
+    set statusline+=\ %2*
+    set statusline+=%<                                  " truncate here if too long
+    set statusline+=\ %0.20{getcwd()}                   " current working dir
+    set statusline+=\ "                                 " trailing space
+endif
+
+"""""" Autocommands
+if has("autocmd")
+    autocmd FileType mail set tw=70 " Text width for mail
+    " When editing a file, always jump to the last cursor position
+    autocmd BufReadPost * 
+        \ if line("'\"") && line("'\"") <= line("$") | 
+        \   exe "normal `\"" | 
+        \ endif
+    " Load skeletons
+    autocmd BufNewFile *.py 0r ~/.vim/skeletons/py.py
+    autocmd BufNewFile *.cs 0r ~/.vim/skeletons/cs.cs
+    " Use K for vim-help in vim-files
+    autocmd filetype vim noremap K <Esc>:help <C-r><C-w><cr>
+    " Automatically open quickfix after grep
+    autocmd QuickFixCmdPost *grep* cwindow
+    " Force -o for C files
+    autocmd FileType c set fo-=o
+    " Close vim if NERDTree is only window
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+endif
+
+"""""" Custom mappings
+" f12: Compile and show error list
 noremap <F12> :make<Enter>:cw<Enter>
+" Avoid accidental hits of <F1> while aiming for <Esc>
+noremap! <F1> <Esc>
+" Swap implementations of ` and ' jump to markers
+" By default, ' jumps to the marked line, ` jumps to the marked line and
+" column, so swap them
+nnoremap ' `
+nnoremap ` '
+" Remap j and k to act as expected when used on long, wrapped, lines
+nnoremap j gj
+nnoremap k gk
+" <leader><space>: Clear search highlighting
+nnoremap <silent> <leader><space> :nohlsearch<cr>
+" <leader>= / <leader>-: underlining
+nnoremap <leader>= yypVr=k
+nnoremap <leader>- yypVr-k
+" Use tab to switch between braces
+nnoremap <tab> %
+vnoremap <tab> %
+" Use <leader>@ to repeat a macro line-wise
+nnoremap <leader>@ :normal! @
+" Use C-hjkl to navigate windows
+noremap <C-J> <C-W>j
+noremap <C-K> <C-W>k
+noremap <C-H> <C-W>h
+noremap <C-L> <C-W>l
+" <leader>w: Write
+noremap <leader>w :w<cr>
+" <leader>P: Paste mode
+noremap <leader>P :setlocal paste!<cr>
 
- fun! RangerChooser()
-   exec "silent !ranger --choosefile=/tmp/chosenfile " . expand("%:p:h")
-   if filereadable('/tmp/chosenfile')
-     exec 'edit ' . system('cat /tmp/chosenfile')
-     call system('rm /tmp/chosenfile')
-   endif
-   redraw!
- endfun
- map ,r :call RangerChooser()<CR>
-
-" make invisible errors, very visible
-"
-" no trailing whitespacing, no spaces at the begging of the line.
-" and no tabs after spaces.
-syn match WrongWhitespace /\s\+$\| \+\t/
-highlight WrongWhitespace ctermbg=red guibg=red
-   
-" Filetype-specific plugins
-autocmd FileType py source ~/.vim/filetypes/py.vim
-autocmd FileType cs source ~/.vim/filetypes/cs.vim
-autocmd BufNewFile *.py 0r ~/.vim/skeletons/py.py
-autocmd BufNewFile *.cs 0r ~/.vim/skeletons/cs.cs
+"""""" Misc
+" Use make as default compiler
 compiler make
-"# END OF FILE #################################################################
-
+" Write with sudo with :W
+com! W w<bang> !sudo tee % >/dev/null

@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # vim: set fileencoding=utf-8 ts=4 sts=4 sw=4 tw=80 expandtab :
 
-# Copyright (C) 2012 Florian Bruhin <me@the-compiler.org>
+# Copyright (C) 2013 Florian Bruhin <me@the-compiler.org>
 
 # NAME is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

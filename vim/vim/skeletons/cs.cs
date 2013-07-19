@@ -1,5 +1,5 @@
 /*****************************************************************************
-Copyright (C) 2012 Florian Bruhin <me@the-compiler.org>
+Copyright (C) 2013 Florian Bruhin <me@the-compiler.org>
 
 NAME is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
