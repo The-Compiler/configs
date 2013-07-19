@@ -125,3 +125,6 @@ hc keybind XF86Launch3 spawn /home/florian/bin/onboardctl toggle
 
 # utf8select
 hc keybind Mod4-y spawn ~/scripts/utf8select.sh
+
+# Fix java
+hc setenv _JAVA_AWT_WM_NONREPARENTING 1
