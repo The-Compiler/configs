@@ -1,10 +1,10 @@
-# /dev/sda2 LABEL=rootfs
-UUID=2a1246cd-dd4f-48e8-82e0-7d93eeeac41b	/         	nilfs2    	rw,noatime			0 0
+# 
+# /etc/fstab: static file system information
+#
+# <file system>	<dir>	<type>	<options>	<dump>	<pass>
+# /dev/sda2 LABEL=root
+UUID=01437767-50c9-4d0c-9b59-f66ccd0cd198	/         	btrfs     	rw,relatime,ssd,space_cache,subvol=__active	0 1
+
 # /dev/sda1 LABEL=boot
-UUID=677a1536-c7b7-4393-a099-84b074cc0b3e	/boot     	ext4      	rw,noatime,data=ordered,discard	0 0
-# /dev/sda3 LABEL=home
-UUID=8cd55cd2-90b7-40b8-9190-a8ce24bfe309	/home     	nilfs2    	rw,noatime			0 0
-# tmpfs for /tmp
-tmpfs						/tmp		tmpfs		nodev,nosuid                    0 0
-# tmpfs for /run
-tmpfs                                           /run            tmpfs           defaults                        0 0
+UUID=fe3a2b62-51c7-48a4-982f-0473dabf36a9	/boot     	ext3      	rw,relatime,data=ordered	0 2
+
