@@ -18,7 +18,9 @@ bind-key L toggle-show-read-feeds
 
 color background color252 color234
 color listnormal color252 color234
+color listnormal_unread color150 color234
 color listfocus color252 color237
+color listfocus_unread color150 color237
 color info color15 color239
 color article color252 color234
 
