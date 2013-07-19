@@ -81,6 +81,7 @@ alias mozilla-sdk='cd /opt/addon-sdk && source bin/activate; cd -'
 alias unrarall='for f in *.rar; do d="${f%%.*}"; mkdir "$d"; mv "$f" "$d"; cd "$d"; unrar x "$f" && rm "$f"; cd ..; done'
 xoj() { for f in "$@"; do xournal "$f" &>/dev/null & disown; done }
 pdf() { "$VIEW_PDF" "$@" &>/dev/null & disown }
+qr() { qrencode "$1" -o- -t ANSIUTF8; }
 
 
 paste() {
