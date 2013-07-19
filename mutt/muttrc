@@ -42,6 +42,8 @@ macro index gs "<change-folder>=[Gmail]/Spam<enter>" "Go to Spam"
 set sort = 'threads'
 set sort_aux = 'reverse-last-date-received'
 
+bind index G group-reply
+
 # Vi-like keybindings
 bind generic l select-entry
 bind index l display-message
