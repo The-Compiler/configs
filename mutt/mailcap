@@ -21,9 +21,11 @@ application/x-mspowerpoint;     catppt %s; copiousoutput
 application/ppt;                catppt %s; copiousoutput
 # images
 image/*;			cacaview %s; needsterminal
-image/*;			img2txt --gamma=0.6 -f ansi -W $COLUMNS %s; copiousoutput
+image/*;			identify %s; copiousoutput
 # audio
 audio/*;			mediainfo %s; copiousoutput
 # videos
 video/*;			mediainfo %s; copiousoutput
 video/*;			mplayer -vo caca %s; needsterminal
+# archives
+application/x-tar;              tar -tf - ; copiousoutput;
