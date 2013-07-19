@@ -79,7 +79,7 @@ my_hdr X-URL: http://www.the-compiler.org/
 my_hdr X-Operating-System: Arch Linux, Kernel `uname -r | sed 's/-.*$//'`
 my_hdr X-Editor: vim `vim --version | sed -n '1s/[^0-9]* \([^ ]*\).*/\1/p'`
 my_hdr X-PGP-Key: http://www.the-compiler.org/pubkey.asc
-my_hdr OpenPGP: id=FD55A072\; url=http://www.the-compiler.org/pubkey.asc\; preference=sign
+my_hdr OpenPGP: id=FD55A072\; url=http://www.the-compiler.org/pubkey.asc\; preference=signencrypt
 
 # Editing
 set editor="vim -c 'set filetype=mail' -c 'set fileencodings=' -c 'set fileencoding=' -c 'set nohlsearch' '+:silent+?^$' " 
@@ -202,13 +202,15 @@ source ~/.mutt/hooks
 source /etc/Muttrc.gpg.dist
 set pgp_sign_as=0xFD55A072
 set pgp_timeout=60
-set crypt_replysign
 set crypt_verify_sig=yes
+set pgp_autosign
+set pgp_replyencrypt
 
 # autosign messages to people in the keyring
-send-hook '(~t .*)' 'reset pgp_autosign'
+send-hook '(~t .*)' 'reset pgp_autoencrypt'
 send-hook "(~t DUMMY `(gpg --list-keys | sed -ne \
-          's/^[^<]*<\([a-z0-9\.\-\_]*@[a-z0-9\.\-\_]*\)>.*/\
-          send-hook \"(~t \1)\" \"set pgp_autosign\"/gip' | \
-          sort -u >~/.mutt/autosign)`)" 'set pgp_autosign'
-source ~/.mutt/autosign
+'s/^[^<]*<\([a-z0-9\.\-\_]*@[a-z0-9\.\-\_]*\)>.*/\
+send-hook \"(~t \1)\" \"set pgp_autoencrypt\"/gip' | \
+sort -u >~/.mutt/autoencrypt)`)" 'set pgp_autoencrypt'
+
+source ~/.mutt/autoencrypt
