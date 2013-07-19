@@ -169,7 +169,7 @@ hdr_order Date: From: List-Id: To: Cc: User-Agent: X-Mailer: Subject:
 color   hdrdefault   color110   color234
 color   quoted       color244   color234
 color   signature    color150   color234
-color   attachment   color174   color234
+color   attachment   color110   color234
 color   message      color252   color234
 color   error        color15    color1
 color   indicator    color252   color237
@@ -187,18 +187,29 @@ color header color225 color234 ^Subject:
 color body color229 color234 '(^|\W)[\*]\w.*\w[\*]($|\W)' # *bold*
 color body color229 color234 '(^|\W)_\w[[:alpha:]]*\w_($|\W)' # _underlined_
 color body color229 color234 '(^|\W)/\w[^/]*\w/($|\W)' # /italics/
-color body color174 color234 '\w+://[a-z0-9.~_/%;@#?+&=-]+' # URL
-color body color174 color234 "www\\.[-.a-z0-9]+\\.[a-z]{2,3}[a-z0-9;.~_/%@#?+ +&=-]*"  # URL
+color body color174 color234 '\w+://[a-z0-9.~_/%;:@#?+&=-]+' # URL
+color body color174 color234 "www\\.[-.a-z0-9]+\\.[a-z]{2,3}[a-z0-9;:.~_/%@#?+&=-]*"  # URL
 color body color229 color234 "[a-z0-9.+-]+@[a-z0-9.-]+\\.[a-z]{2,4}" # email
-color body red color234 '[-=+#_*~]{3,}.*' # lines
+color body color150 color234 '[-=+#_*~]{3,}.*' # lines
+color body color181 color234 '\[[0-9]+\]' # link-tags
 # Attribution lines
-color body magenta default "\\* [^<]+ <[^>]+> \\[[^]]+\\]:" 
-color body magenta default "(^|[^[:alnum:]])on [a-z0-9 ,]+( at [a-z0-9:,. +-]+)? wrote:"
+#color body magenta default "\\* [^<]+ <[^>]+> \\[[^]]+\\]:" 
+color body color248 default "(^|[^[:alnum:]])([Oo]n)? .*wrote:$"
+color body color248 default ".* schrieb.*:$"
+color body color248 default "(^|[^[:alnum:]])([Oo]n)? .* was blubbering:$"
+color body color248 default "^[0-9]{4}/[0-9]{1,2}/[0-9]{1,2} .*:$"
 # PGP
-color body green default "^gpg: Good signature .*"
+color body color146 default "^gpg.*"
+color body color146 default "^Primary key fingerprint:.*"
+color body color150 default "^gpg: Good signature .*"
 color body brightwhite red "^gpg: BAD signature from.*"
-color body yellow default "^gpg: WARNING.*"
-color body yellow default "^gpg: no valid OpenPGP data found.*"
+color body color229 default "^gpg: WARNING.*"
+color body color229 default "^gpg:          There is no indication that the signature belongs to the owner."
+color body color229 default "^gpg: no valid OpenPGP data found.*"
+# OpenSSL
+color body green default "^Verification successful"
+color body brightwhite red "^Verification failure"
+color body yellow default "^Error reading S/MIME message"
 
 # Hooks
 source ~/.mutt/hooks
