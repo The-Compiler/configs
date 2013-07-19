@@ -47,7 +47,8 @@
 
 #  caption         always         "%{yr}[%{k}%l%{y}][%{k}%6`%{y}][%{k}%2`G%{y}][%{k}%1`%{y}][%{k}%7`%{y}][%{k}%c%{y}]"
   #hardstatus      alwayslastline "%{= dg} %=%{g}%?%-Lw%?%{r}%n*%f %t%?(%u)%?%{g}%?%+Lw%?%="
-  caption      always "%{= dg} %=%{y}%3`@%H%=%{g}%?%-Lw%?%{r}%n*%f %t%?(%u)%?%{g}%?%+Lw%?%=%{= db} %=%l | %6` | %2`G | %1` | %c%="
+#  caption      always "%{= dg} %=%{y}%3`@%H%=%{g}%?%-Lw%?%{r}%n*%f %t%?(%u)%?%{g}%?%+Lw%?%=%{= db} %=%l | %6` | %2`G | %1` | %c%="
+  caption      always "%{= dg} %=%{y}%3`@%H%=%{g}%?%-Lw%?%{r}%n*%f %t%?(%u)%?%{g}%?%+Lw%?%=%{= db}"
 # don't login for 'who'
   deflogin         off
 # Funny nethack messages, please!
