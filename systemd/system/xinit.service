@@ -1,0 +1,9 @@
+[Unit]
+Description=Direct login to X
+After=systemd-user-sessions.service
+
+[Service]
+ExecStart=/bin/su florian -l -c "/bin/bash --login -c xinit -- -nolisten"
+
+[Install]
+WantedBy=graphical.target

@@ -1,0 +1,13 @@
+[Unit]
+Description=SSH tunnels
+After=network.target
+Requires=network.target
+
+[Service]
+ExecStart=/usr/bin/autossh -M 0 -N %i
+User=autossh
+Group=autossh
+
+[Install]
+WantedBy=graphical.target
+
