@@ -237,3 +237,13 @@ set print_split
 macro index p "<display-toggle-weed> <print-message> <display-toggle-weed> <exit>"
 macro pager p "<display-toggle-weed> <print-message> <display-toggle-weed>"
 set print="yes"
+
+# Mailing lists
+subscribe dslinux-commit@dslinux.in-berlin.de
+subscribe dslinux-devel@dslinux.in-berlin.de
+subscribe installzone@ch-open.ch
+subscribe oss@gnupingu.ch
+subscribe crew@handz.ch
+subscribe swiss-chaos@chaostreff.ch
+subscribe zuerich@chaostreff.ch
+subscribe ubuntu-ch@lists.ubuntu.com
