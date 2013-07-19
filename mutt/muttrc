@@ -247,3 +247,31 @@ subscribe crew@handz.ch
 subscribe swiss-chaos@chaostreff.ch
 subscribe zuerich@chaostreff.ch
 subscribe ubuntu-ch@lists.ubuntu.com
+
+# S/MIME
+
+set smime_ca_location="/etc/ssl/certs"
+
+# Verify a signature of type multipart/signed
+set smime_verify_command="openssl smime -verify -inform DER -in %s %C -content %f"
+
+# Verify a signature of type application/x-pkcs7-mime
+set smime_verify_opaque_command="\
+openssl smime -verify -inform DER -in %s %C || \
+openssl smime -verify -inform DER -in %s -noverify 2>/dev/null"
+
+# These are used to extract a certificate from a message.
+# First generate a PKCS#7 structure from the message.
+set smime_pk7out_command="openssl smime -verify -in %f -noverify -pk7out"
+
+# Extract the included certificate(s) from a PKCS#7 structure.
+set smime_get_cert_command="openssl pkcs7 -print_certs -in %f"
+
+# Extract the signer's certificate only from a S/MIME signature (sender verification)
+set smime_get_signer_cert_command="openssl smime -verify -in %f -noverify -signer %c -out /dev/null"
+
+# This is used to get the email address the certificate was issued to.
+set smime_get_cert_email_command="openssl x509 -in  %f -noout -email"
+
+# Add a certificate to the database using smime_keys.
+set smime_import_cert_command="smime_keys add_cert %f"
