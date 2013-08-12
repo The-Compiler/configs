@@ -197,7 +197,7 @@ precmd() { # gets run after a command before the prompt
 }
 
 ### Autorun tmux ###
-if [[ -z "$TMUX" && "$SSH_CONNECTION" ]]; then
+if [[ -z "$TMUX" && -n "$SSH_CONNECTION" ]]; then
     tmux -2 attach -d
 fi
 
