@@ -79,6 +79,7 @@ alias newx='xinit /usr/bin/urxvt -- :1'
 alias nmapa='nmap -T Aggressive -P0 -sT -p 1-65535'
 alias mozilla-sdk='cd /opt/addon-sdk && source bin/activate; cd -'
 alias unrarall='for f in *.rar; do d="${f%%.*}"; mkdir "$d"; mv "$f" "$d"; cd "$d"; unrar x "$f" && rm "$f"; cd ..; done'
+alias tx='tmux -2 attach -d'
 xoj() { for f in "$@"; do xournal "$f" &>/dev/null & disown; done }
 pdf() { "$VIEW_PDF" "$@" &>/dev/null & disown }
 qr() { qrencode "$1" -o- -t ANSIUTF8; }
@@ -185,19 +186,19 @@ setprompt
 
 ### Hooks ###
 preexec() { # Gets run before a command gets executed
-    # Set screen window title
+    # Set screen/tmux window title
     [[ $TERM == screen* ]] && echo -ne "\ek$1\e\\"
 }
 precmd() { # gets run after a command before the prompt
-    # Reset screen window title
+    # Reset screen/tmux window title
     [[ $TERM == screen* ]] && echo -ne "\ekzsh\e\\"
     # Generate vcs_info
     vcs_info
 }
 
-### Autorun screen ###
-if [[ "$TERM" != "screen"* && "$SSH_CONNECTION" != "" ]]; then
-    /usr/bin/screen -d -R # -S autoscreen -d -R #&& exit
+### Autorun tmux ###
+if [[ -z "$TMUX" && -z "$SSH_CONNECTION" ]]; then
+    tmux -2 attach -d
 fi
 
 ### Syntax highlighting ###
