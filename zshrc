@@ -83,7 +83,7 @@ alias tx='tmux -2 attach -d'
 xoj() { for f in "$@"; do xournal "$f" &>/dev/null & disown; done }
 pdf() { "$VIEW_PDF" "$@" &>/dev/null & disown }
 qr() { qrencode "$1" -o- -t ANSIUTF8; }
-
+genpwd() { tr -dc A-Za-z0-9 < /dev/urandom | head -c 8; echo }
 
 paste() {
     opts=('-d' 'name=The Compiler' '--data-urlencode')
