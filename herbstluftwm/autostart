@@ -117,7 +117,7 @@ hc keybind XF86Back use_index -1
 hc keybind XF86Forward use_index +1
 
 # Fn + F4
-hc keybind XF86ScreenSaver spawn xscreensaver-command -lock
+hc keybind XF86ScreenSaver spawn i3lock -d -c 000000
 
 # ThinkVantage-Key
 hc keybind XF86Launch1 spawn urxvtcd
@@ -135,3 +135,6 @@ hc keybind Mod4-t spawn ~/bin/xojtex
 # Fix xdg-open
 hc setenv DE gnome
 hc setenv BROWSER chromium
+
+# No beeps
+xset -b
