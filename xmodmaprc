@@ -1,0 +1,10 @@
+! Map second tablet key
+keycode 161 = XF86Launch3
+
+! Use Caps as escape
+remove Lock = Caps_Lock
+keysym Caps_Lock = Escape
+
+! Redefine Break as Caps_Lock
+keysym Break = Caps_Lock
+add Lock = Caps_Lock
