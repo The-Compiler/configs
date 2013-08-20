@@ -3,7 +3,7 @@
 hc() { herbstclient "$@" ;}
 
 Mod=Mod4
-feh --bg-center /home/florian/.config/herbstluftwm/wallpaper.png
+feh --no-fehbg --bg-center /home/florian/.config/herbstluftwm/wallpaper.png
 
 # colors
 hc set frame_border_active_color '#afdf5f'
