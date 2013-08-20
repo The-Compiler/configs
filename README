@@ -1,9 +1,11 @@
-This Repository contains some of my config files for the applications
-I'm using, aka dotfiles. Mind most of them start with a dot, so you
-might need to use ls -a or something similiar to see them.
+# vim: ft=text
 
-The .zshrc and .vimrc are heavily based on the versions used in GRML,
-www.grml.org - Thanks!
+This Repository contains some of my config files for the applications
+I'm using, aka dotfiles.
+
+Usually, you need to prepend a dot to them. I keep the git repo in
+~/.config-git and symlink my configfiles to there, which works fine, except
+with easystroke.
 
 If not specified otherwise in the files itself:
 
