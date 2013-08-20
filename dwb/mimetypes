@@ -1,2 +1,4 @@
-application/pdf mupdf
 application/octet-stream evince
+audio/x-mpegurl mpv
+application/pdf zathura
+application/force-download zathura
