@@ -50,6 +50,7 @@ export LESSCOLORIZER=code2color
 ### settings
 export ACK_COLOR_MATCH="bold red"
 export SUDO_PROMPT='[sudo] password for %u@%h (-> %U): '
+export GIT_PAGER='less +g'
 
 ### keybindings ###
 # vi mode
