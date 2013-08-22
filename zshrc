@@ -1,3 +1,4 @@
+#!/bin/bash
 ### General options ###
 # Report time if command runs >2s
 REPORTTIME=2
