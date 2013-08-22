@@ -34,7 +34,7 @@ export VIEW_PDF="zathura" # for latex-makefile
 [[ -f ~/.dircolors ]] && eval $(dircolors ~/.dircolors) || eval $(dircolors)
 
 ### Colors and syntax highlighting for less ###
-export LESS="-R -j 0"
+export LESS="-R -M -J -W +g"
 export LESS_TERMCAP_me=$(printf '\e[0m')
 export LESS_TERMCAP_se=$(printf '\e[0m')
 export LESS_TERMCAP_ue=$(printf '\e[0m')
@@ -43,6 +43,7 @@ export LESS_TERMCAP_md=$(printf '\e[1;34m')
 export LESS_TERMCAP_us=$(printf '\e[1;32m')
 export LESS_TERMCAP_so=$(printf '\e[1;44;1m')
 export LESSCOLORIZER=code2color
+
 ### keybindings ###
 # vi mode
 bindkey -v
