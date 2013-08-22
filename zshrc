@@ -47,8 +47,9 @@ export LESS_TERMCAP_us=$(printf '\e[1;32m')
 export LESS_TERMCAP_so=$(printf '\e[1;44;1m')
 export LESSCOLORIZER=code2color
 
-### ack color
+### settings
 export ACK_COLOR_MATCH="bold red"
+export SUDO_PROMPT='[sudo] password for %u@%h (-> %U): '
 
 ### keybindings ###
 # vi mode
@@ -78,6 +79,7 @@ bindkey -M vicmd '/' history-incremental-search-backward
 alias ls='ls --color --escape --classify'
 alias grep='grep --color=auto'
 alias nano='nano --nowrap'
+
 # shorthands
 alias scr='screen -U -xRR'
 alias s='ssh'
