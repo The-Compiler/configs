@@ -59,8 +59,6 @@ bindkey -M vicmd '/' history-incremental-search-backward
 ### aliases ###
 alias ls='ls --color --escape --classify'
 alias grep='grep --color=auto'
-alias less=$PAGER
-alias zless=$PAGER
 alias nano='nano --nowrap'
 alias scr='screen -U -xRR'
 alias s='ssh'
@@ -74,40 +72,11 @@ alias clock='watch -t -n 0.5 "date +%T | toilet -f bigascii12"'
 alias pymath='bpython -i <(echo "from math import *")'
 alias newx='xinit /usr/bin/urxvt -- :1'
 alias nmapa='nmap -T Aggressive -P0 -sT -p 1-65535'
-alias mozilla-sdk='cd /opt/addon-sdk && source bin/activate; cd -'
-alias unrarall='for f in *.rar; do d="${f%%.*}"; mkdir "$d"; mv "$f" "$d"; cd "$d"; unrar x "$f" && rm "$f"; cd ..; done'
 alias tx='tmux -2 attach -d'
 xoj() { for f in "$@"; do xournal "$f" &>/dev/null & disown; done }
 pdf() { "$VIEW_PDF" "$@" &>/dev/null & disown }
 qr() { qrencode "$1" -o- -t ANSIUTF8; }
 genpwd() { tr -dc A-Za-z0-9 < /dev/urandom | head -c 8; echo }
-
-paste() {
-    opts=('-d' 'name=The Compiler' '--data-urlencode')
-    if [[ -n "$1" ]]; then # file
-        opts+=("text@$1")
-        case $1 in
-            *.py) opts+=('-d' 'lang=python') ;;
-            *.c) opts+=('-d' 'lang=c') ;;
-            *.diff|*.patch) opts+=('-d' 'lang=diff') ;;
-            *.sh|*.bash|*.zsh) opts+=('-d' 'lang=bash') ;;
-            *.tex) opts+=('-d' 'lang=latex') ;;
-            Makefile|*.mk) opts+=('-d' 'lang=make') ;;
-        esac
-    else
-        opts+=('text@-') # stdin
-    fi
-    curl "${opts[@]}" http://paste.the-compiler.org/api/create
-}
-
-sch() {
-    cd ~/school/2013/Sem01
-    while (( $# > 0 )); do
-        cd "$1"
-        shift
-    done
-    ls
-}
 
 ### completion ###
 # init completion
