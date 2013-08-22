@@ -163,13 +163,20 @@ setprompt() {
     local dtime='%F{yellow}%T'
     local job="%(1j.${startsep}%F{red}%j job.)%(2j.s.)%(1j.${endsep}.)"
     local vcs='${vcs_info_msg_0_}'
+    if [[ -n $RANGER_LEVEL ]]; then
+        local ranger="${startsep}%F{red}ranger"
+        (( RANGER_LEVEL > 1 )) && ranger+=":$RANGER_LEVEL"
+        ranger+="${endsep}"
+    else
+        local ranger=
+    fi
     local rootwarn='%(!.%F{blue}(%F{red}!%F{blue}).)'
     local promptchar='%F{blue}─╼ '
     local n=$'\n'
     local rstatus='%(?..%F{red}╾─[%F{blue}$?%F{red}]──┄)'
 
     PROMPT="${upper_start}${userhost}${sep}${dir}${sep}${date}${sep}"
-    PROMPT+="${dtime}${endsep}${job}${vcs}${fade}$n"
+    PROMPT+="${dtime}${endsep}${job}${vcs}${ranger}${fade}$n"
 
     PROMPT+="${lower_start}${rootwarn}${promptchar}${reset}"
 
