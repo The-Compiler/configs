@@ -71,10 +71,12 @@ bindkey '^R' history-incremental-search-backward
 # / in command mode
 bindkey -M vicmd '/' history-incremental-search-backward
 
-### aliases ###
+### aliases / functions ###
+# default settings
 alias ls='ls --color --escape --classify'
 alias grep='grep --color=auto'
 alias nano='nano --nowrap'
+# shorthands
 alias scr='screen -U -xRR'
 alias s='ssh'
 alias m='mosh'
@@ -83,11 +85,13 @@ alias yu='yaourt -Suya; sudo abs; sudo pkgfile -u; sudo pacdiffviewer'
 alias yi='yaourt -S'
 alias yq='yaourt -Si'
 alias yl='yaourt -Ql'
+alias tx='tmux -2 attach -d'
+# pseudo-functions
 alias clock='watch -t -n 0.5 "date +%T | toilet -f bigascii12"'
 alias pymath='bpython -i <(echo "from math import *")'
 alias newx='xinit /usr/bin/urxvt -- :1'
 alias nmapa='nmap -T Aggressive -P0 -sT -p 1-65535'
-alias tx='tmux -2 attach -d'
+# functions
 xoj() { for f in "$@"; do xournal "$f" &>/dev/null & disown; done }
 pdf() { "$VIEW_PDF" "$@" &>/dev/null & disown }
 qr() { qrencode "$1" -o- -t ANSIUTF8; }
