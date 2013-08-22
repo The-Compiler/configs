@@ -45,6 +45,9 @@ export LESS_TERMCAP_us=$(printf '\e[1;32m')
 export LESS_TERMCAP_so=$(printf '\e[1;44;1m')
 export LESSCOLORIZER=code2color
 
+### ack color
+export ACK_COLOR_MATCH="bold red"
+
 ### keybindings ###
 # vi mode
 bindkey -v
