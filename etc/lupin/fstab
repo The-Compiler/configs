@@ -1,0 +1,19 @@
+# 
+# /etc/fstab: static file system information
+#
+# <file system>	<dir>	<type>	<options>	<dump>	<pass>
+tmpfs		/tmp	tmpfs	nodev,nosuid	0	0
+# /dev/sda1 UUID=18ac620d-bd5e-42a9-8dd9-ecef9828c0ed
+LABEL=rootfs   	/         	ext4      	rw,relatime,user_xattr,acl,barrier=1,data=ordered	0 1
+
+# /dev/sda2 UUID=2524d77e-7410-48e4-ba89-61e7f321ace9
+LABEL=boot    	/boot     	ext2      	rw,relatime,errors=continue	0 2
+
+# /dev/sda3 UUID=ae5cadeb-1e19-4f7b-834a-5312c6eae3f8
+LABEL=home  	/home     	ext4      	rw,relatime,user_xattr,acl,barrier=1,data=ordered	0 2
+
+# /dev/sda4 UUID=32e1566a-5e9c-4b68-9924-9a06dec881ed
+LABEL=swap	swap		swap		defaults						0 0
+
+# we want /srv to be in /home
+/home/srv	/srv		none		bind							0 0
