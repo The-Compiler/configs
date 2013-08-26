@@ -1,0 +1,3 @@
+new -n foobar 'cd ~; ./run.sh'
+neww -n log 'cd ~/supybot_log; ./supybot_log.sh'
+selectw -t 0
