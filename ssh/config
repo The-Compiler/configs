@@ -1,0 +1,45 @@
+Host ron
+HostName ron.the-compiler.org
+Port 222
+User florian
+
+Host home
+HostName the-compiler.dyndns.org
+Port 22
+User florian
+
+Host harry
+HostName harry.the-compiler.org
+Port 22
+User florian
+
+Host lupin
+HostName lupin.the-compiler.org
+Port 22
+User florian
+
+Host hedwig
+HostName hedwig.the-compiler.org
+Port 22
+User root
+
+Host moody
+HostName 192.168.1.253
+Port 22
+User florian
+
+Host draco
+Hostname draco.the-compiler.org
+Port 22
+User florian
+
+Host ccczh
+User root
+HostName 2001:1620:92e:1::42
+Port 22
+ProxyCommand  ssh root@hedwig.the-compiler.org nc %h %p 2> /dev/null
+
+Host filedrop
+User root
+HostName 172.31.184.42
+Port 22
