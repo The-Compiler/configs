@@ -1,0 +1,13 @@
+[Unit]
+Description=VirtualBox Web Service
+After=network.target
+
+[Service]
+Type=simple
+PIDFile=/run/vboxweb/vboxweb.pid
+ExecStart=/usr/bin/vboxwebsrv --pidfile /run/vboxweb/vboxweb.pid
+User=vbox
+Group=vbox
+
+[Install]
+WantedBy=multi-user.target

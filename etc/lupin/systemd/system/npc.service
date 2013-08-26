@@ -1,0 +1,11 @@
+[Unit]
+Description=nerds pissing contest
+After=lighttpd.service
+
+[Service]
+User=http
+Group=http
+ExecStart=/usr/bin/python /usr/share/webapps/npc/npc.py flup
+
+[Install]
+WantedBy=multi-user.target

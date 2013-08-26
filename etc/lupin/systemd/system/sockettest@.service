@@ -1,0 +1,12 @@
+[Unit]
+Description=sockettest
+After=network.service
+
+[Service]
+User=nobody
+Group=nobody
+ExecStart=-/usr/local/bin/sockettest.sh
+StandardInput=socket
+
+[Install]
+WantedBy=multi-user.target

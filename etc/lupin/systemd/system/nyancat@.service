@@ -1,0 +1,12 @@
+[Unit]
+Description=nyancat
+After=network.service
+
+[Service]
+User=nobody
+Group=nobody
+ExecStart=-/usr/bin/nyancat -t
+StandardInput=socket
+
+[Install]
+WantedBy=multi-user.target
