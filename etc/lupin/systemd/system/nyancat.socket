@@ -1,9 +1,0 @@
-[Unit]
-Conflicts=nyancat.service
-
-[Socket]
-ListenStream=23
-Accept=yes
-
-[Install]
-WantedBy=sockets.target

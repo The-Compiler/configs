@@ -1,9 +1,0 @@
-[Unit]
-Conflicts=sockettest.service
-
-[Socket]
-ListenStream=1337
-Accept=yes
-
-[Install]
-WantedBy=sockets.target
