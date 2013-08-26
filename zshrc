@@ -78,9 +78,9 @@ bindkey -M vicmd '/' history-incremental-search-backward
 ### aliases / functions ###
 # default settings
 alias ls='ls --color --escape --classify'
+alias l='ls --color --escape --classify -lah'
 alias grep='grep --color=auto'
 alias nano='nano --nowrap'
-
 # shorthands
 alias scr='screen -U -xRR'
 alias s='ssh'
