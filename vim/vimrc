@@ -1,5 +1,11 @@
-"" After starting the first time, ignore colorscheme warning and
-"" run :NeoBundleInstall to install plugins, then restart
+"" TO INSTALL:
+"" - Copy this config to .vimrc
+"" - Copy the vim folder to ~/.vim
+"" - Start vim
+"" - Ignore warning about missing colorscheme
+"" - Run :NeoBundleInstall in vim
+"" - mkdir ~/.vim/.tags
+"" - Restart vim
 
 """""" Options
 set nocompatible                " Turn off vim compability mode
