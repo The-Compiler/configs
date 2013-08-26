@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [[ "$2" == up && $(iwgetid --raw) == PostAuto ]]; then
+    curl -s \
+         --data-urlencode 'url=http://mobile.postauto.ch/app/mpag-lp-zuerich.htm?header=true&footer=true&backlink=false&keyvisual=true&lang=de' \
+        "http://www.mpp.postauto.ch/welcome.php"
+fi
