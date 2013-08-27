@@ -1,244 +1,278 @@
-# GMail Account
+### GMail Account ###
 source ~/.mutt/accounts
 source ~/.mutt/alias
-set from = "me@the-compiler.org"
-set realname = "Florian Bruhin"
-set folder = "imaps://imap.gmail.com:993"
-set spoolfile = "+INBOX"
-mailboxes = "+INBOX"
-set postponed="+[Gmail]/Drafts"
+set from          = "me@the-compiler.org"
+set realname      = "Florian Bruhin"
+set folder        = "imaps://imap.gmail.com:993"
+set spoolfile     = "+INBOX"
+mailboxes         = "+INBOX"
+set postponed     = "+[Gmail]/Drafts"
 set query_command = "goobook query '%s'"
-# Timeouts
+
+### Timeouts ###
 set imap_keepalive = 300
-set timeout=15
-set mail_check=60
+set timeout        = 300
+set mail_check     = 120
 
-# Directories and Files
-set header_cache=~/.mutt/cache/headers
-set message_cachedir=~/.mutt/cache/bodies
-set certificate_file=~/.mutt/certificates
-#set signature = ~/.mutt/sig
-set signature = "cat /home/florian/.mutt/sig; fortune -n 158 -s | tr '\n' ' ' | sed 's/[\t ][\t ]*/ /g' | fold -s -w 79|"
-set alias_file = ~/.mutt/alias
-set mailcap_path=~/.mutt/mailcap
+### Directories and Files ###
+set header_cache     = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+set alias_file       = ~/.mutt/alias
+set mailcap_path     = ~/.mutt/mailcap
 
-# Attachment stuff
-auto_view text/html application/pdf image/*
-mime_lookup application/octet-stream
+### Attachments ###
+auto_view         text/html application/pdf image/*
+mime_lookup       application/octet-stream
 alternative_order text/enriched text/plain text/html
 
-# GMail-like shortcuts
-macro index,pager Y "<save-message>=[Gmail]/All<quote-char> Mail<enter><enter>" "Archive"
-macro index,pager x "<delete-message><sync-mailbox>" "Delete and expunge"
-macro index,pager S "<save-message>=[Gmail]/Spam<enter>" "Spam"
-macro index,pager I "<save-message>=INBOX<enter>" "Inbox"
-macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
-macro index ga "<change-folder>=[Gmail]/All<quote-char> Mail<enter>" "Go to all mail"
-macro index gt "<change-folder>=[Gmail]/Sent<quote-char> Mail<enter>" "Go to sent Mail"
-macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
-macro index gs "<change-folder>=[Gmail]/Spam<enter>" "Go to Spam"
+### Keybindings ###
+# Gmail-like keybindings
+macro index,pager Y \
+    "<save-message>=[Gmail]/All<quote-char> Mail<enter><enter>" "Archive"
+macro index,pager S \
+    "<save-message>=[Gmail]/Spam<enter>" "Spam"
+macro index,pager I \
+    "<save-message>=INBOX<enter>" "Inbox"
+macro index gi \
+    "<change-folder>=INBOX<enter>" "Go to inbox"
+macro index ga \
+    "<change-folder>=[Gmail]/All<quote-char> Mail<enter>" "Go to all mail"
+macro index gt \
+    "<change-folder>=[Gmail]/Sent<quote-char> Mail<enter>" "Go to sent Mail"
+macro index gd \
+    "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
+macro index gs \
+    "<change-folder>=[Gmail]/Spam<enter>" "Go to Spam"
+# Vi-like keybindings
+bind  generic        l select-entry
+bind  index          l display-message
+macro index          h '<change-folder>?'
+bind  index,pager    H display-toggle-weed
+bind  pager          h exit
+bind  pager          j next-line
+bind  pager          k previous-line
+bind  pager          l view-attachments
+bind  attach,compose l view-attach
+bind  attach         h exit
+bind  attach         H display-toggle-weed
+bind  compose        l view-attach
+# Other
+macro index,pager    x "<delete-message><sync-mailbox>" "Delete and expunge"
+bind  index          G group-reply
 
-# Sorting
-set sort = 'threads'
+### Sorting ###
+set sort     = 'threads'
 set sort_aux = 'reverse-last-date-received'
 
-bind index G group-reply
+### Charset ###
+set charset      = "utf-8"
+set locale       = `echo "${LC_ALL:-${LC_TIME:-${LANG}}}"`
+set send_charset = "us-ascii:iso-8859-15:utf-8"
 
-# Vi-like keybindings
-bind generic l select-entry
-bind index l display-message
-macro index h '<change-folder>?'
-bind index H display-toggle-weed
-bind pager h exit
-bind pager H display-toggle-weed
-bind pager j next-line
-bind pager k previous-line
-bind pager l view-attachments
-bind attach l view-attach
-bind attach h exit
-bind attach H display-toggle-weed
-bind compose l view-attach
-
-# Charset
-set charset="utf-8"
-set locale=`echo "${LC_ALL:-${LC_TIME:-${LANG}}}"`
-set send_charset="us-ascii:iso-8859-15:utf-8"
-
-# Behaviour
+### Behaviour ###
 set allow_ansi
-set delete = yes
-set move = no
+set delete          = yes
+set move            = no
 set nobeep
-set quit = ask-yes
-set confirmappend = no
+set quit            = ask-yes
+set confirmappend   = no
 set abort_nosubject = yes
 
-push <show-version>
-my_hdr Accept-Language: de, en
-my_hdr X-URL: http://www.the-compiler.org/
-my_hdr X-Operating-System: Arch Linux, Kernel `uname -r | sed 's/-.*$//'`
-my_hdr X-Editor: vim `vim --version | sed -n '1s/[^0-9]* \([^ ]*\).*/\1/p'`
-my_hdr X-PGP-Key: http://www.the-compiler.org/pubkey.asc
-my_hdr OpenPGP: id=FD55A072\; url=http://www.the-compiler.org/pubkey.asc\; preference=signencrypt
-
-# Editing
-set editor="vim -c 'set filetype=mail' -c 'set fileencodings=' -c 'set fileencoding=' -c 'set nohlsearch' '+:silent+?^$' " 
-set edit_headers=yes      # See the headers when editing
+### Editing ###
+set editor       = "vim -c 'set filetype=mail' -c 'set fileencodings=' \
+                        -c 'set fileencoding=' -c 'set nohlsearch' \
+                        '+:silent+?^$' "
+set edit_headers = yes
 set autoedit
 
-# Replying
+### Sending ###
+# Custom headers
+my_hdr Accept-Language: de, en
+my_hdr X-URL: http://www.the-compiler.org/
+my_hdr X-Operating-System: Arch Linux
+my_hdr X-Editor: vim `vim --version | sed -n '1s/[^0-9]* \([^ ]*\).*/\1/p'`
+my_hdr X-PGP-Key: http://www.the-compiler.org/pubkey.asc
+my_hdr OpenPGP: id=FD55A072\; url=http://www.the-compiler.org/pubkey.asc\; \
+preference=signencrypt
+# Other
+set signature      = "cat /home/florian/.mutt/sig; fortune -n 158 -s | \
+                      tr '\n' ' ' | sed 's/[\t ][\t ]*/ /g' | fold -s -w 79|"
 set include
-set attribution="* %n <%a> [%{%Y-%m-%d %H:%M:%S %Z}]:"
-set reverse_name = yes
-set envelope_from = yes
-set use_domain = no
-set forward_format="Fwd: %s"
+set attribution    = "* %n <%a> [%{%Y-%m-%d %H:%M:%S %Z}]:"
+set reverse_name   = yes
+set envelope_from  = yes
+set use_domain     = no
+set forward_format = "Fwd: %s"
 
-# Index
+### Index ###
 set pager_index_lines = 10
-set pager_context = 5
-set mark_old = no
+set pager_context     = 5
+set mark_old          = no
 
-# Viewing
+### Viewing ###
 set tilde
 set nomarkers
 unignore *
-ignore Return-Path: Received: Message-ID: MIME-Version: Content-Type:
-ignore Content-Disposition: Content-Transfer-Encoding: Delivered-To: Received-SPF:
-ignore Authentication-Results: DKIM-Signature: X-Google-DKIM-Signature:
-ignore Auto-Submitted: X-Gm-Message-State: X-Mailer-Version: X-Mailer-Environment:
-ignore X-Report-Abuse-At: X-Report-Abuse-Info: X-rpcampaign: X-Streamsend2id:
-ignore List-Unsubscribe: X-Original-To: X-Virus-Scanned: X-Bluewin-Spam-Analysis:
-ignore X-FXIT-IP: X-Bluewin-ln: References: In-Reply-To: X-Spam-Checker-Version:
-ignore X-Spam-Level: X-Spam-Status: X-Spam-CTCH-RefID: X-Gmail-Fetch-Info:
-ignore Thread-Topic: Thread-Index: Accept-Language: Content-Language: X-MS-Has-Attach:
-ignore X-MS-TNEF-Correlator: acceptlanguage: X-Priority: X-BeenThere:
-ignore X-Mailman-Version: Precedence: List-Archive: List-Post: List-Help:
-ignore List-Subscribe: Errors-To: X-Authenticated: X-Flags: X-Provags-ID: X-GMX-UID:
-ignore X-OPST-Key: X-Y-GMX-Trusted: Bounces-To: X-BounceId: X-OriginalArrivalTime:
-ignore Content-Class: Importance: Priority: X-MimeOLE: X-List-Administrivia:
-ignore DomainKey-Signature: X-LinkedIn-Template: X-LinkedIn-Class: X-LinkedIn-fbl:
-ignore X-Facebook: X-Facebook-Notify: X-FACEBOOK-PRIORITY: X-yahoo-newman-expires:
-ignore X-Yahoo-Newman-Property: X-Yahoo-Newman-Id: X-Originating-IP: X-TunaBlaster:
-ignore X-VirtualServer: X-VirtualServerGroup: X-MailingID: X-SMHeaderMap:
-ignore X-Destination-ID: X-SMFBL: X-Report-Abuse: x-custom-ip-tag: x-fetlife: X-DKIM:
-ignore X-Ovh-Template: X-Ovh-Nic: X-Ovh-Keywords: X-Ovh-Section: X-Ovh-Tracer-Id:
-ignore X-DFOptimize: X-GMX-Antivirus: X-GMX-Antispam: X-Mailbox-Line: X-Greylist:
-ignore X-TMDA: Mimiaid: X-DFOptimize: X-List-Unsubscribe: X-Unsubscribe-Web:
-ignore X-ICPINFO: X-Return-Path-Hint: X-PHP-Originating-Script: X-Savane-Server:
-ignore X-Savane-Project: X-Savane-Tracker: X-Savane-Item-ID: X-Apparently-From:
-ignore DomainKey-Status: X-DomainKeys: X-Twitterimpressionid: x-job: X-LibVersion:
-ignore X-Mailgun-Sid: X-Antivirus: X-Antivirus-Status: X-MSMail-Priority:
-ignore X-AVK-Virus-Check: Envelope-to: Delivery-date: X-Amavis-Alert: X-AWS-Outgoing:
-ignore X-Sendgrid-EID: X-Notifications: X-Notification-ID: X-Sender-ID:
-ignore X-Notification-Category: X-Notification-Type: X-EmailType-Id: X-Sent-To:
-ignore x-ds-vetting-token: X-DKIM_SIGN_REQUIRED: X-AuditID: X-YMail-OSG:
-ignore X-Brightmail-Tracker: X-AntiAbuse: X-Scanned: X-MSMail-Priority:
-ignore X-Google-Ads-Sender: X-Trak-Extra-Language: X-KeepSent: X-MIMETrack: x-cbid:
-ignore X-Yahoo-SMTP: X-rim-org-msg-ref-id: X-IADB-IP: X-IADB-IP-REVERSE:
-ignore X-Complaints-To: X-PM-RCPT: X-PM-Tag: X-PM-Message-Id: X-Mms-Message-ID:
-ignore X-Mms-Message-Class: X-MSFBL: X-Outgoing: X-Forwarded-To: X-Forwarded-For:
-ignore X-Outgoing: X-Base64-Encode: X-PVIQ: X-Trac-Version: X-Trac-Project:
-ignore X-Trac-Ticket-URL: X-Trac-Ticket-ID: x-errors-to: X-Campaign: X-campaignid:
-ignore x-accounttype: x-mcda: X-Sender-Info: X-Apache-Env: Mail-Followup-To: Face:
-ignore X-Spam-Flag: X-Spam-Report: X-Spam-Prev-Subject: X-PMX-Version:
-ignore X-Launchpad-Bug: X-Launchpad-Bug-Information-Type: X-Launchpad-Bug-Private:
-ignore X-Launchpad-Bug-Security-Vulnerability: X-Launchpad-Bug-Commenters:
-ignore X-Launchpad-Bug-Reporter: X-Launchpad-Bug-Modifier:
-ignore X-Launchpad-Message-Rationale: X-Generated-By: X-Launchpad-Hash:
-ignore X-Google-Sender-Auth: X-Forwarded-Message-Id: X-Con-Id: X-Con-U:
-ignore X-Forefront-Antispam-Report: X-SpamScore: X-BigFish:
-ignore X-SA-Exim-Connect-IP: X-SA-Exim-Mail-From: X-SA-Exim-Version:
-ignore X-SA-Exim-Scanned: X-Original-Authentication-Results:
-ignore X-Google-Group-ID: X-MIME-Autoconverted:
-ignore X-Bugzilla-Reason: X-Bugzilla-Type: X-Bugzilla-Watch-Reason:
-ignore X-Bugzilla-Product: X-Bugzilla-Component: X-Bugzilla-Keywords:
-ignore X-Bugzilla-Severity: X-Bugzilla-Who: X-Bugzilla-Status:
-ignore X-Bugzilla-Priority: X-Bugzilla-Assigned-To:
-ignore X-Bugzilla-Target-Milestone: X-Bugzilla-Changed-Fields: X-Bugzilla-URL:
-ignore X-twfbl: X-mailstream: X-Rocket-MIMEInfo:
-ignore X-Roundup-issue-status: X-Roundup-issue-type: X-Roundup-issue-severity:
-ignore X-Roundup-issue-versions: X-Roundup-issue-resolution:
-ignore X-Roundup-issue-priority: X-Roundup-issue-components: X-Roundup-Name:
-ignore X-Roundup-Loop: X-Roundup-Version:
-#ignore X-PHP-Script: X-Source: X-Source-Args: X-Source-Dir:
-ignore X-Received: X-DH-MailerID: X-Abuse-Info: X-Bulkmail: X-UI-Filterresults:
+ignore Return-Path: Received: Message-ID: MIME-Version: Content-Type: \
+  Content-Disposition: Content-Transfer-Encoding: Delivered-To: Received-SPF: \
+  Authentication-Results: DKIM-Signature: X-Google-DKIM-Signature: \
+  Auto-Submitted: X-Gm-Message-State: X-Mailer-Version: X-Mailer-Environment: \
+  X-Report-Abuse-At: X-Report-Abuse-Info: X-rpcampaign: X-Streamsend2id: \
+  List-Unsubscribe: X-Original-To: X-Virus-Scanned: X-Bluewin-Spam-Analysis: \
+  X-FXIT-IP: X-Bluewin-ln: References: In-Reply-To: X-Spam-Checker-Version: \
+  X-Spam-Level: X-Spam-Status: X-Spam-CTCH-RefID: X-Gmail-Fetch-Info: \
+  Thread-Topic: Thread-Index: Accept-Language: Content-Language: \
+  X-MS-Has-Attach: X-MS-TNEF-Correlator: acceptlanguage: X-Priority: \
+  X-BeenThere: X-Mailman-Version: Precedence: List-Archive: List-Post: \
+  List-Help: List-Subscribe: Errors-To: X-Authenticated: X-Flags: \
+  X-Provags-ID: X-GMX-UID: X-OPST-Key: X-Y-GMX-Trusted: Bounces-To: \
+  X-BounceId: X-OriginalArrivalTime: Content-Class: Importance: Priority: \
+  X-MimeOLE: X-List-Administrivia: DomainKey-Signature: X-LinkedIn-Template: \
+  X-LinkedIn-Class: X-LinkedIn-fbl: X-Facebook: X-Facebook-Notify: \
+  X-FACEBOOK-PRIORITY: X-yahoo-newman-expires: X-Yahoo-Newman-Property: \
+  X-Yahoo-Newman-Id: X-Originating-IP: X-TunaBlaster: X-VirtualServer: \
+  X-VirtualServerGroup: X-MailingID: X-SMHeaderMap: X-Destination-ID: \
+  X-SMFBL: X-Report-Abuse: x-custom-ip-tag: x-fetlife: X-DKIM: \
+  X-Ovh-Template: X-Ovh-Nic: X-Ovh-Keywords: X-Ovh-Section: X-Ovh-Tracer-Id: \
+  X-DFOptimize: X-GMX-Antivirus: X-GMX-Antispam: X-Mailbox-Line: X-Greylist: \
+  X-TMDA: Mimiaid: X-DFOptimize: X-List-Unsubscribe: X-Unsubscribe-Web: \
+  X-ICPINFO: X-Return-Path-Hint: X-PHP-Originating-Script: X-Savane-Server: \
+  X-Savane-Project: X-Savane-Tracker: X-Savane-Item-ID: X-Apparently-From: \
+  DomainKey-Status: X-DomainKeys: X-Twitterimpressionid: x-job: X-LibVersion: \
+  X-Mailgun-Sid: X-Antivirus: X-Antivirus-Status: X-MSMail-Priority: \
+  X-AVK-Virus-Check: Envelope-to: Delivery-date: X-Amavis-Alert: \
+  X-AWS-Outgoing: X-Sendgrid-EID: X-Notifications: X-Notification-ID: \
+  X-Sender-ID: X-Notification-Category: X-Notification-Type: X-EmailType-Id: \
+  X-Sent-To: x-ds-vetting-token: X-DKIM_SIGN_REQUIRED: X-AuditID: \
+  X-YMail-OSG: X-Brightmail-Tracker: X-AntiAbuse: X-Scanned: \
+  X-MSMail-Priority: X-Google-Ads-Sender: X-Trak-Extra-Language: X-KeepSent: \
+  X-MIMETrack: x-cbid: X-Yahoo-SMTP: X-rim-org-msg-ref-id: X-IADB-IP: \
+  X-IADB-IP-REVERSE: X-Complaints-To: X-PM-RCPT: X-PM-Tag: X-PM-Message-Id: \
+  X-Mms-Message-ID: X-Mms-Message-Class: X-MSFBL: X-Outgoing: X-Forwarded-To: \
+  X-Forwarded-For: X-Outgoing: X-Base64-Encode: X-PVIQ: X-Trac-Version: \
+  X-Trac-Project: X-Trac-Ticket-URL: X-Trac-Ticket-ID: x-errors-to: \
+  X-Campaign: X-campaignid: x-accounttype: x-mcda: X-Sender-Info: \
+  X-Apache-Env: Mail-Followup-To: Face: X-Spam-Flag: X-Spam-Report: \
+  X-Spam-Prev-Subject: X-PMX-Version: X-Launchpad-Bug: \
+  X-Launchpad-Bug-Information-Type: X-Launchpad-Bug-Private: \
+  X-Launchpad-Bug-Security-Vulnerability: X-Launchpad-Bug-Commenters: \
+  X-Launchpad-Bug-Reporter: X-Launchpad-Bug-Modifier: \
+  X-Launchpad-Message-Rationale: X-Generated-By: X-Launchpad-Hash: \
+  X-Google-Sender-Auth: X-Forwarded-Message-Id: X-Con-Id: X-Con-U: \
+  X-Forefront-Antispam-Report: X-SpamScore: X-BigFish: X-SA-Exim-Connect-IP: \
+  X-SA-Exim-Mail-From: X-SA-Exim-Version: X-SA-Exim-Scanned: \
+  X-Original-Authentication-Results: X-Google-Group-ID: X-MIME-Autoconverted: \
+  X-Bugzilla-Reason: X-Bugzilla-Type: X-Bugzilla-Watch-Reason: \
+  X-Bugzilla-Product: X-Bugzilla-Component: X-Bugzilla-Keywords: \
+  X-Bugzilla-Severity: X-Bugzilla-Who: X-Bugzilla-Status: \
+  X-Bugzilla-Priority: X-Bugzilla-Assigned-To: X-Bugzilla-Target-Milestone: \
+  X-Bugzilla-Changed-Fields: X-Bugzilla-URL: X-twfbl: X-mailstream: \
+  X-Rocket-MIMEInfo: X-Roundup-issue-status: X-Roundup-issue-type: \
+  X-Roundup-issue-severity: X-Roundup-issue-versions: \
+  X-Roundup-issue-resolution: X-Roundup-issue-priority: \
+  X-Roundup-issue-components: X-Roundup-Name: X-Roundup-Loop: \
+  X-Roundup-Version: X-Received: X-DH-MailerID: X-Abuse-Info: X-Bulkmail: \
+  X-UI-Filterresults:
 hdr_order Date: From: List-Id: To: Cc: User-Agent: X-Mailer: Subject:
 
-# Colors
-color   hdrdefault   color110   color234
-color   quoted       color244   color234
-color   signature    color150   color234
-color   attachment   color110   color234
-color   message      color252   color234
-color   error        color15    color1
-color   indicator    color252   color237
-color   status       color15    color239
-color   tree         color174   color234
-color   normal       color252   color234
-color   search       color0     color149
-color   tilde        color247   color234
-color   index        color180   color234 ~F # marked
-color   index        color150   color234 "~N|~O" # unread
-color   index        color15    color1 "~D" # deleted
-color   index        color255   color96 "~T" # toggled
-
-color header color225 color234 ^Subject:
-color body color229 color234 '(^|\W)[\*]\w.*\w[\*]($|\W)' # *bold*
-color body color229 color234 '(^|\W)_\w[[:alpha:]]*\w_($|\W)' # _underlined_
-color body color229 color234 '(^|\W)/\w[^/]*\w/($|\W)' # /italics/
-color body color174 color234 '\w+://[a-z0-9.~_/%;:@#?+&=-]+' # URL
-color body color174 color234 "www\\.[-.a-z0-9]+\\.[a-z]{2,3}[a-z0-9;:.~_/%@#?+&=-]*"  # URL
-color body color229 color234 "[a-z0-9.+-]+@[a-z0-9.-]+\\.[a-z]{2,4}" # email
-color body color150 color234 '[-=+#_*~]{3,}.*' # lines
-color body color181 color234 '\[[0-9]+\]' # link-tags
+### Colors ###
+# General colors
+color hdrdefault color110 color234
+color quoted     color244 color234
+color signature  color150 color234
+color attachment color110 color234
+color message    color252 color234
+color error      color15  color1
+color indicator  color252 color237
+color status     color15  color239
+color tree       color174 color234
+color normal     color252 color234
+color search     color0   color149
+color tilde      color247 color234
+color index      color180 color234 "~F"    # marked
+color index      color150 color234 "~N|~O" # unread
+color index      color15  color1   "~D"    # deleted
+color index      color255 color96  "~T"    # toggled
+# Special headers
+color header     color225 color234 "^Subject:"
+# *bold*
+color body       color229 color234 "(^|\W)[\*]\w.*\w[\*]($|\W)"
+# _underlined_
+color body       color229 color234 "(^|\W)_\w[[:alpha:]]*\w_($|\W)"
+# /italics/
+color body       color229 color234 "(^|\W)/\w[^/]*\w/($|\W)"
+# URLs
+color body       color174 color234 "\w+://[a-z0-9.~_/%;:@#?+&=-]+"
+color body       color174 color234 "www\\.[-.a-z0-9]+\\.[a-z]{2,3}[a-z0-9;:.~_/%@#?+&=-]*"
+color body       color229 color234 "[a-z0-9.+-]+@[a-z0-9.-]+\\.[a-z]{2,4}"
+# Lines
+color body       color150 color234 "[-=+#_*~]{3,}.*"
+# Link-Tags
+color body       color181 color234 "\[[0-9]+\]"
 # Attribution lines
-#color body magenta default "\\* [^<]+ <[^>]+> \\[[^]]+\\]:" 
-color body color248 default "(^|[^[:alnum:]])([Oo]n)? .*wrote:$"
-color body color248 default ".* schrieb.*:$"
-color body color248 default "(^|[^[:alnum:]])([Oo]n)? .* was blubbering:$"
-color body color248 default "^[0-9]{4}/[0-9]{1,2}/[0-9]{1,2} .*:$"
+color body       color248 default  "(^|[^[:alnum:]])([Oo]n)? .*wrote:$"
+color body       color248 default  ".* schrieb.*:$"
+color body       color248 default  "(^|[^[:alnum:]])([Oo]n)? .* was blubbering:$"
+color body       color248 default  "^[0-9]{4}/[0-9]{1,2}/[0-9]{1,2} .*:$"
 # PGP
-color body color146 default "^gpg.*"
-color body color146 default "^Primary key fingerprint:.*"
-color body color150 default "^gpg: Good signature .*"
-color body brightwhite red "^gpg: BAD signature from.*"
-color body color229 default "^gpg: WARNING.*"
-color body color229 default "^gpg:          There is no indication that the signature belongs to the owner."
-color body color229 default "^gpg: no valid OpenPGP data found.*"
+color body       color146 default  "^gpg.*"
+color body       color146 default  "^Primary key fingerprint:.*"
+color body       color150 default  "^gpg: Good signature .*"
+color body       brightwhite red   "^gpg: BAD signature from.*"
+color body       color229 default  "^gpg: WARNING.*"
+color body       color229 default  "^gpg:          There is no indication that the signature belongs to the owner."
+color body       color229 default  "^gpg: no valid OpenPGP data found.*"
 # OpenSSL
-color body green default "^Verification successful"
-color body brightwhite red "^Verification failure"
-color body yellow default "^Error reading S/MIME message"
+color body       green default     "^Verification successful"
+color body       brightwhite red   "^Verification failure"
+color body       yellow default    "^Error reading S/MIME message"
 
-# Hooks
+### Hooks ###
 source ~/.mutt/hooks
 
-# GPG
+### GPG ###
 source /etc/Muttrc.gpg.dist
-set pgp_sign_as=0xFD55A072
-set pgp_timeout=60
-set crypt_verify_sig=yes
+set pgp_sign_as      = 0xFD55A072
+set pgp_timeout      = 60
+set crypt_verify_sig = yes
 set pgp_autosign
 set pgp_replyencrypt
-
-# autosign messages to people in the keyring
+# autoencrypt messages to people in the keyring
 send-hook '(~t .*)' 'reset pgp_autoencrypt'
 send-hook "(~t DUMMY `(gpg --list-keys | sed -ne \
 's/^[^<]*<\([a-z0-9\.\-\_]*@[a-z0-9\.\-\_]*\)>.*/\
 send-hook \"(~t \1)\" \"set pgp_autoencrypt\"/gip' | \
 sort -u >~/.mutt/autoencrypt)`)" 'set pgp_autoencrypt'
-
 source ~/.mutt/autoencrypt
 
-# Eww, mail printing
-set print_command="muttprint"
-set print_split
-macro index p "<display-toggle-weed> <print-message> <display-toggle-weed> <exit>"
-macro pager p "<display-toggle-weed> <print-message> <display-toggle-weed>"
-set print="yes"
+### S/MIME ###
+set smime_ca_location             = "/etc/ssl/certs"
+# Verify a signature of type multipart/signed
+set smime_verify_command          = "\
+openssl smime -verify -inform DER -in %s %C -content %f"
+# Verify a signature of type application/x-pkcs7-mime
+set smime_verify_opaque_command   = "\
+openssl smime -verify -inform DER -in %s %C || \
+openssl smime -verify -inform DER -in %s -noverify 2>/dev/null"
+# These are used to extract a certificate from a message.
+# First generate a PKCS#7 structure from the message.
+set smime_pk7out_command          = "\
+openssl smime -verify -in %f -noverify -pk7out"
+# Extract the included certificate(s) from a PKCS#7 structure.
+set smime_get_cert_command        = "\
+openssl pkcs7 -print_certs -in %f"
+# Extract the signer's certificate only from a S/MIME signature
+set smime_get_signer_cert_command = "\
+openssl smime -verify -in %f -noverify -signer %c -out /dev/null"
+# This is used to get the email address the certificate was issued to.
+set smime_get_cert_email_command  = "\
+openssl x509 -in  %f -noout -email"
+# Add a certificate to the database using smime_keys.
+set smime_import_cert_command     = "\
+smime_keys add_cert %f"
 
-# Mailing lists
+### Mailing lists ###
 subscribe dslinux-commit@dslinux.in-berlin.de
 subscribe dslinux-devel@dslinux.in-berlin.de
 subscribe installzone@ch-open.ch
@@ -247,31 +281,6 @@ subscribe crew@handz.ch
 subscribe swiss-chaos@chaostreff.ch
 subscribe zuerich@chaostreff.ch
 subscribe ubuntu-ch@lists.ubuntu.com
-
-# S/MIME
-
-set smime_ca_location="/etc/ssl/certs"
-
-# Verify a signature of type multipart/signed
-set smime_verify_command="openssl smime -verify -inform DER -in %s %C -content %f"
-
-# Verify a signature of type application/x-pkcs7-mime
-set smime_verify_opaque_command="\
-openssl smime -verify -inform DER -in %s %C || \
-openssl smime -verify -inform DER -in %s -noverify 2>/dev/null"
-
-# These are used to extract a certificate from a message.
-# First generate a PKCS#7 structure from the message.
-set smime_pk7out_command="openssl smime -verify -in %f -noverify -pk7out"
-
-# Extract the included certificate(s) from a PKCS#7 structure.
-set smime_get_cert_command="openssl pkcs7 -print_certs -in %f"
-
-# Extract the signer's certificate only from a S/MIME signature (sender verification)
-set smime_get_signer_cert_command="openssl smime -verify -in %f -noverify -signer %c -out /dev/null"
-
-# This is used to get the email address the certificate was issued to.
-set smime_get_cert_email_command="openssl x509 -in  %f -noout -email"
-
-# Add a certificate to the database using smime_keys.
-set smime_import_cert_command="smime_keys add_cert %f"
+subscribe soem-user@lists.berlios.de
+subscribe soem-dev@lists.berlios.de
+subscribe nut-upsuser@lists.alioth.debian.org
