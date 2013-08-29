@@ -218,6 +218,7 @@ color body       color248 default  "^[0-9]{4}/[0-9]{1,2}/[0-9]{1,2} .*:$"
 # PGP
 color body       color146 default  "^gpg.*"
 color body       color146 default  "^Primary key fingerprint:.*"
+color body       color146 default  "^     Subkey fingerprint:.*"
 color body       color150 default  "^gpg: Good signature .*"
 color body       brightwhite red   "^gpg: BAD signature from.*"
 color body       color229 default  "^gpg: WARNING.*"
