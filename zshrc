@@ -38,6 +38,7 @@ export VIEW_PDF="zathura" # for latex-makefile
 if [[ "$OS" == Windows_NT ]]; then
     export PATH="/usr/local/bin:/usr/bin:$PATH"
     export SHELL="/usr/bin/zsh"
+    alias open='cygstart'
 fi
 
 ### Colors for ls ###
