@@ -9,7 +9,9 @@ setopt notify
 # don't kill background jobs
 setopt nohup
 # pkgfile command_not_found handler
-source /usr/share/doc/pkgfile/command-not-found.zsh
+if [[ -f /usr/share/doc/pkgfile/command-not-found.zsh ]]; then
+    source /usr/share/doc/pkgfile/command-not-found.zsh
+fi
 # easy color names in this config
 autoload -U colors && colors
 
