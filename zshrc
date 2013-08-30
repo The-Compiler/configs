@@ -34,6 +34,10 @@ export EDITOR="vim"
 export VISUAL="$EDITOR"
 export PATH="$PATH:$HOME/bin"
 export VIEW_PDF="zathura" # for latex-makefile
+### Adjust PATH if on Windows ###
+if [[ "$OS" == Windows_NT ]]; then
+    export PATH="/usr/local/bin:/usr/bin:$PATH"
+fi
 
 ### Colors for ls ###
 [[ -f ~/.dircolors ]] && eval $(dircolors ~/.dircolors) || eval $(dircolors)
