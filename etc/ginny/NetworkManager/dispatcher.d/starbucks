@@ -1,0 +1,22 @@
+#!/usr/bin/python3
+# vim: set fileencoding=utf-8 ts=4 sts=4 sw=4 tw=80 expandtab :
+
+import requests
+import lxml.html
+import subprocess
+import sys
+
+if sys.argv[2] != up:
+    sys.exit(0)
+
+essid = subprocess.check_output(["iwgetid", "--raw"]).decode('UTF-8').rstrip('\n')
+
+if essid != 'Starbucks':
+    sys.exit(0)
+
+url1 = "http://www.mpp.tpn.ch/starbucks.php?net=SBCH"
+doc = lxml.html.parse(url1).getroot()
+form = doc.get_element_by_id('frmConnect')
+newurl = form.action
+data = form.fields
+requests.post(newurl, data)
