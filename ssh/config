@@ -43,3 +43,8 @@ Host filedrop
 User root
 HostName 172.31.184.42
 Port 22
+
+Host keks
+User thecompiler
+HostName mehl.schokokeks.org
+Port 22
