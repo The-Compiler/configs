@@ -6,7 +6,7 @@ import lxml.html
 import subprocess
 import sys
 
-if sys.argv[2] != up:
+if sys.argv[2] != 'up':
     sys.exit(0)
 
 essid = subprocess.check_output(["iwgetid", "--raw"]).decode('UTF-8').rstrip('\n')
@@ -18,5 +18,5 @@ url1 = "http://www.mpp.tpn.ch/starbucks.php?net=SBCH"
 doc = lxml.html.parse(url1).getroot()
 form = doc.get_element_by_id('frmConnect')
 newurl = form.action
-data = form.fields
+data = dict(form.fields)
 requests.post(newurl, data)
