@@ -3,11 +3,12 @@ source ~/.mutt/accounts
 source ~/.mutt/alias
 set from          = "me@the-compiler.org"
 set realname      = "Florian Bruhin"
-set folder        = "imaps://imap.gmail.com:993"
+set folder        = "imap://mehl.schokokeks.org"
+set ssl_starttls  = yes
 set spoolfile     = "+INBOX"
-mailboxes         = "+INBOX"
-set postponed     = "+[Gmail]/Drafts"
-set query_command = "goobook query '%s'"
+set imap_check_subscribed = yes
+set postponed     = "=INBOX.Drafts"
+#set query_command = "goobook query '%s'"
 
 ### Timeouts ###
 set imap_keepalive = 300
@@ -27,23 +28,18 @@ mime_lookup       application/octet-stream
 alternative_order text/enriched text/plain text/html
 
 ### Keybindings ###
-# Gmail-like keybindings
-macro index,pager Y \
-    "<save-message>=[Gmail]/All<quote-char> Mail<enter><enter>" "Archive"
 macro index,pager S \
-    "<save-message>=[Gmail]/Spam<enter>" "Spam"
+    "<save-message>=INBOX.Spam<enter>" "Spam"
 macro index,pager I \
     "<save-message>=INBOX<enter>" "Inbox"
 macro index gi \
     "<change-folder>=INBOX<enter>" "Go to inbox"
-macro index ga \
-    "<change-folder>=[Gmail]/All<quote-char> Mail<enter>" "Go to all mail"
 macro index gt \
-    "<change-folder>=[Gmail]/Sent<quote-char> Mail<enter>" "Go to sent Mail"
+    "<change-folder>=INBOX.Sent<enter>" "Go to sent Mail"
 macro index gd \
-    "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
+    "<change-folder>=INBOX.Drafts<enter>" "Go to drafts"
 macro index gs \
-    "<change-folder>=[Gmail]/Spam<enter>" "Go to Spam"
+    "<change-folder>=INBOX.Spam<enter>" "Go to Spam"
 # Vi-like keybindings
 bind  generic        l select-entry
 bind  index          l display-message
@@ -58,7 +54,6 @@ bind  attach         h exit
 bind  attach         H display-toggle-weed
 bind  compose        l view-attach
 # Other
-macro index,pager    x "<delete-message><sync-mailbox>" "Delete and expunge"
 bind  index          G group-reply
 
 ### Sorting ###
