@@ -1,0 +1,16 @@
+DEFAULT=${HOME}/mail/florian/
+MAILDIR=${DEFAULT}
+PMDIR=${MAILDIR}/procmail
+LOGFILE=${PMDIR}/procmail.log
+VERBOSE=yes
+LOGABSTRACT=all
+
+INCLUDERC=${PMDIR}/envelopeto.rc
+INCLUDERC=${PMDIR}/pgp.rc
+INCLUDERC=${PMDIR}/subject.rc
+INCLUDERC=${PMDIR}/spamto.rc
+INCLUDERC=${PMDIR}/sourceforge.rc
+
+# Everything else
+:0:
+$DEFAULT

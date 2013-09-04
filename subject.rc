@@ -1,0 +1,9 @@
+# Empty subject
+:0 fhw
+* ^Subject:[\ ]*$
+|formail -i "Subject: No subject ($$)"
+
+# No subject
+:0 fhw
+* !^Subject:
+|formail -i "Subject: No subject ($$)"
