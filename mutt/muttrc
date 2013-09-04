@@ -6,7 +6,9 @@ set realname      = "Florian Bruhin"
 set folder        = "imap://mehl.schokokeks.org"
 set ssl_starttls  = yes
 set spoolfile     = "+INBOX"
-set imap_check_subscribed = yes
+mailboxes         "+INBOX" "+INBOX.Arngard" "+INBOX.Gmail" "+INBOX.Spam"
+mailboxes         "+INBOX.claude" "+INBOX.heinz" "+INBOX.hlwm" "+INBOX.jugend"
+mailboxes         "+INBOX.regines" "+INBOX.tng" "+INBOX.todo"
 set postponed     = "=INBOX.Drafts"
 #set query_command = "goobook query '%s'"
 
@@ -53,6 +55,12 @@ bind  attach,compose l view-attach
 bind  attach         h exit
 bind  attach         H display-toggle-weed
 bind  compose        l view-attach
+# Sidebar
+bind  index,pager    \CP sidebar-prev
+bind  index,pager    \CN sidebar-next
+bind  index,pager    \CO sidebar-open
+macro index,pager    b   '<enter-command>toggle sidebar_visible<enter>'
+bind  index          B   bounce-message
 # Other
 bind  index          G group-reply
 
@@ -73,6 +81,9 @@ set nobeep
 set quit            = ask-yes
 set confirmappend   = no
 set abort_nosubject = yes
+set sidebar_width   = 25
+set sidebar_visible = yes
+set sidebar_delim   = ' '
 
 ### Editing ###
 set editor       = "vim -c 'set filetype=mail' -c 'set fileencodings=' \
@@ -189,6 +200,7 @@ color index      color180 color234 "~F"    # marked
 color index      color150 color234 "~N|~O" # unread
 color index      color15  color1   "~D"    # deleted
 color index      color255 color96  "~T"    # toggled
+color sidebar_new color150 color234
 # Special headers
 color header     color225 color234 "^Subject:"
 # *bold*
