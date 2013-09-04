@@ -6,10 +6,15 @@ VERBOSE=yes
 LOGABSTRACT=all
 
 INCLUDERC=${PMDIR}/envelopeto.rc
+INCLUDERC=${PMDIR}/lines.rc
+
 INCLUDERC=${PMDIR}/pgp.rc
 INCLUDERC=${PMDIR}/subject.rc
 INCLUDERC=${PMDIR}/spamto.rc
 INCLUDERC=${PMDIR}/sourceforge.rc
+INCLUDERC=${PMDIR}/lugsbeiz.rc
+
+INCLUDERC=${PMDIR}/tag-forward.rc
 
 # Everything else
 :0:

@@ -1,2 +1,2 @@
-:0f
-| formail -i "X-Envelope-To: $1"
+:0 fhw
+| $HOME/bin/envtofilter "$1"

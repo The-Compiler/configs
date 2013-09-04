@@ -1,0 +1,9 @@
+:0
+* ^TO_florianbruh@gmail.com
+{
+   :0 chfw
+   SUBJECT=| formail -xSubject:
+
+   :0 hfw
+   | /usr/bin/formail -i "Subject: [old-gmail]$SUBJECT"
+}
