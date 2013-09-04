@@ -179,7 +179,8 @@ ignore Return-Path: Received: Message-ID: MIME-Version: Content-Type: \
   X-Roundup-issue-resolution: X-Roundup-issue-priority: \
   X-Roundup-issue-components: X-Roundup-Name: X-Roundup-Loop: \
   X-Roundup-Version: X-Received: X-DH-MailerID: X-Abuse-Info: X-Bulkmail: \
-  X-UI-Filterresults: Old-Return-Path: Old-Received-SPF: X-policyd-weight:
+  X-UI-Filterresults: Old-Return-Path: Old-Received-SPF: X-policyd-weight: \
+  X-Orig-Envelope-To:
 hdr_order Date: From: List-Id: To: Cc: User-Agent: X-Mailer: Subject:
 
 ### Colors ###
