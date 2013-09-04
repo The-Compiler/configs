@@ -6,7 +6,6 @@ VERBOSE=yes
 LOGABSTRACT=all
 
 INCLUDERC=${PMDIR}/envelopeto.rc
-INCLUDERC=${PMDIR}/lines.rc
 
 INCLUDERC=${PMDIR}/pgp.rc
 INCLUDERC=${PMDIR}/subject.rc
