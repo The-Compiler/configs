@@ -1,2 +1,8 @@
+:0 h
+* ^To: \/.*
+{
+  TO = $MATCH
+}
+
 :0 fhw
-| $HOME/bin/envtofilter "$1"
+| $HOME/bin/envtofilter "$1" "$TO"
