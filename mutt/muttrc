@@ -224,6 +224,8 @@ color body       color248 default  "(^|[^[:alnum:]])([Oo]n)? .*wrote:$"
 color body       color248 default  ".* schrieb.*:$"
 color body       color248 default  "(^|[^[:alnum:]])([Oo]n)? .* was blubbering:$"
 color body       color248 default  "^[0-9]{4}/[0-9]{1,2}/[0-9]{1,2} .*:$"
+color body       color248 default  "^Am.*\+[0-9]{4}$"
+color body       color248 default  "^schrieb .* <.*@.*>:$"
 # PGP
 color body       color146 default  "^gpg.*"
 color body       color146 default  "^Primary key fingerprint:.*"
