@@ -13,5 +13,11 @@ ENVTO = $2
   FROM = $MATCH
 }
 
+:0 h
+* ^Sender: \/.*
+{
+  SENDER = $MATCH
+}
+
 :0 fhw
-| $HOME/bin/envtofilter "$ENVFROM" "$ENVTO" "$FROM" "$TO"
+| $HOME/bin/envtofilter "$ENVFROM" "$ENVTO" "$FROM" "$TO" "$SENDER"
