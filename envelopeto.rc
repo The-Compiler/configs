@@ -1,8 +1,17 @@
+ENVFROM = $1
+ENVTO = $2
+
 :0 h
 * ^To: \/.*
 {
   TO = $MATCH
 }
 
+:0 h
+* ^To: \/.*
+{
+  FROM = $MATCH
+}
+
 :0 fhw
-| $HOME/bin/envtofilter "$1" "$TO"
+| $HOME/bin/envtofilter "$ENVFROM" "$ENVTO" "$FROM" "$TO"
