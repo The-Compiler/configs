@@ -5,7 +5,7 @@ LOGFILE=${PMDIR}/procmail.log
 VERBOSE=yes
 LOGABSTRACT=all
 
-INCLUDERC=${PMDIR}/envelopeto.rc
+INCLUDERC=${PMDIR}/envelope.rc
 
 INCLUDERC=${PMDIR}/pgp.rc
 INCLUDERC=${PMDIR}/subject.rc
