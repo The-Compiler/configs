@@ -112,6 +112,7 @@ pdf() { "$VIEW_PDF" "$@" &>/dev/null & disown }
 qr() { qrencode "$1" -o- -t ANSIUTF8; }
 genpwd() { tr -dc A-Za-z0-9 < /dev/urandom | head -c 8; echo }
 igitt() { git clone "ssh://git@the-compiler.org/$1" ;}
+bashhelp() { bash -c "help -m '$1'" | $PAGER ;}
 # ignore dangerous commands from history and make them safer and more verbose
 alias rm=' rm -I -v'
 alias chmod=' chmod -c'
