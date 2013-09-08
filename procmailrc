@@ -5,14 +5,21 @@ LOGFILE=${PMDIR}/procmail.log
 VERBOSE=yes
 LOGABSTRACT=all
 
+# Add envelope-from and envelope-to headers
 INCLUDERC=${PMDIR}/envelope.rc
 
+# Rewrite application/pgp to pgp/mime
 INCLUDERC=${PMDIR}/pgp.rc
+# Rewrite mails without subjects
 INCLUDERC=${PMDIR}/subject.rc
+# Move mails to spambucket-addresses to spam
 INCLUDERC=${PMDIR}/spamto.rc
+# Remove advertisements in sourceforge messages
 INCLUDERC=${PMDIR}/sourceforge.rc
+# Move lugs beiz messages to Spam
 INCLUDERC=${PMDIR}/lugsbeiz.rc
 
+# Tag mails from old gmail address
 INCLUDERC=${PMDIR}/tag-forward.rc
 
 # Everything else
