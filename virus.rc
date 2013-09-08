@@ -1,0 +1,6 @@
+:0 fhbw
+|~/bin/clamscan-procmail
+
+:0
+* ^X-ClamAV:
+${DEFAULT}.Spam/
