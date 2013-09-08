@@ -1,0 +1,6 @@
+:0 fhb
+|spamc
+
+:0
+* ^X-Spam-Flag: YES
+${DEFAULT}.Spam/

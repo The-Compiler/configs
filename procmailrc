@@ -18,6 +18,8 @@ INCLUDERC=${PMDIR}/spamto.rc
 INCLUDERC=${PMDIR}/sourceforge.rc
 # Move lugs beiz messages to Spam
 INCLUDERC=${PMDIR}/lugsbeiz.rc
+# Run spamassassin
+INCLUDERC=${PMDIR}/spam.rc
 
 # Tag mails from old gmail address
 INCLUDERC=${PMDIR}/tag-forward.rc
