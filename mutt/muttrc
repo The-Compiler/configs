@@ -86,6 +86,7 @@ set abort_nosubject = yes
 set sidebar_width   = 25
 set sidebar_visible = yes
 set sidebar_delim   = ' '
+set time_inc        = 250
 
 ### Editing ###
 set editor       = "vim -c 'set filetype=mail' -c 'set fileencodings=' \
