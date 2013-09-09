@@ -8,7 +8,7 @@ ENVTO = $2
 }
 
 :0 h
-* ^To: \/.*
+* ^From: \/.*
 {
   FROM = $MATCH
 }
