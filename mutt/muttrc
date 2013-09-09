@@ -64,6 +64,7 @@ macro index,pager    b   '<enter-command>toggle sidebar_visible<enter>'
 bind  index          B   bounce-message
 # Other
 bind  index          G group-reply
+bind  editor         <delete>  delete-char
 
 ### Sorting ###
 set sort     = 'threads'
