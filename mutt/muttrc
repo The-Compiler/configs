@@ -10,6 +10,7 @@ set imap_check_subscribed = yes
 mailboxes INBOX
 set postponed     = "=INBOX.Drafts"
 set record        = "=INBOX.Sent"
+ifdef trash set trash = "=INBOX.Trash"
 #set query_command = "goobook query '%s'"
 
 ### Timeouts ###
