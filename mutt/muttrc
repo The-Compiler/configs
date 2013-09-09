@@ -9,6 +9,7 @@ set spoolfile     = "+INBOX"
 set imap_check_subscribed = yes
 mailboxes INBOX
 set postponed     = "=INBOX.Drafts"
+set record        = "=INBOX.Sent"
 #set query_command = "goobook query '%s'"
 
 ### Timeouts ###
