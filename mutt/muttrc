@@ -30,6 +30,7 @@ auto_view         text/html application/pdf image/*
 mime_lookup       application/octet-stream
 alternative_order text/enriched text/plain text/html
 
+bind index \Ci ignore-thread
 ### Keybindings ###
 macro index,pager S \
     "<save-message>=INBOX.Spam<enter>" "Spam"
