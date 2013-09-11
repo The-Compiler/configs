@@ -415,9 +415,6 @@ noremap! <F1> <Esc>
 " column, so swap them
 nnoremap ' `
 nnoremap ` '
-" Remap j and k to act as expected when used on long, wrapped, lines
-nnoremap j gj
-nnoremap k gk
 " <leader><space>: Clear search highlighting
 nnoremap <silent> <leader><space> :nohlsearch<cr>
 " <leader>= / <leader>-: underlining
