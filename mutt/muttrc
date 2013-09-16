@@ -8,6 +8,7 @@ set ssl_starttls  = yes
 set spoolfile     = "+INBOX"
 set imap_check_subscribed = yes
 mailboxes =INBOX
+unmailboxes =INBOX.Drafts =INBOX.Sent =INBOX.Trash
 set postponed     = "=INBOX.Drafts"
 set record        = "=INBOX.Sent"
 ifdef trash set trash = "=INBOX.Trash"
