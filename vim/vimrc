@@ -53,9 +53,9 @@ set undofile                    " ...
 set undodir=~/.vim/undo         " Keep persistent undo file
 set numberwidth=5               " Width of number column
 set updatetime=100              " Run autocmds all 100ms
+set autoindent                  " Non-intrusive auto-indenting
 if has("gui_running") | set guifont=ProggyTinyTT\ 12 | endif
 if has("mouse") | set mouse=a | endif " Mouse support
-if has("smartindent") | set smartindent | endif " Smart indenting
 if has("wildmenu") | set wildmenu | endif " Visual tab completion
 " Ignore some files for tab menu
 if has("wildignore") | set wildignore=*.swp,*.bak,*.pyc,*/.git/*,*/.hg/*,*/.svn/* | endif
