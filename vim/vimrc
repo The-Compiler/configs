@@ -10,12 +10,12 @@
 "" - Restart vim
 
 """""" Set vimfiles path
-if has("windows")
-	let vimfiles = expand("$VIMRUNTIME/../vimfiles")
-	if has("gui_running") | set guifont=ProggyTinyTT:h12:cANSI | endif
-elseif has("unix")
+if has("unix")
 	let vimfiles = expand("$HOME/.vim")
 	if has("gui_running") | set guifont=ProggyTinyTT\ 12 | endif
+else
+	let vimfiles = expand("$VIMRUNTIME/../vimfiles")
+	if has("gui_running") | set guifont=ProggyTinyTT:h12:cANSI | endif
 endif
 
 """""" Options
