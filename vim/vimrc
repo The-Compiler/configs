@@ -58,7 +58,7 @@ set nrformats=hex               " Don't allow octal numbers for CTRL-A/CTRL+X
 set switchbuf=useopen           " Switch to already open buffers from quickfix
 set undolevels=1000             " Save many undo steps
 set undofile                    " ...
-let &undodir=expand(vimfiles . "/undo")  " Keep persistent undo file
+let &undodir=vimfiles . "/undo" " Keep persistent undo file
 set numberwidth=5               " Width of number column
 set updatetime=100              " Run autocmds all 100ms
 set autoindent                  " Non-intrusive auto-indenting
@@ -67,7 +67,7 @@ if has("wildmenu") | set wildmenu | endif " Visual tab completion
 " Ignore some files for tab menu
 if has("wildignore") | set wildignore=*.swp,*.bak,*.pyc,*/.git/*,*/.hg/*,*/.svn/* | endif
 " Limits for .viminfo
-let &viminfo=expand("%,'50,\"100,:100,!,n" . vimfiles . "/viminfo")
+let &viminfo="%,'50,\"100,:100,!,n" . vimfiles . "/viminfo"
 " Locations for tag file
 set tags=./tags,./TAGS,tags,TAGS,../tags,../../tags,../../../tags,../../../../tags
 filetype plugin on              " Automatically load filetype-specific plugins
@@ -79,7 +79,7 @@ let mapleader=","               " Use , as leader instead of \
 if has('vim_starting')
     let &runtimepath .= ','. vimfiles .'/bundle/neobundle.vim/'
 endif
-call neobundle#rc(expand(vimfiles . "/bundle/"))
+call neobundle#rc(vimfiles . "/bundle/")
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 """ Vimproc - needed for NeoBundle
@@ -129,7 +129,7 @@ let g:ctrlp_match_window = 'bottom,order:ttb,max:30' " 30 entries in window
 let g:ctrlp_root_markers = ['NEWS', 'AUTHORS', 
                           \ 'BUGS', 'README.md']     " Project root markers
 let g:ctrlp_clear_cache_on_exit = 0                  " Persistent cache
-let g:ctrlp_cache_dir = expand(vimfiles . '/.ctrlp_cache')   " ...
+let g:ctrlp_cache_dir = vimfiles . '/.ctrlp_cache'   " ...
 let g:ctrlp_show_hidden = 1                          " Show hidden files
 let g:ctrlp_follow_symlinks = 1                      " Follow symlinks
 " <leader>f[ftbl] for files/tags/buffers/lines
@@ -242,7 +242,7 @@ NeoBundle 'xolox/vim-misc'                  " Needed by easytags
 NeoBundle 'xolox/vim-easytags'
 let g:easytags_include_members = 1          " Include struct members
 let g:easytags_dynamic_files = 1            " Reuse project-specific files
-let g:easytags_by_filetype = expand(vimfiles . "/.tags") " Use tags per filetype
+let g:easytags_by_filetype = vimfiles . "/.tags" " Use tags per filetype
 let g:easytags_updatetime_warn = 0          " Don't warn about fast updatetime
 let g:easytags_resolve_links = 1            " Resolve symbolic links
 let g:easytags_auto_highlight = 0           " Don't highlight tags
