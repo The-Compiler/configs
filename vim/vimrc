@@ -9,6 +9,15 @@
 "" - Run :NeoBundleInstall in vim
 "" - Restart vim
 
+"""""" Set vimfiles path
+if has("windows")
+	let vimfiles = expand("$VIMRUNTIME/../vimfiles")
+	if has("gui_running") | set guifont=ProggyTinyTT:h12:cANSI | endif
+elseif has("unix")
+	let vimfiles = expand("$HOME/.vim")
+	if has("gui_running") | set guifont=ProggyTinyTT\ 12 | endif
+endif
+
 """""" Options
 set nocompatible                " Turn off vim compability mode
 set esckeys                     " Arrow keys, etc. in insert mode
@@ -49,17 +58,16 @@ set nrformats=hex               " Don't allow octal numbers for CTRL-A/CTRL+X
 set switchbuf=useopen           " Switch to already open buffers from quickfix
 set undolevels=1000             " Save many undo steps
 set undofile                    " ...
-set undodir=~/.vim/undo         " Keep persistent undo file
+let &undodir=expand(vimfiles . "/undo")  " Keep persistent undo file
 set numberwidth=5               " Width of number column
 set updatetime=100              " Run autocmds all 100ms
 set autoindent                  " Non-intrusive auto-indenting
-if has("gui_running") | set guifont=ProggyTinyTT\ 12 | endif
 if has("mouse") | set mouse=a | endif " Mouse support
 if has("wildmenu") | set wildmenu | endif " Visual tab completion
 " Ignore some files for tab menu
 if has("wildignore") | set wildignore=*.swp,*.bak,*.pyc,*/.git/*,*/.hg/*,*/.svn/* | endif
 " Limits for .viminfo
-set viminfo=%,'50,\"100,:100,!,n~/.viminfo
+let &viminfo=expand("%,'50,\"100,:100,!,n" . vimfiles . "/viminfo")
 " Locations for tag file
 set tags=./tags,./TAGS,tags,TAGS,../tags,../../tags,../../../tags,../../../../tags
 filetype plugin on              " Automatically load filetype-specific plugins
@@ -69,9 +77,9 @@ let mapleader=","               " Use , as leader instead of \
 """""" Plugins
 """ NeoBundle - plugin management
 if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
+    let &runtimepath .= ','. vimfiles .'/bundle/neobundle.vim/'
 endif
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#rc(expand(vimfiles . "/bundle/"))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 """ Vimproc - needed for NeoBundle
@@ -121,7 +129,7 @@ let g:ctrlp_match_window = 'bottom,order:ttb,max:30' " 30 entries in window
 let g:ctrlp_root_markers = ['NEWS', 'AUTHORS', 
                           \ 'BUGS', 'README.md']     " Project root markers
 let g:ctrlp_clear_cache_on_exit = 0                  " Persistent cache
-let g:ctrlp_cache_dir = $HOME.'/.vim/.ctrlp_cache'   " ...
+let g:ctrlp_cache_dir = expand(vimfiles . '/.ctrlp_cache')   " ...
 let g:ctrlp_show_hidden = 1                          " Show hidden files
 let g:ctrlp_follow_symlinks = 1                      " Follow symlinks
 " <leader>f[ftbl] for files/tags/buffers/lines
@@ -161,7 +169,7 @@ NeoBundle 'YankRing.vim'
 " <leader>p to toggle paste list
 nnoremap <leader>p :YRShow<cr>
 " history file location
-let g:yankring_history_dir = expand('$HOME') . "/.vim/bundle/YankRing.vim"
+let g:yankring_history_dir = vimfiles . "/bundle/YankRing.vim"
 
 """ Surround - easily surround text by braces
 NeoBundle 'tpope/vim-surround'
@@ -234,7 +242,7 @@ NeoBundle 'xolox/vim-misc'                  " Needed by easytags
 NeoBundle 'xolox/vim-easytags'
 let g:easytags_include_members = 1          " Include struct members
 let g:easytags_dynamic_files = 1            " Reuse project-specific files
-let g:easytags_by_filetype = "~/.vim/.tags" " Use tags per filetype
+let g:easytags_by_filetype = expand(vimfiles . "/.tags") " Use tags per filetype
 let g:easytags_updatetime_warn = 0          " Don't warn about fast updatetime
 let g:easytags_resolve_links = 1            " Resolve symbolic links
 let g:easytags_auto_highlight = 0           " Don't highlight tags
@@ -392,8 +400,8 @@ if has("autocmd")
         \   exe "normal `\"" | 
         \ endif
     " Load skeletons
-    autocmd BufNewFile *.py 0r ~/.vim/skeletons/py.py
-    autocmd BufNewFile *.cs 0r ~/.vim/skeletons/cs.cs
+    autocmd BufNewFile *.py 0r expand(vimfiles . "/skeletons/py.py")
+    autocmd BufNewFile *.cs 0r expand(vimfiles . "/skeletons/cs.cs")
     " Use K for vim-help in vim-files
     autocmd filetype vim noremap K <Esc>:help <C-r><C-w><cr>
     " Automatically open quickfix after grep
