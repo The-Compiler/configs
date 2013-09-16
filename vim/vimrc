@@ -7,7 +7,6 @@
 "" - Start vim
 "" - Ignore warning about missing colorscheme
 "" - Run :NeoBundleInstall in vim
-"" - mkdir ~/.vim/.tags
 "" - Restart vim
 
 """""" Options
