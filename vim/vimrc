@@ -1,4 +1,5 @@
 "" TO INSTALL:
+"" - Install exuberant ctags (e.g. the ctags package in your distribution)
 "" - Copy or symlink this config to ~/.vimrc
 "" - mkdir ~/.vim
 "" - Copy or sumlink the folders inside vim/vim to ~/.vim/*
