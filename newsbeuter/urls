@@ -40,6 +40,8 @@ http://www.kickstarter.com/projects/597507018/pebble-e-paper-watch-for-iphone-an
 http://feeds.evoke.eu/evoke/
 http://devopsreactions.tumblr.com/rss
 http://www.cyanogenmod.org/feed
+http://community.orange.ch/orangech/rss/Category?category.id=de&interaction.style=forum
+http://community.orange.ch/orangech/rss/Category?category.id=en&interaction.style=forum
 
 http://code.bitlbee.org/lh/bitlbee/atom
 https://github.com/claudehohl/Stikked/commits/master.atom 
@@ -57,3 +59,7 @@ http://git.savannah.gnu.org/gitweb/?p=weechat.git;a=atom
 http://code.google.com/feeds/p/yourls/svnchanges/basic
 https://code.google.com/feeds/p/diy-layout-creator/svnchanges/basic
 http://freecode.com/projects/mutt-folderlist/releases.atom
+https://bitbucket.org/brodie/dnuos/rss
+https://www.archlinux.org/feeds/packages/
+http://feeds.launchpad.net/~jerub/oursql/py3k/branch.atom
+http://www.pietrobattiston.it/gitweb?p=ddupes.git/.git;a=atom

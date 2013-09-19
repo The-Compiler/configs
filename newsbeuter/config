@@ -27,3 +27,6 @@ color article color252 color234
 notify-screen yes
 notify-xterm yes
 notify-beep yes
+
+# kill archlinux packages we're not interested in
+ignore-article "https://www.archlinux.org/feeds/packages/" "title !~ \"^systemd \""
