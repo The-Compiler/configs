@@ -2,7 +2,7 @@
 "" - Copy or symlink this config to ~/.vimrc
 "" - mkdir ~/.vim
 "" - Copy or sumlink the folders inside vim/vim to ~/.vim/*
-"" - mkdir ~/.vim/bundle
+"" - mkdir ~/.vim/{bundle,tags,undo}
 "" - git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 "" - Start vim
 "" - Ignore warning about missing colorscheme
