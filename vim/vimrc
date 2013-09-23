@@ -340,6 +340,9 @@ if has("netbeans_intg")
     nnoremap <leader>dI :CCinit<space>
 endif
 
+"""""" Show trailing whitespace
+NeoBundle 'ShowTrailingWhitespace'
+
 """""" Statusline
 if has("statusline")
     function! Gitstatus()
