@@ -23,6 +23,9 @@ endif
 if !isdirectory(vimfiles . '/bundle') | call mkdir(vimfiles . '/bundle') | endif
 if !isdirectory(vimfiles . '/tags') | call mkdir(vimfiles . '/tags') | endif
 if !isdirectory(vimfiles . '/undo') | call mkdir(vimfiles . '/undo') | endif
+if !isdirectory(vimfiles . '/bak') | call mkdir(vimfiles . '/bak') | endif
+if !isdirectory(vimfiles . '/tmp') | call mkdir(vimfiles . '/tmp') | endif
+if !isdirectory(vimfiles . '/view') | call mkdir(vimfiles . '/view') | endif
 
 """""" Options
 set nocompatible                " Turn off vim compability mode
@@ -68,6 +71,9 @@ let &undodir=vimfiles . "/undo" " Keep persistent undo file
 set numberwidth=5               " Width of number column
 set updatetime=100              " Run autocmds all 100ms
 set autoindent                  " Non-intrusive auto-indenting
+let &backupdir=vimfiles . "/bak" " Write backup files to vim folder
+let &dir=vimfiles . "/tmp"      " Write Swapfiles to vim folder
+let &viewdir=vimfiles . "/view" " Write view-files to vim folder
 if has("mouse") | set mouse=a | endif " Mouse support
 if has("wildmenu") | set wildmenu | endif " Visual tab completion
 " Ignore some files for tab menu
