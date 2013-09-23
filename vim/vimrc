@@ -451,3 +451,6 @@ noremap <leader>P :setlocal paste!<cr>
 compiler make
 " Write with sudo with :W
 com! W w<bang> !sudo tee % >/dev/null
+" Highlight tw+1
+hi ColorColumn ctermbg=235 guibg=#262626
+set cc=+1
