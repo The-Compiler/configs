@@ -3,7 +3,7 @@
 "" - Copy or symlink this config to ~/.vimrc
 "" - mkdir ~/.vim
 "" - Copy or sumlink the folders inside vim/vim to ~/.vim/*
-"" - mkdir ~/.vim/{bundle,tags,undo}
+"" - mkdir ~/.vim/bundle
 "" - git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 "" - Start vim
 "" - Ignore warning about missing colorscheme
@@ -18,6 +18,11 @@ else
 	let vimfiles = expand("$VIMRUNTIME/../vimfiles")
 	if has("gui_running") | set guifont=ProggyTinyTT:h12:cANSI | endif
 endif
+
+"""""" Create directories
+if !isdirectory(vimfiles . '/bundle') | call mkdir(vimfiles . '/bundle') | endif
+if !isdirectory(vimfiles . '/tags') | call mkdir(vimfiles . '/tags') | endif
+if !isdirectory(vimfiles . '/undo') | call mkdir(vimfiles . '/undo') | endif
 
 """""" Options
 set nocompatible                " Turn off vim compability mode
