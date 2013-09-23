@@ -399,9 +399,9 @@ endif
 if has("autocmd")
     autocmd FileType mail set tw=70 " Text width for mail
     " When editing a file, always jump to the last cursor position
-    autocmd BufReadPost * 
-        \ if line("'\"") && line("'\"") <= line("$") | 
-        \   exe "normal `\"" | 
+    autocmd BufReadPost *
+        \ if line("'\"") && line("'\"") <= line("$") |
+        \   exe "normal `\"" |
         \ endif
     " Load skeletons
     autocmd BufNewFile *.py 0r expand(vimfiles . "/skeletons/py.py")
