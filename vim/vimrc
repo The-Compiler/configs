@@ -74,6 +74,7 @@ set autoindent                  " Non-intrusive auto-indenting
 let &backupdir=vimfiles . "/bak" " Write backup files to vim folder
 let &dir=vimfiles . "/tmp"      " Write Swapfiles to vim folder
 let &viewdir=vimfiles . "/view" " Write view-files to vim folder
+set autochdir                   " Automatically switch to file path
 if has("mouse") | set mouse=a | endif " Mouse support
 if has("wildmenu") | set wildmenu | endif " Visual tab completion
 " Ignore some files for tab menu
