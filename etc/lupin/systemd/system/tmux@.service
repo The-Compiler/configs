@@ -3,7 +3,8 @@ Description=tmux
 After=network.target
 
 [Service]
-Type=forking
+Type=oneshot
+RemainAfterExit=yes
 User=%i
 ExecStart=/usr/bin/tmux start
 ExecStop=/usr/bin/tmux kill-session
