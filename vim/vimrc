@@ -76,7 +76,7 @@ set autochdir                   " Automatically switch to file path
 let no_buffers_menu = 1         " Show no buffers menu in GUI
 if has("gui_running")           " Set font for gui
     set guifont="ProggyTinyTT 12,ProggyTinyTT:h12:cANSI"
-fi
+endif
 if has("mouse") | set mouse=a | endif " Mouse support
 if has("wildmenu") | set wildmenu | endif " Visual tab completion
 " Ignore some files for tab menu
