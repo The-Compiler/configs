@@ -13,10 +13,8 @@
 """""" Set vimfiles path
 if has("unix")
 	let vimfiles = expand("$HOME/.vim")
-	if has("gui_running") | set guifont=ProggyTinyTT\ 12 | endif
 else
 	let vimfiles = expand("$VIMRUNTIME/../vimfiles")
-	if has("gui_running") | set guifont=ProggyTinyTT:h12:cANSI | endif
 endif
 
 """""" Create directories
@@ -75,10 +73,16 @@ let &backupdir=vimfiles . "/bak" " Write backup files to vim folder
 let &dir=vimfiles . "/tmp"      " Write Swapfiles to vim folder
 let &viewdir=vimfiles . "/view" " Write view-files to vim folder
 set autochdir                   " Automatically switch to file path
+let no_buffers_menu = 1         " Show no buffers menu in GUI
+if has("gui_running")           " Set font for gui
+    set guifont="ProggyTinyTT 12,ProggyTinyTT:h12:cANSI"
+fi
 if has("mouse") | set mouse=a | endif " Mouse support
 if has("wildmenu") | set wildmenu | endif " Visual tab completion
 " Ignore some files for tab menu
-if has("wildignore") | set wildignore=*.swp,*.bak,*.pyc,*/.git/*,*/.hg/*,*/.svn/* | endif
+if has("wildignore")
+    set wildignore=*.swp,*.bak,*.pyc,*/.git/*,*/.hg/*,*/.svn/*
+endif
 " Limits for .viminfo
 let &viminfo="%,'50,\"100,:100,!,n" . vimfiles . "/viminfo"
 " Locations for tag file
