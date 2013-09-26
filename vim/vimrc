@@ -75,7 +75,7 @@ let &viewdir=vimfiles . "/view" " Write view-files to vim folder
 set autochdir                   " Automatically switch to file path
 let no_buffers_menu = 1         " Show no buffers menu in GUI
 if has("gui_running")           " Set font for gui
-    set guifont="ProggyTinyTT 12,ProggyTinyTT:h12:cANSI"
+    set guifont=ProggyTinyTT_12,ProggyTinyTT:h12:cANSI
     set guioptions+=a           " Autoselect text
     set guioptions+=c           " Use console dialogs
     set guioptions-=t           " No tear-off menus
