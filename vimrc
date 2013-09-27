@@ -279,6 +279,9 @@ nnoremap <leader>t :TagbarToggle<cr>
 """""" Show trailing whitespace
 NeoBundle 'ShowTrailingWhitespace'
 
+"""""" My own vimfiles
+NeoBundle 'git://cmpl.cc/vimfiles/'
+
 """""" Finish NeoBundle Bootstrap
 if s:neobootstrapdone == 0
     execute ':NeoBundleInstall'
