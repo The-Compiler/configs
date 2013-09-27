@@ -74,6 +74,7 @@ let &dir=vimfiles . "/tmp"      " Write Swapfiles to vim folder
 let &viewdir=vimfiles . "/view" " Write view-files to vim folder
 set autochdir                   " Automatically switch to file path
 let no_buffers_menu = 1         " Show no buffers menu in GUI
+set history=100                 " Bigger history
 if has("gui_running")           " Set font for gui
     set guifont=ProggyTinyTT_12,ProggyTinyTT:h12:cANSI
     set guioptions+=a           " Autoselect text
@@ -89,8 +90,14 @@ if has("wildmenu") | set wildmenu | endif " Visual tab completion
 if has("wildignore")
     set wildignore=*.swp,*.bak,*.pyc,*/.git/*,*/.hg/*,*/.svn/*
 endif
-" Limits for .viminfo
-let &viminfo="%,'50,\"100,:100,!,n" . vimfiles . "/viminfo"
+" viminfo
+" ': Save N previous files
+" <: Save N lines per register
+" !: Save all-uppercase global variables
+" n: Name
+" r: Don't store these paths
+" s: Size limits for registers in KB
+let &viminfo="'50,s100,!,r/tmp,r/mnt,r/media,n" . vimfiles . "/viminfo"
 " Locations for tag file
 set tags=./tags,./TAGS,tags,TAGS,../tags,../../tags,../../../tags,../../../../tags
 filetype plugin on              " Automatically load filetype-specific plugins
