@@ -2,8 +2,6 @@
 "" - Install exuberant ctags (e.g. the ctags package in your distribution)
 "" - Install git
 "" - Copy or symlink this config to ~/.vimrc
-"" - mkdir ~/.vim
-"" - Copy or symlink the folders inside vim/vim to ~/.vim/*
 "" - Start vim, wait until everything is installed
 "" - Restart vim
 
@@ -35,7 +33,10 @@ elseif !isdirectory(vimfiles . '/bundle/neobundle.vim')
     echo 'Installing NeoBundle...'
     echo ''
     echo 'WARNING: If you are on Windows, this will take some time in which '
-    echo 'you will only see random command windows popping up'
+    echo 'you will only see random command windows popping up.'
+    echo ''
+    echo 'Please be patient and do not start another vim instance until'
+    echo 'the install is finished!'
     call confirm("")
     call mkdir(vimfiles . '/bundle/neobundle.vim')
     execute ':silent !git clone git://github.com/Shougo/neobundle.vim ' . shellescape(vimfiles . '/bundle/neobundle.vim')
