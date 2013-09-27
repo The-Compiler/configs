@@ -1,0 +1,10 @@
+[Unit]
+Description=Git Daemon Instance
+
+[Service]
+User=git
+# The '-' is to ignore non-zero exit statuses
+ExecStart=-/usr/lib/git-core/git-daemon --inetd --base-path=/srv/git/repositories
+StandardInput=socket
+StandardOutput=inherit
+StandardError=journal
