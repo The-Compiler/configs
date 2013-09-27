@@ -20,7 +20,6 @@ if !isdirectory(vimfiles . '/tags') | call mkdir(vimfiles . '/tags') | endif
 if !isdirectory(vimfiles . '/undo') | call mkdir(vimfiles . '/undo') | endif
 if !isdirectory(vimfiles . '/bak') | call mkdir(vimfiles . '/bak') | endif
 if !isdirectory(vimfiles . '/tmp') | call mkdir(vimfiles . '/tmp') | endif
-if !isdirectory(vimfiles . '/view') | call mkdir(vimfiles . '/view') | endif
 
 """""" NeoBundle
 " Bootstrap
@@ -93,7 +92,6 @@ set updatetime=100              " Run autocmds all 100ms
 set autoindent                  " Non-intrusive auto-indenting
 let &backupdir=vimfiles . "/bak" " Write backup files to vim folder
 let &dir=vimfiles . "/tmp"      " Write Swapfiles to vim folder
-let &viewdir=vimfiles . "/view" " Write view-files to vim folder
 set autochdir                   " Automatically switch to file path
 let no_buffers_menu = 1         " Show no buffers menu in GUI
 set history=100                 " Bigger history
@@ -285,10 +283,13 @@ NeoBundle 'majutsushi/tagbar'
 " <leader>t: toggle tagbar
 nnoremap <leader>t :TagbarToggle<cr>
 
-"""""" Show trailing whitespace
+""" Show trailing whitespace
 NeoBundle 'ShowTrailingWhitespace'
 
-"""""" My own vimfiles
+""" Automatically save/restore sessions
+NeoBundle 'https://code.google.com/p/vim-plugin-autosess/'
+
+""" My own vimfiles
 NeoBundle 'git://cmpl.cc/vimfiles/'
 
 """""" Statusline
@@ -362,9 +363,6 @@ if has("autocmd")
     autocmd FileType c set fo-=o
     " Close vim if NERDTree is only window
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-    " Automatically save view
-    autocmd BufWinLeave * silent! mkview
-    autocmd BufWinEnter * silent! loadview
     " Auto-reload vimrc on write
     autocmd BufWritePost .vimrc source %
 endif
