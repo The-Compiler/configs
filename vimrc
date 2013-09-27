@@ -291,6 +291,7 @@ NeoBundle 'git://cmpl.cc/vimfiles/'
 if s:neobootstrapdone == 0
     execute ':NeoBundleInstall'
     execute ':NeoBundleCheck'
+    if !isdirectory(vimfiles . '/bundle/ShowMarks/doc') | call mkdir(vimfiles . '/bundle/ShowMarks/doc') | endif
 endif
 
 """""" Colorscheme
