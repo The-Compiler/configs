@@ -282,6 +282,7 @@ NeoBundle 'ShowTrailingWhitespace'
 """""" Finish NeoBundle Bootstrap
 if s:neobootstrapdone == 0
     execute ':NeoBundleInstall'
+    execute ':NeoBundleCheck'
 endif
 
 """""" Colorscheme
