@@ -137,20 +137,6 @@ NeoBundle 'godlygeek/tabular'
 nnoremap <leader><tab> :Tab /
 vnoremap <leader><tab> :Tab /
 
-""" MinBufExpl - buffer list on top
-NeoBundle 'techlivezheng/vim-plugin-minibufexpl'
-let g:miniBufExplUseSingleClick = 1           " Use single-click to go to buf
-let g:miniBufExplorerAutoStart = 1            " Open buffer list automatically
-let g:miniBufExplBuffersNeeded = 1            " Always show list
-let g:miniBufExplStatusLineText = "%#Normal#" " Nearly hide statusline
-let g:did_minibufexplorer_syntax_inits = 1    " Custom colors
-highlight MBENormal               ctermfg=247 guifg=#9e9e9e
-highlight MBEChanged              ctermfg=247 guifg=#9e9e9e
-highlight MBEVisibleNormal        ctermfg=247 guifg=#9e9e9e cterm=reverse gui=reverse
-highlight MBEVisibleChanged       ctermfg=247 guifg=#9e9e9e cterm=reverse gui=reverse
-highlight MBEVisibleActiveNormal  ctermfg=150 guifg=#9e9e9e cterm=reverse gui=reverse
-highlight MBEVisibleActiveChanged ctermfg=150 guifg=#9e9e9e cterm=reverse gui=reverse
-
 """ Ctrl-P - fuzzy finder for files and more
 NeoBundle 'kien/ctrlp.vim'
 let g:ctrpl_extensions =  ['buffertag', 'line']      " Plugins to use
