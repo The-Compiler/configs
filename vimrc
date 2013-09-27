@@ -3,7 +3,6 @@
 "" - Install git
 "" - Copy or symlink this config to ~/.vimrc
 "" - Start vim, wait until everything is installed
-"" - Restart vim
 
 set nocompatible " Turn off vim compability mode
 
@@ -141,7 +140,12 @@ NeoBundle 'Shougo/vimproc', {
 
 """ xoria256 - colorscheme
 NeoBundle 'xoria256.vim' " Color scheme
-" The rest of the settings is at the end, after NeoBundle bootstrapping
+set t_Co=256             " Number of terminal colors
+if has("syntax") | syn on | endif
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " highlight conflict markers
+if s:neobootstrapdone == 1
+    colorscheme xoria256
+endif
 
 """ Repeat - repeation for plugins
 NeoBundle 'tpope/vim-repeat'
@@ -287,20 +291,6 @@ NeoBundle 'ShowTrailingWhitespace'
 """""" My own vimfiles
 NeoBundle 'git://cmpl.cc/vimfiles/'
 
-"""""" Finish NeoBundle Bootstrap
-if s:neobootstrapdone == 0
-    execute ':NeoBundleInstall'
-    execute ':NeoBundleCheck'
-    if !isdirectory(vimfiles . '/bundle/ShowMarks/doc') | call mkdir(vimfiles . '/bundle/ShowMarks/doc') | endif
-endif
-
-"""""" Colorscheme
-" can't do this earlier because of NeoBundle bootstrapping
-set t_Co=256             " Number of terminal colors
-if has("syntax") | syn on | endif
-match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " highlight conflict markers
-colorscheme xoria256
-
 """""" Statusline
 if has("statusline")
     function! Gitstatus()
@@ -411,9 +401,19 @@ noremap <leader>P :setlocal paste!<cr>
 
 """""" Misc
 " Use make as default compiler
-compiler make
+if s:neobootstrapdone == 1
+    compiler make
+endif
 " Write with sudo with :W
 com! W w<bang> !sudo tee % >/dev/null
 " Highlight tw+1
 hi ColorColumn ctermbg=235 guibg=#262626
 set cc=+1
+
+"""""" Finish NeoBundle Bootstrap
+if s:neobootstrapdone == 0
+    execute ':NeoBundleInstall'
+    execute ':NeoBundleCheck'
+    if !isdirectory(vimfiles . '/bundle/ShowMarks/doc') | call mkdir(vimfiles . '/bundle/ShowMarks/doc') | endif
+    source $MYVIMRC
+endif
