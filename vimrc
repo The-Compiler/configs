@@ -27,13 +27,18 @@ if !isdirectory(vimfiles . '/view') | call mkdir(vimfiles . '/view') | endif
 
 """""" NeoBundle
 " Bootstrap
-if isdirectory(vimfiles . '/bundle/neobundle.vim')
-    let s:neobootstrapdone = 1
-else
+let s:neobootstrapdone = 1
+if !executable('git')
+    echoerr 'Git is not installed, beware of breakage!'
+elseif !isdirectory(vimfiles . '/bundle/neobundle.vim')
     let s:neobootstrapdone = 0
     echo 'Installing NeoBundle...'
+    echo ''
+    echo 'WARNING: If you are on Windows, this will take some time in which '
+    echo 'you will only see random command windows popping up'
+    call confirm("")
     call mkdir(vimfiles . '/bundle/neobundle.vim')
-    execute '!git clone git://github.com/Shougo/neobundle.vim ' . shellescape(vimfiles . '/bundle/neobundle.vim')
+    execute ':silent !git clone git://github.com/Shougo/neobundle.vim ' . shellescape(vimfiles . '/bundle/neobundle.vim')
 endif
 " Activate
 if has('vim_starting')
@@ -42,7 +47,6 @@ endif
 call neobundle#rc(vimfiles . "/bundle/")
 " Update
 NeoBundleFetch 'Shougo/neobundle.vim'
-
 
 """""" Options
 set esckeys                     " Arrow keys, etc. in insert mode
