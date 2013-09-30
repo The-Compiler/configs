@@ -16,6 +16,7 @@ endif
 """""" Create directories
 if !isdirectory(vimfiles) | call mkdir(vimfiles) | endif
 if !isdirectory(vimfiles . '/bundle') | call mkdir(vimfiles . '/bundle') | endif
+if !isdirectory(vimfiles . '/snippets') | call mkdir(vimfiles . '/snippets') | endif
 if !isdirectory(vimfiles . '/tags') | call mkdir(vimfiles . '/tags') | endif
 if !isdirectory(vimfiles . '/undo') | call mkdir(vimfiles . '/undo') | endif
 if !isdirectory(vimfiles . '/bak') | call mkdir(vimfiles . '/bak') | endif
@@ -285,6 +286,7 @@ nnoremap <leader>t :TagbarToggle<cr>
 
 """ SnipMate
 NeoBundle 'snipMate'
+let g:snippets_dir = vimfiles . "/snippets"
 
 """ Show trailing whitespace
 NeoBundle 'ShowTrailingWhitespace'
