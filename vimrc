@@ -381,6 +381,8 @@ endif
 noremap <F12> :make<Enter>:cw<Enter>
 " Avoid accidental hits of <F1> while aiming for <Esc>
 noremap! <F1> <Esc>
+" Turn off Q
+nnoremap Q <nop>
 " Swap implementations of ` and ' jump to markers
 " By default, ' jumps to the marked line, ` jumps to the marked line and
 " column, so swap them
