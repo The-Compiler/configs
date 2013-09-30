@@ -2,6 +2,5 @@ new -n irc weechat-curses
 neww mutt
 neww -n rss newsbeuter
 neww -n sys htop
-neww hnb
 neww -n log 'journalctl -fb'
 selectw -t 0
