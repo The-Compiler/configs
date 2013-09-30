@@ -373,7 +373,10 @@ if has("autocmd")
     " Close vim if NERDTree is only window
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
     " Auto-reload vimrc on write
-    autocmd BufWritePost .vimrc source %
+    augroup reload_vimrc
+        autocmd!
+        autocmd BufWritePost .vimrc source %
+    augroup END
 endif
 
 """""" Custom mappings
