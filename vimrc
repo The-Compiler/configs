@@ -300,6 +300,9 @@ NeoBundle 'vimwiki'
 """ Startify
 NeoBundle 'mhinz/vim-startify'
 
+""" Multiple Cursors
+NeoBundle 'terryma/vim-multiple-cursors'
+
 """ My own vimfiles
 NeoBundle 'git://cmpl.cc/vimfiles/'
 
