@@ -18,6 +18,8 @@ INCLUDERC=${PMDIR}/spamto.rc
 INCLUDERC=${PMDIR}/sourceforge.rc
 # Move lugs beiz messages to Spam
 INCLUDERC=${PMDIR}/lugsbeiz.rc
+# Move ubuntu wiki messages to Spam
+INCLUDERC=${PMDIR}/ubuntuwiki.rc
 # Run spamassassin
 INCLUDERC=${PMDIR}/spam.rc
 # Run ClamAV
