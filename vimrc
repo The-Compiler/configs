@@ -287,10 +287,13 @@ nnoremap <leader>t :TagbarToggle<cr>
 NeoBundle 'ShowTrailingWhitespace'
 
 """ Automatically save/restore sessions
-NeoBundle 'https://code.google.com/p/vim-plugin-autosess/'
+"NeoBundle 'https://code.google.com/p/vim-plugin-autosess/'
 
 """ Vim-Wiki
 NeoBundle 'vimwiki'
+
+""" Startify
+NeoBundle 'mhinz/vim-startify'
 
 """ My own vimfiles
 NeoBundle 'git://cmpl.cc/vimfiles/'
