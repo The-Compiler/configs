@@ -372,6 +372,8 @@ if has("autocmd")
     autocmd FileType c set fo-=o
     " Close vim if NERDTree is only window
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+    " Spellcheck git commits
+    autocmd FileType gitcommit setlocal spell
     " Auto-reload vimrc on write
     augroup reload_vimrc
         autocmd!
