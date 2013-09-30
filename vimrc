@@ -283,6 +283,9 @@ NeoBundle 'majutsushi/tagbar'
 " <leader>t: toggle tagbar
 nnoremap <leader>t :TagbarToggle<cr>
 
+""" SnipMate
+NeoBundle 'snipMate'
+
 """ Show trailing whitespace
 NeoBundle 'ShowTrailingWhitespace'
 
