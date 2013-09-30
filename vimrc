@@ -289,6 +289,9 @@ NeoBundle 'ShowTrailingWhitespace'
 """ Automatically save/restore sessions
 NeoBundle 'https://code.google.com/p/vim-plugin-autosess/'
 
+""" Vim-Wiki
+NeoBundle 'vimwiki'
+
 """ My own vimfiles
 NeoBundle 'git://cmpl.cc/vimfiles/'
 
