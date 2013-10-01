@@ -27,6 +27,8 @@ INCLUDERC=${PMDIR}/virus.rc
 
 # Tag mails from old gmail address
 INCLUDERC=${PMDIR}/tag-forward.rc
+# Sort ML mails
+INCLUDERC=${PMDIR}/lists.rc
 
 # Everything else
 :0:
