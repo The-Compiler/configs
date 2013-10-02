@@ -144,6 +144,7 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " highlight conflict markers
 if s:neobootstrapdone == 1
     colorscheme xoria256
 endif
+highlight SignColumn ctermbg=237 guibg=#3a3a3a
 
 """ Repeat - repeation for plugins
 NeoBundle 'tpope/vim-repeat'
