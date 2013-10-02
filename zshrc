@@ -36,10 +36,11 @@ export PATH="$PATH:$HOME/bin"
 export VIEW_PDF="zathura" # for latex-makefile
 export PAGER="less"
 
-### Adjust PATH if on Windows ###
+### Windows / Cygwin fixes ###
 if [[ "$OS" == Windows_NT ]]; then
     export PATH="/usr/local/bin:/usr/bin:$PATH"
     export SHELL="/usr/bin/zsh"
+    export TERM="cygwin"
     alias open='cygstart'
 fi
 
