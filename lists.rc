@@ -1,0 +1,13 @@
+:0
+* ^From.*-owner@.*
+* ^Subject:.*(mailing list memberships reminder|Mitgliedschafts-Erinnerung)
+* ^List-Id:
+${DEFAULT}.Spam/
+
+:0
+* ^List-Id: <(swiss-chaos|zuerich).chaostreff.ch>
+${DEFAULT}.lists/
+
+:0
+* ^Mailing-list: list vim_dev@googlegroups.com
+${DEFAULT}.lists/
