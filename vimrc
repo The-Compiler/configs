@@ -384,6 +384,9 @@ if has("autocmd")
         autocmd!
         autocmd BufWritePost .vimrc source %
     augroup END
+    " Change status bar color on focus loss
+    au FocusGained * hi StatusLine guibg=#4e4e4e
+    au FocusLost * hi StatusLine guibg=#cccccc
 endif
 
 """""" Custom mappings
