@@ -97,7 +97,7 @@ let no_buffers_menu = 1         " Show no buffers menu in GUI
 set history=100                 " Bigger history
 set confirm                     " Ask user when :q with modified files
 if has("gui_running")           " Set font for gui
-    set guifont=ProggyTinyTT_12,ProggyTinyTT:h12:cANSI
+    set guifont=ProggyTinyTT\ 12,ProggyTinyTT:h12:cANSI
     set guioptions+=a           " Autoselect text
     set guioptions+=c           " Use console dialogs
     set guioptions-=t           " No tear-off menus
