@@ -370,7 +370,7 @@ if has("autocmd")
     autocmd BufNewFile *.py 0r expand(vimfiles . "/skeletons/py.py")
     autocmd BufNewFile *.cs 0r expand(vimfiles . "/skeletons/cs.cs")
     " Use K for vim-help in vim-files
-    autocmd filetype vim noremap K <Esc>:help <C-r><C-w><cr>
+    autocmd filetype vim setlocal keywordprg=:help
     " Automatically open quickfix after grep
     autocmd QuickFixCmdPost *grep* cwindow
     " Force -o for C files
