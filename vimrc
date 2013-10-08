@@ -303,6 +303,9 @@ NeoBundle 'mhinz/vim-startify'
 """ Multiple Cursors
 NeoBundle 'terryma/vim-multiple-cursors'
 
+""" ga improvement
+NeoBundle 'tpope/vim-characterize'
+
 """ My own vimfiles
 NeoBundle 'git://cmpl.cc/vimfiles/'
 
