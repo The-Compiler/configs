@@ -185,7 +185,7 @@ ignore Return-Path: Received: Message-ID: MIME-Version: Content-Type: \
   X-Roundup-Version: X-Received: X-DH-MailerID: X-Abuse-Info: X-Bulkmail: \
   X-UI-Filterresults: Old-Return-Path: Old-Received-SPF: X-policyd-weight: \
   X-Orig-Envelope-To: X-MEETUP-TRACK: X-MEETUP-RECIP-ID: X-MEETUP-MESG-ID: \
-  X-SG-EID: X-Sig:
+  X-SG-EID: X-Sig: X-Proofpoint-Virus-Version: X-Proofpoint-Spam-Details:
 hdr_order Date: From: List-Id: To: Cc: User-Agent: X-Mailer: Subject:
 
 ### Colors ###
