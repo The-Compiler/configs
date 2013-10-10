@@ -31,6 +31,9 @@ INCLUDERC=${PMDIR}/subject.rc
 # Tag mails from old gmail address
 INCLUDERC=${PMDIR}/tag-forward.rc
 
+# Remove mailman footer
+INCLUDERC=${PMDIR}/mailman-footer.rc
+
 #### Sorting ####
 
 # Move eggs (junk but not spam) to eggs folder

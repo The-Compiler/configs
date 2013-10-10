@@ -1,0 +1,6 @@
+:0 h
+* ^X-Mailman-Version:
+{
+    :0 fwb
+    | $HOME/bin/mailmanfooter
+}
