@@ -5,9 +5,9 @@
 ${DEFAULT}.Spam/
 
 :0
-* ^List-Id: <(swiss-chaos|zuerich).chaostreff.ch>
+* ^List-Id:
 ${DEFAULT}.lists/
 
 :0
-* ^Mailing-list: list vim_dev@googlegroups.com
+* ^Mailing-list:
 ${DEFAULT}.lists/
