@@ -1,10 +1,4 @@
 :0
-* ^From.*-owner@.*
-* ^Subject:.*(mailing list memberships reminder|Mitgliedschafts-Erinnerung)
-* ^List-Id:
-${DEFAULT}.Spam/
-
-:0
 * ^List-Id:
 ${DEFAULT}.lists/
 

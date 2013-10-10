@@ -1,0 +1,21 @@
+:0
+* ^From: .*ventilator@semmel.ch>?
+* ^To: .*lugs@lugs.ch>?
+* ^Subject: .*Beiz.*nach.*Treff.*
+${DEFAULT}.eggs/
+
+:0
+* ^From.*-owner@.*
+* ^Subject:.*(mailing list memberships reminder|Mitgliedschafts-Erinnerung)
+* ^List-Id:
+${DEFAULT}.eggs/
+
+:0
+* ^From: .*ventilator@semmel.ch>?
+* ^To: .*lugs@lugs.ch>?
+* ^Subject: .*Beiz.*nach.*Treff.*
+${DEFAULT}.eggs/
+
+:0
+* ^From: Ubuntu Wiki <noreply@ubuntu.com>
+${DEFAULT}.eggs/
