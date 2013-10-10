@@ -1,19 +1,19 @@
 ENVFROM = $1
 ENVTO = $2
 
-:0 h
+:0
 * ^To: \/.*
 {
   TO = $MATCH
 }
 
-:0 h
+:0
 * ^From: \/.*
 {
   FROM = $MATCH
 }
 
-:0 h
+:0
 * ^Sender: \/.*
 {
   SENDER = $MATCH

@@ -7,6 +7,6 @@
       SUBJECT = $MATCH
     }
 
-    :0 hfw
+    :0 fhw
     | /usr/bin/formail -i "Subject: [old-gmail]$SUBJECT"
 }
