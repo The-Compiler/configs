@@ -1,14 +1,7 @@
 :0
 * ^List-Id: <.*\.lists\.sourceforge\.net>
 {
-  REPLACEMENT='REMOVED AD HERE'
-  #REPLACEMENT=''
-  ADDBLOCKREGEX='s/(^|\n)[-]{78}(\n[^\n-][^\n-][^\n]+){1,7}(\n\n|\n|$)/\1'$REPLACEMENT'\3/m'
-
-  # always save a copy of manipulated messages, just to be sure
-  # dirsuffix in my case is set to "/.d"
-  :0 c
-  archive$DIRSUFFIX
+  ADDBLOCKREGEX='s/(^|\n)[-]{78}(\n[^\n-][^\n-][^\n]+){1,7}(\n\n|\n|$)/\1\3/m'
 
   # remove advertisment for different encodings
   :0 fwb
@@ -24,5 +17,4 @@
   # always try to filter it in plaintext
   :0 fwb
   | perl -p0777i -i -e "$ADDBLOCKREGEX"
-
 }
