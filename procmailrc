@@ -5,7 +5,7 @@ LOGFILE=${PMDIR}/procmail.log
 VERBOSE=yes
 LOGABSTRACT=all
 
-SPAMBIN=spamc
+SPAMBIN=${HOME}/perl5/bin/spamassassin
 
 # Remove advertisements in sourceforge messages
 # (do this here to avoid triggering spam filter)
