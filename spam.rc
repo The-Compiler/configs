@@ -1,5 +1,5 @@
 :0 fhb
-|nice -n 15 spamc
+|nice -n 15 ${SPAMBIN}
 
 :0
 * ^X-Spam-Flag: YES

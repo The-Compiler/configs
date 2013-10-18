@@ -5,6 +5,8 @@ LOGFILE=${PMDIR}/procmail.log
 VERBOSE=yes
 LOGABSTRACT=all
 
+SPAMBIN=spamc
+
 # Remove advertisements in sourceforge messages
 # (do this here to avoid triggering spam filter)
 INCLUDERC=${PMDIR}/sourceforge.rc
