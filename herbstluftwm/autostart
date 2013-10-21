@@ -121,7 +121,7 @@ hc keybind XF86ScreenSaver spawn i3lock -d -c 000000
 
 # ThinkVantage-Key
 hc keybind XF86Launch1 spawn urxvtcd
-hc keybind XF86Launch3 spawn /home/florian/bin/onboardctl toggle
+hc keybind XF86Launch2 spawn /home/florian/bin/onboardctl toggle
 
 # utf8select
 hc keybind Mod4-y spawn ~/scripts/utf8select.sh
