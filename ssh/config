@@ -48,3 +48,8 @@ Host keks
 User thecompiler
 HostName mehl.schokokeks.org
 Port 22
+
+Host diggory
+User florian
+HostName diggory.the-compiler.org
+Port 22
