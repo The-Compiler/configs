@@ -1,0 +1,3 @@
+#!/bin/bash
+[[ "$2" == up ]] && sshtunnel start-all
+[[ "$2" == down ]] && sshtunnel stop-all
