@@ -306,6 +306,10 @@ NeoBundle 'terryma/vim-multiple-cursors'
 """ ga improvement
 NeoBundle 'tpope/vim-characterize'
 
+""" Edit GPG files
+NeoBundle 'jamessan/vim-gnupg'
+let g:GPGDefaultRecipients = [ '0xFD55A072' ]
+
 """ My own vimfiles
 NeoBundle 'git://cmpl.cc/vimfiles/'
 
