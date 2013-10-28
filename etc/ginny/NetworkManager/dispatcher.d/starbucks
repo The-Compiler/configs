@@ -5,6 +5,7 @@ import requests
 import lxml.html
 import subprocess
 import sys
+import time
 
 if sys.argv[2] != 'up':
     sys.exit(0)
@@ -14,6 +15,7 @@ essid = subprocess.check_output(["iwgetid", "--raw"]).decode('UTF-8').rstrip('\n
 if essid != 'Starbucks':
     sys.exit(0)
 
+time.sleep(10)
 url1 = "http://www.mpp.tpn.ch/starbucks.php?net=SBCH"
 doc = lxml.html.parse(url1).getroot()
 form = doc.get_element_by_id('frmConnect')
