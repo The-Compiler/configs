@@ -5,7 +5,7 @@ After=xinit.service
 
 [Service]
 Type=oneshot
-ExecStart=/bin/sh -c 'sleep 1; echo -n 215 > /sys/devices/platform/i8042/serio1/speed; echo -n 230 > /sys/devices/platform/i8042/serio1/sensitivity'
+ExecStart=/bin/sh -c 'sleep 1; echo -n 255 > /sys/devices/platform/i8042/serio1/speed; echo -n 255 > /sys/devices/platform/i8042/serio1/sensitivity'
 RemainAfterExit=yes
 
 
