@@ -1,6 +1,6 @@
 # vim: ft=sh
 
-# Adds an [old-gmail] marker to mails arriving via the old mail address.
+# Adds markers in subjects of mails arriving via old mail addresses.
 
 :0
 * ^TO_florianbruh@gmail.com
@@ -13,4 +13,17 @@
 
     :0 fhw
     | /usr/bin/formail -i "Subject: [old-gmail]$SUBJECT"
+}
+
+:0
+* ^TO_florian.bruhin@gmx.ch
+{
+    :0
+    * ^Subject:\/.*
+    {
+      SUBJECT = $MATCH
+    }
+
+    :0 fhw
+    | /usr/bin/formail -i "Subject: [old-gmx]$SUBJECT"
 }
