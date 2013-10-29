@@ -1,5 +1,5 @@
 :0 fhbw
-|nice -n 15 ~/bin/clamscan-procmail
+|nice -n 15 ~/bin/clamwrapper
 
 :0 fhw
 * ^X-ClamAV:
