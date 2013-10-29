@@ -1,5 +1,7 @@
 # vim: ft=sh
 
+# Removes annoying mailman mailing list footer.
+
 :0
 * ^X-Mailman-Version:
 {

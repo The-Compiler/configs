@@ -1,5 +1,10 @@
 # vim: ft=sh
 
+# Moves nearly-spam messages (get the Monty Python reference?) to a seperate
+# folder.
+# These are generally messages which are not strictly spam, but still not
+# important.
+
 :0
 * ^From.*-owner@.*
 * ^Subject:.*(mailing list memberships reminder|Mitgliedschafts-Erinnerung)

@@ -1,6 +1,7 @@
 # vim: ft=sh
 
-# application/pgp
+# Rewrites ASCII armor PGP messages to PGP/MIME messages
+
 :0
 * !^Content-Type: message/
 * !^Content-Type: multipart/

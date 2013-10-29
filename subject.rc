@@ -1,5 +1,8 @@
 # vim: ft=sh
 
+# Adds the PID to mails without subject, which hopefully will be random enough
+# to allow threading based on subjects.
+
 # Empty subject
 :0 fhw
 * ^Subject:[\ ]*$

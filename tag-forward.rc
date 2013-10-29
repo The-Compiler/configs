@@ -1,5 +1,7 @@
 # vim: ft=sh
 
+# Adds an [old-gmail] marker to mails arriving via the old mail address.
+
 :0
 * ^TO_florianbruh@gmail.com
 {

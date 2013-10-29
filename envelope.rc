@@ -1,5 +1,7 @@
 # vim: ft=sh
 
+# Adds X-Envelope-To and X-Envelope-From headers to mails
+
 ENVFROM = $1
 ENVTO = $2
 

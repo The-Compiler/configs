@@ -1,5 +1,7 @@
 # vim: ft=sh
 
+# Removes sourceforge advertisements from mails
+
 :0
 * ^List-Id: <.*\.lists\.sourceforge\.net>
 {

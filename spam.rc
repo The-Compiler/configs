@@ -1,5 +1,8 @@
 # vim: ft=sh
 
+# Checks mails for spam by running $SPAMBIN (spamassassin) and moves them to
+# spam folder if they are.
+
 :0 fhb
 |nice -n 15 ${SPAMBIN}
 

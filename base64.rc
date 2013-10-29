@@ -1,5 +1,10 @@
 # vim: ft=sh
 
+# Decodes base64 encoded messages before passing them to the other rules.
+# Requires mimencode from the metamail project which is nearly dead, I
+# extracted the binary from the Archlinux package at:
+# https://www.archlinux.org/packages/community/x86_64/metamail/download/
+
 :0
 * ^Content-Type: *text/plain
 {
