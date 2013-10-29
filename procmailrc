@@ -14,13 +14,16 @@ INCLUDERC=${PMDIR}/base64.rc
 # (do this here to avoid triggering spam filter)
 INCLUDERC=${PMDIR}/sourceforge.rc
 
+# Add blacklist header to spam to addresses
+INCLUDERC=${PMDIR}/spamto.rc
+
+# Add blacklist header to viruses
+INCLUDERC=${PMDIR}/virus.rc
+
 #### Spam/Virus checks ####
 
 # Run spamassassin
 INCLUDERC=${PMDIR}/spam.rc
-
-# Run ClamAV
-INCLUDERC=${PMDIR}/virus.rc
 
 #### Rewriting / tagging ####
 
@@ -43,9 +46,6 @@ INCLUDERC=${PMDIR}/mailman-footer.rc
 
 # Move eggs (junk but not spam) to eggs folder
 INCLUDERC=${PMDIR}/eggs.rc
-
-# Move mails to spambucket-addresses to spam
-INCLUDERC=${PMDIR}/spamto.rc
 
 # Sort ML mails
 INCLUDERC=${PMDIR}/lists.rc

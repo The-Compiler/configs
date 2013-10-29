@@ -1,6 +1,6 @@
 :0 fhbw
 |nice -n 15 ~/bin/clamscan-procmail
 
-:0
+:0 fhw
 * ^X-ClamAV:
-${DEFAULT}.Spam/
+|formail -i "X-TCO-Spam-Blacklist: yes"
