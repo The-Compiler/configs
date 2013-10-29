@@ -5,10 +5,6 @@
 
   # remove advertisment for different encodings
   :0 fwb
-  * ^Content-Transfer-Encoding: base64
-  | base64 -d | perl -p0777i -i -e "$ADDBLOCKREGEX" | base64
-
-  :0 fwb
   * ^Content-Transfer-Encoding: quoted-printable
   | perl -e 'use MIME::QuotedPrint; print decode_qp(join("",<STDIN>));' \
   | perl -p0777i -i -e "$ADDBLOCKREGEX"                                 \
