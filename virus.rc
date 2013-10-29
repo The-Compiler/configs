@@ -1,3 +1,5 @@
+# vim: ft=sh
+
 :0 fhbw
 |nice -n 15 ~/bin/clamwrapper
 

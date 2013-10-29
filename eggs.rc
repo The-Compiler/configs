@@ -1,3 +1,5 @@
+# vim: ft=sh
+
 :0
 * ^From.*-owner@.*
 * ^Subject:.*(mailing list memberships reminder|Mitgliedschafts-Erinnerung)

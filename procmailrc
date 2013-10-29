@@ -1,3 +1,5 @@
+# vim: ft=sh
+
 DEFAULT=${HOME}/mail/florian/
 MAILDIR=${DEFAULT}
 PMDIR=${MAILDIR}/procmail

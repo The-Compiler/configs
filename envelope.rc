@@ -1,3 +1,5 @@
+# vim: ft=sh
+
 ENVFROM = $1
 ENVTO = $2
 

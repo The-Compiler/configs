@@ -1,3 +1,5 @@
+# vim: ft=sh
+
 # application/pgp
 :0
 * !^Content-Type: message/

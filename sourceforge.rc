@@ -1,3 +1,5 @@
+# vim: ft=sh
+
 :0
 * ^List-Id: <.*\.lists\.sourceforge\.net>
 {

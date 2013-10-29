@@ -1,3 +1,5 @@
+# vim: ft=sh
+
 # Empty subject
 :0 fhw
 * ^Subject:[\ ]*$
