@@ -1,0 +1,10 @@
+:0
+* ^Content-Type: *text/plain
+{
+        :0 fbw
+        * ^Content-Transfer-Encoding: *base64
+        | $HOME/bin/mimencode -u -b
+
+        :0 Afhw
+        | formail -I "Content-Transfer-Encoding: 8bit"
+}

@@ -7,6 +7,9 @@ LOGABSTRACT=all
 
 SPAMBIN=${HOME}/perl5/bin/spamassassin
 
+# Decode base64 mails
+INCLUDERC=${PMDIR}/base64.rc
+
 # Remove advertisements in sourceforge messages
 # (do this here to avoid triggering spam filter)
 INCLUDERC=${PMDIR}/sourceforge.rc
