@@ -1,6 +1,6 @@
 # html
 text/html;                     elinks -force-html %s; needsterminal
-text/html;                     elinks -dump  %s;      copiousoutput
+text/html;                     elinks -force-html -dump -localhost %s | sed 's/^   //';  copiousoutput
 # pdf
 application/pdf;               pdftotext -layout -l 10 -nopgbrk /dev/stdin -; copiousoutput
 content/pdf;                   pdftotext -layout -l 10 -nopgbrk /dev/stdin -; copiousoutput
