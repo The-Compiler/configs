@@ -25,3 +25,7 @@ ${DEFAULT}.eggs/
 * ^From: Google Calendar <calendar-notification@google.com>
 * ^Subject: You have no events scheduled today.
 ${DEFAULT}.eggs/
+
+:0
+* ^X-TCO-this-is-an-egg: yes
+${DEFAULT}.eggs/
