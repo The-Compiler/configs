@@ -22,6 +22,6 @@ ${DEFAULT}.eggs/
 ${DEFAULT}.eggs/
 
 :0
-* From: Google Calendar <calendar-notification@google.com>
-* Subject: You have no events scheduled today.
+* ^From: Google Calendar <calendar-notification@google.com>
+* ^Subject: You have no events scheduled today.
 ${DEFAULT}.eggs/
