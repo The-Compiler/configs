@@ -30,3 +30,5 @@ notify-beep yes
 
 # kill archlinux packages we're not interested in
 ignore-article "https://www.archlinux.org/feeds/packages/" "title !~ \"^systemd \""
+
+always-download "http://www.deimeke.net/dirk/blog/index.php?/feeds/index.rss2"
