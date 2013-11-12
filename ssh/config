@@ -8,6 +8,11 @@ HostName lupin.the-compiler.org
 Port 2323
 User florian
 
+Host git
+HostName lupin.the-compiler.org
+Port 2323
+User git
+
 Host hedwig
 HostName hedwig.the-compiler.org
 Port 2323
