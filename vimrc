@@ -394,6 +394,8 @@ if has("autocmd")
     " Change status bar color on focus loss
     au FocusGained * hi StatusLine guibg=#4e4e4e
     au FocusLost * hi StatusLine guibg=#cccccc
+    " Arduino ft for *.ino
+    autocmd! BufNewFile,BufRead *.ino setlocal ft=cpp
 endif
 
 """""" Custom mappings
