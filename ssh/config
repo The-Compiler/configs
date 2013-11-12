@@ -32,3 +32,8 @@ Host diggory
 User florian
 HostName diggory.the-compiler.org
 Port 22
+
+Host capsaizin
+User thecompiler
+Hostname capsaiz.in
+Port 22
