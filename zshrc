@@ -29,19 +29,18 @@ setopt SHARE_HISTORY
 setopt hist_ignore_space
 
 ### Variables ###
-export BROWSER="google-chrome"
-export EDITOR="vim"
-export VISUAL="$EDITOR"
-export PATH="$PATH:$HOME/bin"
-export VIEW_PDF="zathura" # for latex-makefile
-export PAGER="less"
-
-### Windows / Cygwin fixes ###
 if [[ "$OS" == Windows_NT ]]; then
     export PATH="/usr/local/bin:/usr/bin:$PATH"
     export SHELL="/usr/bin/zsh"
     export TERM="cygwin"
     alias open='cygstart'
+else
+    export BROWSER="dwb"
+    export EDITOR="vim"
+    export VISUAL="$EDITOR"
+    export PATH="$PATH:$HOME/bin"
+    export VIEW_PDF="zathura" # for latex-makefile
+    export PAGER="less"
 fi
 
 ### Colors for ls ###
