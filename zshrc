@@ -58,6 +58,11 @@ export LESS_TERMCAP_us=$(printf '\e[1;32m')
 export LESS_TERMCAP_so=$(printf '\e[1;44;1m')
 export LESSCOLORIZER=code2color
 
+### general colors ###
+if which cope_path &>/dev/null; then
+    PATH="$(cope_path):$PATH"
+fi
+
 ### settings
 export ACK_COLOR_MATCH="bold red"
 export SUDO_PROMPT='[sudo] password for %u@%h (-> %U): '
