@@ -118,13 +118,13 @@ qr() { qrencode "$1" -o- -t ANSIUTF8; }
 genpwd() { tr -dc A-Za-z0-9 < /dev/urandom | head -c 8; echo }
 igitt() { git clone "ssh://git@lupin/$1" ;}
 bashhelp() { bash -c "help -m '$1'" | $PAGER ;}
-# ignore dangerous commands from history and make them safer and more verbose
-alias rm=' rm -I -v'
+# ignore dangerous commands from history and make them safer
+alias rm=' rm -I'
 alias chmod=' chmod -c'
 alias chown=' chown -c'
-alias shred=' shred -u -z -v'
-alias cp='cp -i -v'
-alias mv='mv -i -v'
+alias shred=' shred -u -z'
+alias cp='cp -i'
+alias mv='mv -i'
 
 ### completion ###
 # init completion
