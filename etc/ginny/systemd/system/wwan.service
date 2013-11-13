@@ -1,0 +1,11 @@
+[Unit]
+Description=Turn on mobile broadband
+Wants=ModemManager.service
+After=ModemManager.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/nmcli nm wwan on
+
+[Install]
+WantedBy=multi-user.target
