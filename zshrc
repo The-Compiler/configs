@@ -96,6 +96,7 @@ alias ls='ls --color --escape --classify'
 alias l='ls --color --escape --classify -lah'
 alias grep='grep --color=auto'
 alias nano='nano --nowrap'
+alias dmesg='dmesg --human --decode --nopager'
 # shorthands
 alias scr='screen -U -xRR'
 alias s='ssh'
