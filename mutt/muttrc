@@ -247,7 +247,7 @@ color body       yellow default    "^Error reading S/MIME message"
 source ~/.mutt/hooks
 
 ### GPG ###
-source /etc/Muttrc.gpg.dist
+source ~/.mutt/gpg.rc
 set pgp_sign_as      = 0xFD55A072
 set pgp_timeout      = 60
 set crypt_verify_sig = yes
