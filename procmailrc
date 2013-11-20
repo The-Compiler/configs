@@ -1,8 +1,9 @@
 # vim: ft=sh
 
-DEFAULT=${HOME}/mail/florian/
+MAILUSER=florian
+DEFAULT=${HOME}/mail/${MAILUSER}/
 MAILDIR=${DEFAULT}
-PMDIR=${MAILDIR}/procmail
+PMDIR=${HOME}/procmail/${MAILUSER}
 LOGFILE=${PMDIR}/procmail.log
 VERBOSE=yes
 LOGABSTRACT=all
