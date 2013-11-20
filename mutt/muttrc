@@ -9,7 +9,7 @@ set spoolfile     = "+INBOX"
 mailboxes =INBOX =INBOX.Spam =INBOX.lists =INBOX.eggs
 set postponed     = "=INBOX.Drafts"
 set record        = "=INBOX.Sent"
-ifdef trash set trash = "=INBOX.Trash"
+set trash         = "=INBOX.Trash"
 #set query_command = "goobook query '%s'"
 
 ### Timeouts ###
@@ -29,7 +29,6 @@ auto_view         text/html application/pdf image/*
 mime_lookup       application/octet-stream
 alternative_order text/enriched text/plain text/html
 
-bind index \Ci ignore-thread
 ### Keybindings ###
 macro index,pager S \
     "<save-message>=INBOX.Spam<enter>" "Spam"
