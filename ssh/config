@@ -16,7 +16,7 @@ User git
 Host hedwig
 HostName hedwig.the-compiler.org
 Port 2323
-User root
+User florian
 
 Host moody
 HostName 192.168.1.253
