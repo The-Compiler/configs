@@ -13,9 +13,15 @@ ExecStart=/sbin/ip route add default via ${gateway}
 ExecStart=/sbin/ip -6 addr add ${address6}/${netmask6} dev ${interface}
 ExecStart=/sbin/ip -6 route del default
 ExecStart=/sbin/ip -6 route add default via ${gateway6}
+ExecStart=/sbin/ip tuntap add dev ${tapinterface} mode tap user ${tapuser}
+ExecStart=/sbin/ip link set dev ${tapinterface} up
+ExecStart=/sbin/ip addr add ${tapaddress}/${tapnetmask} dev ${tapinterface}
 ExecStop=/sbin/ip addr flush dev ${interface}
 ExecStop=/sbin/ip -6 addr flush dev ${interface}
 ExecStop=/sbin/ip link set dev ${interface} down
+ExecStop=/sbin/ip addr flush dev ${tapinterface}
+ExecStop=/sbin/ip link set dev ${tapinterface} down
+ExecStart=/sbin/ip tuntap del dev ${tapinterface}
 
 [Install]
 WantedBy=multi-user.target
