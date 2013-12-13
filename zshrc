@@ -158,38 +158,38 @@ setopt listtypes
 ### Prompt ###
 setopt prompt_subst
 autoload -Uz vcs_info
-zstyle ':vcs_info:*' stagedstr '%F{green}•'
-zstyle ':vcs_info:*' unstagedstr '%F{red}•'
+zstyle ':vcs_info:*' stagedstr '%F{green}•%f'
+zstyle ':vcs_info:*' unstagedstr '%F{red}•%f'
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b:%r'
 zstyle ':vcs_info:*' enable git svn bzr hg
-zstyle ':vcs_info:*' formats '──[%F{red}%s/%b%c%u%m%F{blue}]'
+zstyle ':vcs_info:*' formats '──[%F{red}%s/%b%c%u%m%F{blue}]%f'
 
 setprompt() {
     local reset="%{$reset_color%}"
-    local upper_start='%F{blue}╭─['
-    local lower_start='%F{blue}╰'
-    local other_start='%F{blue}┄─['
+    local upper_start='%F{blue}╭─[%f'
+    local lower_start='%F{blue}╰%f'
+    local other_start='%F{blue}┄─[%f'
     local other_end=']─╼ ${reset}'
-    local userhost='%F{green}%n@%m'
-    local sep='%F{blue}]──['
-    local startsep='%F{blue}──['
-    local endsep='%F{blue}]'
-    local fade='%F{blue}────┄'
-    local dir='%F{red}%~'
-    local date='%F{yellow}%D'
-    local dtime='%F{yellow}%T'
-    local job="%(1j.${startsep}%F{red}%j job.)%(2j.s.)%(1j.${endsep}.)"
+    local userhost='%F{green}%n@%m%f'
+    local sep='%F{blue}]──[%f'
+    local startsep='%F{blue}──[%f'
+    local endsep='%F{blue}]%f'
+    local fade='%F{blue}────┄%f'
+    local dir='%F{red}%~%f'
+    local date='%F{yellow}%D%f'
+    local dtime='%F{yellow}%T%f'
+    local job="%(1j.${startsep}%F{red}%j job.)%(2j.s.)%(1j.${endsep}.)%f"
     local vcs='${vcs_info_msg_0_}'
     if [[ -n $RANGER_LEVEL ]]; then
-        local ranger="${startsep}%F{red}ranger"
+        local ranger="${startsep}%F{red}ranger%f"
         (( RANGER_LEVEL > 1 )) && ranger+=":$RANGER_LEVEL"
         ranger+="${endsep}"
     else
         local ranger=
     fi
-    local rootwarn='%(!.%F{blue}(%F{red}!%F{blue}).)'
-    local promptchar='%F{blue}─╼ '
+    local rootwarn='%(!.%F{blue}(%f%F{red}!%f%F{blue}).)%f'
+    local promptchar='%F{blue}─╼ %f'
     local n=$'\n'
     local rstatus='%(?..%F{red}╾─[%F{blue}$?%F{red}]──┄)'
 
