@@ -299,3 +299,21 @@ subscribe ubuntu-ch@lists.ubuntu.com
 subscribe soem-user@lists.berlios.de
 subscribe soem-dev@lists.berlios.de
 subscribe nut-upsuser@lists.alioth.debian.org
+
+
+### notmuch ###
+
+#macro index <F8> \
+#"<enter-command>set my_old_pipe_decode=\$pipe_decode my_old_wait_key=\$wait_key nopipe_decode nowait_key<enter>\
+#<shell-escape>~/bin/notmuch-mutt-ssh -o /home/thecompiler/mail/florian/.notmuch-results --prompt search<enter>\
+#<change-folder-readonly>+INBOX.notmuch-results<enter>\
+#<enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
+#      "notmuch: search mail"
+#
+#macro index <F9> \
+#"<enter-command>set my_old_pipe_decode=\$pipe_decode my_old_wait_key=\$wait_key nopipe_decode nowait_key<enter>\
+#<pipe-message>notmuch-mutt-ssh -o /home/thecompiler/mail/florian/.notmuch-results thread<enter>\
+#<change-folder-readonly>+INBOX.notmuch-results<enter>\
+#<enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
+#      "notmuch: reconstruct thread"
+
