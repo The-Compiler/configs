@@ -92,8 +92,8 @@ bindkey -M vicmd '/' history-incremental-search-backward
 
 ### aliases / functions ###
 # default settings
-alias ls='ls --color --escape --classify'
-alias l='ls --color --escape --classify -lah'
+alias ls='ls --color --classify'
+alias l='ls --color --classify -lah'
 alias grep='grep --color=auto'
 alias nano='nano --nowrap'
 alias dmesg='dmesg --human --decode --nopager'
