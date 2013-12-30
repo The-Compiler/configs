@@ -313,6 +313,9 @@ let g:GPGDefaultRecipients = [ '0xFD55A072' ]
 """ My own vimfiles
 NeoBundle 'git://cmpl.cc/vimfiles/'
 
+NeoBundle 'sotte/presenting.vim'
+NeoBundle 'davidhalter/jedi-vim'
+
 """""" Statusline
 if has("statusline")
     function! Gitstatus()
