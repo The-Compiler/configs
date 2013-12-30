@@ -167,3 +167,9 @@ yank_title_primary= yt
 zoom= =
 zoom_in= +
 zoom_out= -
+entry_delete_active=Control d
+tabgrep= 
+jump= '
+mark= `
+repeat= .
+hints_selector= 
