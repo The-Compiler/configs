@@ -27,6 +27,7 @@ hc set smart_frame_surroundings 1
 hc set smart_window_borders 1
 hc set tree_style '╾│ ├╰╼─╮'
 hc set swap_monitors_to_get_tag 0
+hc set frame_transparent_width 0
 
 # Rules
 hc unrule -F
