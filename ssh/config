@@ -8,6 +8,13 @@ HostName lupin.the-compiler.org
 Port 2323
 User florian
 
+Host lupin_proxy
+HostName lupin.the-compiler.org
+Port 2323
+User florian
+ProxyCommand ssh florian@diggory.the-compiler.org nc %h %p 2> /dev/null
+
+
 Host git
 HostName lupin.the-compiler.org
 Port 2323
