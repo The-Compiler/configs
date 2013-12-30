@@ -26,7 +26,8 @@ Port 2323
 User florian
 
 Host moody
-HostName 192.168.1.253
+#HostName 192.168.1.253
+HostName 151.217.31.173
 Port 2323
 User florian
 
