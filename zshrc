@@ -188,13 +188,19 @@ setprompt() {
     else
         local ranger=
     fi
+    # FIXME this gets only evaluated if a terminal opens
+    if [[ -n "$DISPLAY" && "$DISPLAY" != ":0" ]]; then
+        local disp="${startsep}%F{red}disp $DISPLAY${endsep}"
+    else
+        local disp=
+    fi
     local rootwarn='%(!.%F{blue}(%f%F{red}!%f%F{blue}).)%f'
     local promptchar='%F{blue}─╼ %f'
     local n=$'\n'
     local rstatus='%(?..%F{red}╾─[%F{blue}$?%F{red}]──┄)'
 
     PROMPT="${upper_start}${userhost}${sep}${dir}${sep}${date}${sep}"
-    PROMPT+="${dtime}${endsep}${job}${vcs}${ranger}${fade}$n"
+    PROMPT+="${dtime}${endsep}${job}${vcs}${ranger}${disp}${fade}$n"
 
     PROMPT+="${lower_start}${rootwarn}${promptchar}${reset}"
 
