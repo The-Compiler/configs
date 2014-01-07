@@ -163,7 +163,7 @@ zstyle ':vcs_info:*' unstagedstr '%F{red}•%f'
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b:%r'
 zstyle ':vcs_info:*' enable git svn bzr hg
-zstyle ':vcs_info:*' formats '──[%F{red}%s/%b%c%u%m%F{blue}]%f'
+zstyle ':vcs_info:*' formats '%F{blue}──[%f%F{red}%s/%b%c%u%m%F{blue}]%f'
 
 setprompt() {
     local reset="%{$reset_color%}"
