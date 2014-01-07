@@ -20,6 +20,7 @@ if !isdirectory(vimfiles . '/tags') | call mkdir(vimfiles . '/tags') | endif
 if !isdirectory(vimfiles . '/undo') | call mkdir(vimfiles . '/undo') | endif
 if !isdirectory(vimfiles . '/bak') | call mkdir(vimfiles . '/bak') | endif
 if !isdirectory(vimfiles . '/tmp') | call mkdir(vimfiles . '/tmp') | endif
+if !filereadable(vimfiles . '/.nobackup') | call writefile([], vimfiles . '/.nobackup', 'b') | endif
 
 """""" NeoBundle
 " Bootstrap
