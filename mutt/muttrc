@@ -207,41 +207,45 @@ color index      color15  color1   "~D"    # deleted
 color index      color255 color96  "~T"    # toggled
 color sidebar_new color150 color234
 # Special headers
-color header     color225 color234 "^Subject:"
-# *bold*
-color body       color229 color234 "(^|\W)[\*]\w.*\w[\*]($|\W)"
-# _underlined_
-color body       color229 color234 "(^|\W)_\w[[:alpha:]]*\w_($|\W)"
-# /italics/
-color body       color229 color234 "(^|\W)/\w[^/]*\w/($|\W)"
+color header     color225 color234 '^Subject:'
+# Special chars
+color body       color174 color234 '\\[0-9]{3}'
 # URLs
-color body       color174 color234 "\w+://[a-z0-9.~_/%;:@#?+&=-]+"
-color body       color174 color234 "www\\.[-.a-z0-9]+\\.[a-z]{2,3}[a-z0-9;:.~_/%@#?+&=-]*"
-color body       color229 color234 "[a-z0-9.+-]+@[a-z0-9.-]+\\.[a-z]{2,4}"
+color body       color174 color234 '(\w+://|www\.)[-.a-z0-9]+\.[a-z]{2,}[A-Za-z0-9;:.~_/%@#?+&=-]*'
+color body       color229 color234 '[a-z0-9.+-]+@[a-z0-9.-]+\.[a-z]{2,4}'
 # Lines
-color body       color150 color234 "[-=+#_*~]{3,}.*"
+color body       color150 color234 '[-=+#_*~]{3,}.*'
+color body       color150 color234 '^[#~].*'
+color body       color150 color234 '^[=-].*[=-]$'
 # Link-Tags
-color body       color181 color234 "\[[0-9]+\]"
+color body       color181 color234 '\[([0-9]+|IMG)\]'
 # Attribution lines
-color body       color248 default  "(^|[^[:alnum:]])([Oo]n)? .*wrote:$"
-color body       color248 default  ".* schrieb.*:$"
-color body       color248 default  "(^|[^[:alnum:]])([Oo]n)? .* was blubbering:$"
-color body       color248 default  "^[0-9]{4}/[0-9]{1,2}/[0-9]{1,2} .*:$"
-color body       color248 default  "^Am.*\+[0-9]{4}$"
-color body       color248 default  "^schrieb .* <.*@.*>:$"
+color body       color248 color234 '(^|[^[:alnum:]])([Oo]n)? .*wrote:$'
+color body       color248 color234 '(^|[^[:alnum:]])([Oo]n)? .* was blubbering:$'
+color body       color248 color234 '(^|[^[:alnum:]])([Oo]n)? .* blubbered:$'
+color body       color248 color234 '(^|[^[:alnum:]])[0-9]{4}/[0-9]{1,2}/[0-9]{1,2} .*:$'
+color body       color248 color234 '(^|[^[:alnum:]])Am.*\+[0-9]{4}$'
+color body       color248 color234 '(^|[^[:alnum:]])schrieb .* <.*@.*>:$'
+color body       color248 color234 '(^|[^[:alnum:]])\* .* \[[0-9 -:+]*\]:$'
 # PGP
-color body       color146 default  "^gpg.*"
-color body       color146 default  "^Primary key fingerprint:.*"
-color body       color146 default  "^     Subkey fingerprint:.*"
-color body       color150 default  "^gpg: Good signature .*"
-color body       brightwhite red   "^gpg: BAD signature from.*"
-color body       color229 default  "^gpg: WARNING.*"
-color body       color229 default  "^gpg:          There is no indication that the signature belongs to the owner."
-color body       color229 default  "^gpg: no valid OpenPGP data found.*"
+color body       color146 color234 '^gpg.*'
+color body       color146 color234 '^Primary key fingerprint:.*'
+color body       color146 color234 '^     Subkey fingerprint:.*'
+color body       color150 color234 '^gpg: Good signature .*'
+color body       brightwhite red   '^gpg: BAD signature from.*'
+color body       color229 color234 '^gpg: WARNING.*'
+color body       color229 color234 '^gpg:          There is no indication that the signature belongs to the owner.'
+color body       color229 color234 '^gpg: no valid OpenPGP data found.*'
 # OpenSSL
-color body       green default     "^Verification successful"
-color body       brightwhite red   "^Verification failure"
-color body       yellow default    "^Error reading S/MIME message"
+color body       green color234    '^Verification successful'
+color body       brightwhite red   '^Verification failure'
+color body       yellow color234   '^Error reading S/MIME message'
+# *bold*
+color body       color229 color234 '(^|\W)[\*]\w.*\w[\*]($|\W)'
+# _underlined_
+color body       color229 color234 '(^|\W)_\w[[:alpha:]]*\w_($|\W)'
+# /italics/
+color body       color229 color234 '(^|\W)/\w[^/]*\w/($|\W)'
 
 ### Hooks ###
 source ~/.mutt/hooks
