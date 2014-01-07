@@ -47,6 +47,9 @@ INCLUDERC=${PMDIR}/mailman-footer.rc
 # Move eggs (junk but not spam) to eggs folder
 INCLUDERC=${PMDIR}/eggs.rc
 
+# Move coupons to coupons folder
+INCLUDERC=${PMDIR}/coupons.rc
+
 # Sort ML mails
 INCLUDERC=${PMDIR}/lists.rc
 

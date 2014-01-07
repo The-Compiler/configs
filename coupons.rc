@@ -1,0 +1,11 @@
+# vim: ft=sh
+
+# Sorts coupon emails to coupon folder
+
+:0
+* ^From.*info@produktnews.bol.ch>?
+${DEFAULT}.coupons/
+
+:0
+* ^From.*overlords@email.thinkgeek.com>?
+${DEFAULT}.coupons/
