@@ -120,7 +120,7 @@ genpwd() { tr -dc A-Za-z0-9 < /dev/urandom | head -c 8; echo }
 igitt() { git clone "ssh://git@lupin/$1" ;}
 bashhelp() { bash -c "help -m '$1'" | $PAGER ;}
 # ignore dangerous commands from history and make them safer
-alias rm=' rm -I'
+alias rm='rm -I'
 alias chmod=' chmod -c'
 alias chown=' chown -c'
 alias shred=' shred -u -z'
