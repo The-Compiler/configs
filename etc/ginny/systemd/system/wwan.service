@@ -9,3 +9,4 @@ ExecStart=/usr/bin/nmcli nm wwan on
 
 [Install]
 WantedBy=multi-user.target
+WantedBy=resume.target
