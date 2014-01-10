@@ -57,7 +57,7 @@ done
 
 
 # Autorun
-~/.config/herbstluftwm/autorun.sh &
+~/.config/herbstluftwm/autorun &
 
 # keybindings
 hc keybind $Mod-Shift-q quit
@@ -104,9 +104,9 @@ hc keybind $Mod-Shift-k shift up
 hc keybind $Mod-Shift-l shift right
 
 # Volume keys
-hc keybind XF86AudioLowerVolume spawn ~/bin/volume/vol.sh decrease
-hc keybind XF86AudioRaiseVolume spawn ~/bin/volume/vol.sh increase
-hc keybind XF86AudioMute spawn ~/bin/volume/vol.sh mute
+hc keybind XF86AudioLowerVolume spawn ~/bin/volume decrease
+hc keybind XF86AudioRaiseVolume spawn ~/bin/volume increase
+hc keybind XF86AudioMute spawn ~/bin/volume mute
 
 # Rotate key
 hc keybind XF86RotateWindows spawn ~/bin/xrotate toggle
