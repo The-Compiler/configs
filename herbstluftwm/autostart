@@ -57,7 +57,7 @@ done
 
 
 # Autorun
-~/.config/herbstluftwm/autorun &
+[[ -z "$HLWM_LOADED" ]] && ~/.config/herbstluftwm/autorun &
 
 # keybindings
 hc keybind $Mod-Shift-q quit
@@ -139,3 +139,6 @@ hc setenv BROWSER chromium
 
 # No beeps
 xset -b
+
+# Avoid autostart being executed twice
+hc setenv HLWM_LOADED 1
