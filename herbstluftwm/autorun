@@ -19,7 +19,7 @@ setxkbmap -option compose:menu &
 xscreensaver -nosplash &
 ~/bin/xscreensaver-dunst &
 
-pasystray &
+#pasystray &
 dunst &
 nm-applet &
 
