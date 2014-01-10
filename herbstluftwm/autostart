@@ -3,7 +3,7 @@
 hc() { herbstclient "$@" ;}
 
 Mod=Mod4
-feh --no-fehbg --bg-center /home/florian/.config/herbstluftwm/wallpaper.png
+feh --no-fehbg --bg-center ~/.config/herbstluftwm/wallpaper.png
 
 # colors
 hc set frame_border_active_color '#afdf5f'
@@ -57,7 +57,7 @@ done
 
 
 # Autorun
-/home/florian/scripts/autorun.sh &
+~/.config/herbstluftwm/autorun.sh &
 
 # keybindings
 hc keybind $Mod-Shift-q quit
@@ -104,16 +104,16 @@ hc keybind $Mod-Shift-k shift up
 hc keybind $Mod-Shift-l shift right
 
 # Volume keys
-hc keybind XF86AudioLowerVolume spawn /home/florian/bin/volume/vol.sh decrease
-hc keybind XF86AudioRaiseVolume spawn /home/florian/bin/volume/vol.sh increase
-hc keybind XF86AudioMute spawn /home/florian/bin/volume/vol.sh mute
+hc keybind XF86AudioLowerVolume spawn ~/bin/volume/vol.sh decrease
+hc keybind XF86AudioRaiseVolume spawn ~/bin/volume/vol.sh increase
+hc keybind XF86AudioMute spawn ~/bin/volume/vol.sh mute
 
 # Rotate key
-hc keybind XF86RotateWindows spawn /home/florian/bin/xrotate toggle
+hc keybind XF86RotateWindows spawn ~/bin/xrotate toggle
 
 # Thinkpad back/forward keys
-hc keybind Shift-XF86Back spawn /home/florian/bin/tagswitch prev
-hc keybind Shift-XF86Forward spawn /home/florian/bin/tagswitch next
+hc keybind Shift-XF86Back spawn ~/bin/tagswitch prev
+hc keybind Shift-XF86Forward spawn ~/bin/tagswitch next
 hc keybind XF86Back use_index -1
 hc keybind XF86Forward use_index +1
 
@@ -122,10 +122,10 @@ hc keybind XF86ScreenSaver chain , spawn xset dpms force off , spawn xscreensave
 
 # ThinkVantage-Key
 hc keybind XF86Launch1 spawn urxvtcd
-hc keybind XF86Launch2 spawn /home/florian/bin/onboardctl toggle
+hc keybind XF86Launch2 spawn ~/bin/onboardctl toggle
 
 # utf8select
-hc keybind Mod4-y spawn ~/scripts/utf8select.sh
+hc keybind Mod4-y spawn ~/bin/utf8select
 
 # Fix java
 hc setenv _JAVA_AWT_WM_NONREPARENTING 1
