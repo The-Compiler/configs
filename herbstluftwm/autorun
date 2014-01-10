@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# scroll with middle ultranav button
+~/bin/xinput-settings &
+
+# photos on wrong auths
+# ~/bin/authphoto &
+
+# Remote notifications
+~/bin/notify_recv &
+
+# Rotation
+sudo evrouter -c /etc/evrouterrc /dev/input/by-path/platform-thinkpad_acpi-event &
+
+# mouse/pen gestures
+easystroke &
+
+setxkbmap -option compose:menu &
+xscreensaver -nosplash &
+~/bin/xscreensaver-dunst &
+
+pasystray &
+dunst &
+nm-applet &
+
+pulseaudio --start &
+
+xmodmap ~/.xmodmaprc &
+unclutter &
+~/bin/panel2/panel2.sh &
