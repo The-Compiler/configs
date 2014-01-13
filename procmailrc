@@ -50,6 +50,9 @@ INCLUDERC=${PMDIR}/eggs.rc
 # Move coupons to coupons folder
 INCLUDERC=${PMDIR}/coupons.rc
 
+# Move news
+INCLUDERC=${PMDIR}/news.rc
+
 # Sort ML mails
 INCLUDERC=${PMDIR}/lists.rc
 

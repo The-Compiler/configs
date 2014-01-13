@@ -1,0 +1,21 @@
+# vim: ft=sh
+
+# Sorts notifications to news folder
+
+:0
+* ^From.*info@zh\.piratenpartei\.ch>?
+* ^User-Agent: Heirloom mailx
+${DEFAULT}.news/
+
+:0
+* ^From.*donotreply@notify\.f.t...email\.com>?
+${DEFAULT}.news/
+
+:0
+* ^From.*contact@humblebundle.com>?
+* ^X-Mailer: MailChimp Mailer
+${DEFAULT}.news/
+
+:0
+* ^From.*emails@songkick.com>?
+${DEFAULT}.news/
