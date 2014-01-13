@@ -29,3 +29,7 @@ ${DEFAULT}.eggs/
 :0
 * ^X-TCO-this-is-an-egg: yes
 ${DEFAULT}.eggs/
+
+:0
+* ^To: .*nobody@the-compiler.org>?
+${DEFAULT}.eggs/
