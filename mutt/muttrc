@@ -210,7 +210,7 @@ color sidebar_new color150 color234
 color header     color225 color234 '^Subject:'
 # Special chars
 color body       color244 color234 '\\[0-9]{3}'
-color body       color244 color234 '&[a-z]+;'
+color body       color244 color234 '&[#a-z0-9]+;'
 # URLs
 color body       color174 color234 '(\w+://|www\.)[-.a-z0-9]+\.[a-z]{2,}[A-Za-z0-9;:.~_/%@#?+&=-]*'
 color body       color229 color234 '[a-z0-9.+-]+@[a-z0-9.-]+\.[a-z]{2,4}'
