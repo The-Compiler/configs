@@ -182,9 +182,9 @@ setprompt() {
     local job="%(1j.${startsep}%F{red}%j job.)%(2j.s.)%(1j.${endsep}.)%f"
     local vcs='${vcs_info_msg_0_}'
     if [[ -n $RANGER_LEVEL ]]; then
-        local ranger="${startsep}%F{red}ranger%f"
+        local ranger="${startsep}%F{red}ranger"
         (( RANGER_LEVEL > 1 )) && ranger+=":$RANGER_LEVEL"
-        ranger+="${endsep}"
+        ranger+="%f${endsep}"
     else
         local ranger=
     fi
