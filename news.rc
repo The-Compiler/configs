@@ -8,7 +8,7 @@
 ${DEFAULT}.news/
 
 :0
-* ^From.*donotreply@notify\.f.t...email\.com>?
+* ^From.*donotreply@(notify\.)?f.t...email\.com>?
 ${DEFAULT}.news/
 
 :0
