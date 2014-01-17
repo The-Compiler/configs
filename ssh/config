@@ -49,3 +49,8 @@ Host capsaizin
 User thecompiler
 Hostname capsaiz.in
 Port 22
+
+Host longneck
+User compiler
+Hostname 91.219.237.161
+Port 20202
