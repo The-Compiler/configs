@@ -6,3 +6,8 @@
 :0 fhw
 * ^(X-Envelope-)?To: (.* )?<?(etpace|yourname|czmjp|compiler|florian|datawave|dani|esjay|emeryahn|agt|clb|love|bernardo|quassel|root|admin|example.com)@the-compiler.org>?
 |formail -i "X-TCO-Spam-Blacklist: yes"
+
+# GMX Magazin
+:0 fhw
+* From: GMX Magazin <mailings@gmxnet.de>
+|formail -i "X-TCO-Spam-Blacklist: yes"
