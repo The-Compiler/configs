@@ -280,7 +280,8 @@ let g:easytags_by_filetype = vimfiles . "/tags" " Use tags per filetype
 let g:easytags_updatetime_warn = 0          " Don't warn about fast updatetime
 let g:easytags_resolve_links = 1            " Resolve symbolic links
 let g:easytags_auto_highlight = 0           " Don't highlight tags
-let g:easytags_events = ['BufWritePost', 'BufRead'] " Update on reading/saving
+let g:easytags_suppress_ctags_warning = 1   " Don't warn if no ctags installed
+let g:easytags_events = ['BufWritePost']    " Update on saving
 NeoBundle 'majutsushi/tagbar'
 " <leader>t: toggle tagbar
 nnoremap <leader>t :TagbarToggle<cr>
