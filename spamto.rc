@@ -11,3 +11,8 @@
 :0 fhw
 * From: GMX Magazin <mailings@gmxnet.de>
 |formail -i "X-TCO-Spam-Blacklist: yes"
+
+# GMX stuff
+:0 fhw
+* ^TO_florian.bruhin@gmx.ch
+|formail -i "X-TCO-Spam-Blacklist: yes"
