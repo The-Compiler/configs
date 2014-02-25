@@ -5,7 +5,7 @@ INCLUDERC=${HOME}/procmail/common.rc
 VERBOSE=yes
 LOGABSTRACT=all
 
-SPAMBIN=${HOME}/perl5/bin/spamassassin
+SPAMBIN=/usr/bin/spamc
 
 # Decode base64 mails
 INCLUDERC=${PMDIR}/base64.rc
