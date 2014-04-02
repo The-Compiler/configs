@@ -158,3 +158,7 @@ scheme-handler=
 enable-offline-web-application-cache=true
 enable-ipc=true
 block-insecure-content=false
+adblocker-element-hider=true
+tabbar-height=0
+statusbar-height=0
+favicon-size=0
