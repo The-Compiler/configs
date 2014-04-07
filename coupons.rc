@@ -7,5 +7,9 @@
 ${DEFAULT}.coupons/
 
 :0
+* ^From.*info@produktnews.buch.ch>?
+${DEFAULT}.coupons/
+
+:0
 * ^From.*overlords@email.thinkgeek.com>?
 ${DEFAULT}.coupons/
