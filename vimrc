@@ -307,14 +307,15 @@ if has("unix")
     let g:GPGDefaultRecipients = [ '0xFD55A072' ]
 endif
 
-""" My own vimfiles
-NeoBundle 'git://cmpl.cc/vimfiles/'
 """ cd to project root
 NeoBundle 'airblade/vim-rooter'
 
 """ Python autocompletion
 NeoBundle 'davidhalter/jedi-vim'
 let g:jedi#popup_on_dot = 0
+
+""" My own vimfiles
+NeoBundle 'git://cmpl.cc/vimfiles/'
 
 """""" Statusline
 if has("statusline")
