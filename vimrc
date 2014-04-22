@@ -302,8 +302,10 @@ NeoBundle 'mhinz/vim-startify'
 NeoBundle 'tpope/vim-characterize'
 
 """ Edit GPG files
-NeoBundle 'jamessan/vim-gnupg'
-let g:GPGDefaultRecipients = [ '0xFD55A072' ]
+if has("unix")
+    NeoBundle 'jamessan/vim-gnupg'
+    let g:GPGDefaultRecipients = [ '0xFD55A072' ]
+endif
 
 """ My own vimfiles
 NeoBundle 'git://cmpl.cc/vimfiles/'
