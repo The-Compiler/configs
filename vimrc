@@ -197,17 +197,6 @@ highlight ShowMarksHLu ctermfg=150 guifg=#afdf87 ctermbg=239 guibg=#4e4e4e
 highlight ShowMarksHLo ctermfg=150 guifg=#afdf87 ctermbg=239 guibg=#4e4e4e
 highlight ShowMarksHLm ctermfg=174 guifg=#df8787 ctermbg=239 guibg=#4e4e4e
 
-""" Gundo - graphical undo tree
-if has("python")
-    NeoBundle 'http://bitbucket.org/sjl/gundo.vim'
-    let g:gundo_preview_bottom = 1                   " Bigger preview window
-    let g:gundo_close_on_revert = 1                  " Autoclose
-    let g:gundo_tree_statusline = "Gundo tree"       " Nicer statuslines
-    let g:gundo_preview_statusline = "Gundo preview" " ...
-    " <leader>u to toggle undo tree
-    noremap <leader>u :GundoToggle<cr><cr>
-endif
-
 """ YankRing - clipboard management
 NeoBundle 'YankRing.vim'
 " <leader>p to toggle paste list
@@ -303,17 +292,11 @@ let g:snippets_dir = vimfiles . "/bundle/vimfiles/snippets"
 """ Show trailing whitespace
 NeoBundle 'ShowTrailingWhitespace'
 
-""" Automatically save/restore sessions
-"NeoBundle 'https://code.google.com/p/vim-plugin-autosess/'
-
 """ Vim-Wiki
 NeoBundle 'vimwiki'
 
 """ Startify
 NeoBundle 'mhinz/vim-startify'
-
-""" Multiple Cursors
-NeoBundle 'terryma/vim-multiple-cursors'
 
 """ ga improvement
 NeoBundle 'tpope/vim-characterize'
@@ -327,7 +310,6 @@ NeoBundle 'git://cmpl.cc/vimfiles/'
 """ cd to project root
 NeoBundle 'airblade/vim-rooter'
 
-NeoBundle 'sotte/presenting.vim'
 NeoBundle 'davidhalter/jedi-vim'
 
 """""" Statusline
