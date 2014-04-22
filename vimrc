@@ -93,7 +93,6 @@ set updatetime=100              " Run autocmds all 100ms
 set autoindent                  " Non-intrusive auto-indenting
 let &backupdir=vimfiles . "/bak" " Write backup files to vim folder
 let &dir=vimfiles . "/tmp"      " Write Swapfiles to vim folder
-set autochdir                   " Automatically switch to file path
 let no_buffers_menu = 1         " Show no buffers menu in GUI
 set history=100                 " Bigger history
 set confirm                     " Ask user when :q with modified files
@@ -324,6 +323,8 @@ let g:GPGDefaultRecipients = [ '0xFD55A072' ]
 
 """ My own vimfiles
 NeoBundle 'git://cmpl.cc/vimfiles/'
+""" cd to project root
+NeoBundle 'airblade/vim-rooter'
 
 NeoBundle 'sotte/presenting.vim'
 NeoBundle 'davidhalter/jedi-vim'
