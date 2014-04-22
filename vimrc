@@ -156,7 +156,7 @@ if s:neobootstrapdone == 1
 endif
 highlight SignColumn ctermbg=237 guibg=#3a3a3a
 
-""" Repeat - repeation for plugins
+""" Repeat - repetition for plugins
 NeoBundle 'tpope/vim-repeat'
 
 """ Tabular - easy aligning of lines
