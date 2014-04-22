@@ -169,8 +169,9 @@ NeoBundle 'kien/ctrlp.vim'
 let g:ctrpl_extensions =  ['buffertag', 'line']      " Plugins to use
 let g:ctrlp_map = ''                                 " No default mapping
 let g:ctrlp_match_window = 'bottom,order:ttb,max:30' " 30 entries in window
-let g:ctrlp_root_markers = ['NEWS', 'AUTHORS', 
-                          \ 'BUGS', 'README.md']     " Project root markers
+let g:ctrlp_root_markers = ['NEWS', 'AUTHORS',
+                          \ 'BUGS', 'README.md',
+                          \ '.git']                  " Project root markers
 let g:ctrlp_clear_cache_on_exit = 0                  " Persistent cache
 let g:ctrlp_cache_dir = vimfiles . '/.ctrlp_cache'   " ...
 let g:ctrlp_show_hidden = 1                          " Show hidden files
