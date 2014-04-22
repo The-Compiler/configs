@@ -110,7 +110,7 @@ if has("mouse") | set mouse=a | endif " Mouse support
 if has("wildmenu") | set wildmenu | endif " Visual tab completion
 " Ignore some files for tab menu
 if has("wildignore")
-    set wildignore=*.swp,*.bak,*.pyc,*/.git/*,*/.hg/*,*/.svn/*
+    set wildignore=*.sw[a-z],*.bak,*.pyc,*/.git/*,*/.hg/*,*/.svn/*
 endif
 " viminfo
 " ': Save N previous files
