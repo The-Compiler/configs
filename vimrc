@@ -312,7 +312,9 @@ NeoBundle 'git://cmpl.cc/vimfiles/'
 """ cd to project root
 NeoBundle 'airblade/vim-rooter'
 
+""" Python autocompletion
 NeoBundle 'davidhalter/jedi-vim'
+let g:jedi#popup_on_dot = 0
 
 """""" Statusline
 if has("statusline")
