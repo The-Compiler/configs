@@ -109,7 +109,9 @@ hc keybind XF86AudioRaiseVolume spawn ~/bin/volume increase
 hc keybind XF86AudioMute spawn ~/bin/volume mute
 
 # Rotate key
+# since some update, this suddenly gets mapped to the wrong key, wtf.
 hc keybind XF86RotateWindows spawn ~/bin/xrotate toggle
+hc keybind XF86TaskPane spawn ~/bin/xrotate toggle
 
 # Thinkpad back/forward keys
 hc keybind Shift-XF86Back spawn ~/bin/tagswitch prev
