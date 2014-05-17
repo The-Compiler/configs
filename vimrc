@@ -282,6 +282,8 @@ let g:easytags_auto_highlight = 0           " Don't highlight tags
 let g:easytags_suppress_ctags_warning = 1   " Don't warn if no ctags installed
 let g:easytags_events = ['BufWritePost']    " Update on saving
 NeoBundle 'majutsushi/tagbar'
+let g:tagbar_sort = 1      " Sort tags as they are in the file
+let g:tagbar_autofocus = 1 " Focus tabbar when opened
 " <leader>t: toggle tagbar
 nnoremap <leader>t :TagbarToggle<cr>
 
