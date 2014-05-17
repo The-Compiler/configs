@@ -125,8 +125,8 @@ filetype plugin on              " Automatically load filetype-specific plugins
 filetype indent on              " Automatically load filetype-specific indents
 let mapleader=","               " Use , as leader instead of \
 
-let grepoptions="-nH --exclude=*.pyc --exclude=*.o --exclude=*.d "
-let grepoptions=grepoptions . "--exclude=*.sw[a-z] --exclude=*.bak "
+let grepoptions="-nH --exclude=\"*.pyc\" --exclude=\"*.o\" --exclude=\"*.d\" "
+let grepoptions=grepoptions . "--exclude=\"*.sw[a-z]\" --exclude=\"*.bak\" "
 let grepoptions=grepoptions . "--exclude-dir=.git --exclude-dir=__pycache__"
 let grepoptions=grepoptions . "--exclude-dir=.hg --exclude-dir=.svn"
 if has("unix")
