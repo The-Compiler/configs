@@ -19,3 +19,7 @@ ${DEFAULT}.news/
 :0
 * ^From.*emails@songkick.com>?
 ${DEFAULT}.news/
+
+:0
+* ^To: webdiff@the-compiler.org
+${DEFAULT}.news/
