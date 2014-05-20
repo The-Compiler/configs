@@ -16,14 +16,14 @@ INCLUDERC=${PMDIR}/sourceforge.rc
 
 #### Spam/Virus checks ####
 
-# Pre-filter spam to special addresses
-INCLUDERC=${PMDIR}/spamto.rc
-
 # Filter viruses
 INCLUDERC=${PMDIR}/virus.rc
 
 # Run spamassassin
 INCLUDERC=${PMDIR}/spam.rc
+
+# Filter uncaught spam with own filters
+INCLUDERC=${PMDIR}/spamto.rc
 
 #### Rewriting / tagging ####
 
