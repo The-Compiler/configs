@@ -3,16 +3,16 @@
 # Blacklists various to: addresses because (nearly) everything arriving there is spam.
 
 # Spam
-:0 fhw
+:0
 * ^(X-Envelope-)?To: (.* )?<?(etpace|yourname|czmjp|compiler|florian|datawave|dani|esjay|emeryahn|agt|clb|love|bernardo|quassel|root|admin|example.com)@the-compiler.org>?
-|formail -i "X-TCO-Spam-Blacklist: yes"
+${DEFAULT}.Spam/
 
 # GMX Magazin
-:0 fhw
+:0
 * From: GMX Magazin <mailings@gmxnet.de>
-|formail -i "X-TCO-Spam-Blacklist: yes"
+${DEFAULT}.Spam/
 
 # GMX stuff
-:0 fhw
+:0
 * ^TO_florian.bruhin@gmx.ch
-|formail -i "X-TCO-Spam-Blacklist: yes"
+${DEFAULT}.Spam/

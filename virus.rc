@@ -6,6 +6,6 @@
 :0 fhbw
 |nice -n 15 ~/bin/clamwrapper
 
-:0 fhw
+:0
 * ^X-ClamAV:
-|formail -i "X-TCO-Spam-Blacklist: yes"
+${DEFAULT}.Spam/
