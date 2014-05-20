@@ -16,3 +16,14 @@ ${DEFAULT}.Spam/
 :0
 * ^TO_florian.bruhin@gmx.ch
 ${DEFAULT}.Spam/
+
+# UBS shit
+:0
+* ^Subject: UBS (AG )?(Alarm|Benachrichtigung).*Internet-Banking
+${DEFAULT}.Spam/
+
+# Backscatter from forwarded GMX spammails
+:0
+* ^From: mailer-daemon@gmx.de
+* ^Subject: Mail delivery failed: returning message to sender
+${DEFAULT}.Spam/
