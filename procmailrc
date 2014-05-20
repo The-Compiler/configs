@@ -23,7 +23,7 @@ INCLUDERC=${PMDIR}/virus.rc
 INCLUDERC=${PMDIR}/spam.rc
 
 # Filter uncaught spam with own filters
-INCLUDERC=${PMDIR}/spamto.rc
+INCLUDERC=${PMDIR}/spamfilters.rc
 
 #### Rewriting / tagging ####
 
