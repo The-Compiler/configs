@@ -2,26 +2,23 @@
 
 # Adds X-Envelope-To and X-Envelope-From headers to mails
 
-ENVFROM = $1
-ENVTO = $2
-
 :0
 * ^To: \/.*
 {
-  TO = $MATCH
+  HDRTO = $MATCH
 }
 
 :0
 * ^From: \/.*
 {
-  FROM = $MATCH
+  HDRFROM = $MATCH
 }
 
 :0
 * ^Sender: \/.*
 {
-  SENDER = $MATCH
+  HDRSENDER = $MATCH
 }
 
 :0 fhw
-| $HOME/bin/envtofilter "$ENVFROM" "$ENVTO" "$FROM" "$TO" "$SENDER"
+| "$HOME/bin/envtofilter" "$SENDER" "$RECIPIENT" "$HDRFROM" "$HDRTO" "$HDRSENDER"
