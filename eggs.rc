@@ -44,3 +44,8 @@ ${DEFAULT}.eggs/
 * ^To: .*aur-general@archlinux.org>?
 * ^Subject: .*Signoff report for.*
 ${DEFAULT}.eggs/
+
+:0
+* ^From: Massdrop <info@massdrop.com>
+* ^Subject: See What's New On Massdrop Today;.*
+${DEFAULT}.eggs/
