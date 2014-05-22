@@ -40,7 +40,7 @@ INCLUDERC=${PMDIR}/subject.rc
 INCLUDERC=${PMDIR}/tag-forward.rc
 
 # Remove mailman footer
-INCLUDERC=${PMDIR}/mailman-footer.rc
+#INCLUDERC=${PMDIR}/mailman-footer.rc
 
 #### Sorting ####
 
