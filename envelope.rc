@@ -21,4 +21,4 @@
 }
 
 :0 fhw
-| "$HOME/bin/envtofilter" "$SENDER" "$RECIPIENT" "$HDRFROM" "$HDRTO" "$HDRSENDER"
+| "$HOME/bin/envtofilter"
