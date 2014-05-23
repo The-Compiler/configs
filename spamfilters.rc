@@ -22,6 +22,10 @@ ${DEFAULT}.Spam/
 * ^Subject: UBS (AG )?(Alarm|Benachrichtigung).*Internet-Banking
 ${DEFAULT}.Spam/
 
+:0
+* ^Subject: Warnalarm von der UBS
+${DEFAULT}.Spam/
+
 # Backscatter from forwarded GMX spammails
 :0
 * ^From: mailer-daemon@gmx.de
