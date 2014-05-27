@@ -36,3 +36,8 @@ ${DEFAULT}.Spam/
 :0
 * ^Subject: Loan Offer\.\.\.Apply Now
 ${DEFAULT}.Spam/
+
+:0
+* ^From: .*[Ss]unglasses.*
+* ^Subject: .*([Ss]unglasses|discount).*
+${DEFAULT}.Spam/
