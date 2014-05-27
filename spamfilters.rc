@@ -31,3 +31,8 @@ ${DEFAULT}.Spam/
 * ^From: mailer-daemon@gmx.de
 * ^Subject: Mail delivery failed: returning message to sender
 ${DEFAULT}.Spam/
+
+# Misc. spam
+:0
+* ^Subject: Loan Offer\.\.\.Apply Now
+${DEFAULT}.Spam/
