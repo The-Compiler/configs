@@ -41,3 +41,7 @@ ${DEFAULT}.Spam/
 * ^From: .*[Ss]unglasses.*
 * ^Subject: .*([Ss]unglasses|discount).*
 ${DEFAULT}.Spam/
+
+:0
+* ^Subject: CasinoClub - 120 GRATiS SPiNS! Ohne Einzahlung erforderlich!
+${DEFAULT}.Spam/
