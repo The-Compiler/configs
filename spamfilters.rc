@@ -34,7 +34,7 @@ ${DEFAULT}.Spam/
 
 # Misc. spam
 :0
-* ^Subject: Loan Offer\.\.\.Apply Now
+* ^Subject: Loan Offer\.*Apply Now
 ${DEFAULT}.Spam/
 
 :0
