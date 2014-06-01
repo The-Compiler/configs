@@ -45,3 +45,8 @@ ${DEFAULT}.Spam/
 :0
 * ^Subject: CasinoClub - 120 GRATiS SPiNS! Ohne Einzahlung erforderlich!
 ${DEFAULT}.Spam/
+
+:0
+* ^From: .*[Aa]rgos.*
+* ^Subject: Urgent Order
+${DEFAULT}.Spam/
