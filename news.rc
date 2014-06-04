@@ -23,3 +23,9 @@ ${DEFAULT}.news/
 :0
 * ^To: webdiff@the-compiler.org
 ${DEFAULT}.news/
+
+:0
+* ^From: Twitter <info@twitter.com>
+* ^To: twitter.com@the-compiler.org
+* ^Subject: Florian Bruhin, check out your week on Twitter
+${DEFAULT}.news/
