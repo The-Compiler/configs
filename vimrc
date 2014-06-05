@@ -128,8 +128,10 @@ let mapleader=","               " Use , as leader instead of \
 
 let grepoptions="-nH --exclude=\"*.pyc\" --exclude=\"*.o\" --exclude=\"*.d\" "
 let grepoptions=grepoptions . "--exclude=\"*.sw[a-z]\" --exclude=\"*.bak\" "
+let grepoptions=grepoptions . "--exclude=\"*.dll\" --exclude=\"*.exe\" "
 let grepoptions=grepoptions . "--exclude-dir=.git --exclude-dir=__pycache__"
 let grepoptions=grepoptions . "--exclude-dir=.hg --exclude-dir=.svn"
+let grepoptions=grepoptions . "--exclude-dir=build"
 if has("unix")
     let &grepprg="grep " . grepoptions . " $*"
 else
