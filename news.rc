@@ -29,3 +29,13 @@ ${DEFAULT}.news/
 * ^To: twitter.com@the-compiler.org
 * ^Subject: Florian Bruhin, check out your week on Twitter
 ${DEFAULT}.news/
+
+:0
+* ^From: .* <neal@challengepost.com>
+* ^Precedence: bulk
+${DEFAULT}.news/
+
+:0
+* ^From: Kickstarter Staff <no-reply@kickstarter.com>
+* ^Subject: Happening: .*
+${DEFAULT}.news/
