@@ -2,11 +2,8 @@
 
 # Filters all mailing list messages to a different folder
 
-# Matching on X-Mailman-Version because some sites (e.g. EBay) have List-Id
-# set.
 :0
 * ^List-Id:
-* ^X-Mailman-Version:
 * !^X-List-Administrivia: yes
 ${DEFAULT}.lists/
 
