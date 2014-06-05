@@ -27,6 +27,8 @@ setopt hist_ignore_all_dups
 setopt SHARE_HISTORY
 # Ignore commands starting with a space
 setopt hist_ignore_space
+# Maybe this fixes hangs on start?
+# setopt HIST_FCNTL_LOCK
 
 ### Variables ###
 if [[ "$OS" == Windows_NT ]]; then
