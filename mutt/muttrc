@@ -104,8 +104,9 @@ my_hdr X-PGP-Key: http://www.the-compiler.org/pubkey.asc
 my_hdr OpenPGP: id=FD55A072\; url=http://www.the-compiler.org/pubkey.asc\; \
 preference=signencrypt
 # Other
-set signature      = "cat /home/florian/.mutt/sig; fortune -n 158 -s | \
-                      tr '\n' ' ' | sed 's/[\t ][\t ]*/ /g' | fold -s -w 79|"
+#set signature      = "cat /home/florian/.mutt/sig; fortune -n 158 -s | \
+#                      tr '\n' ' ' | sed 's/[\t ][\t ]*/ /g' | fold -s -w 79|"
+set signature      = ~/.mutt/sig
 set include
 set attribution    = "* %n <%a> [%{%Y-%m-%d %H:%M:%S %Z}]:"
 set reverse_name   = yes
