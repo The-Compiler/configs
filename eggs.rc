@@ -47,10 +47,5 @@ ${DEFAULT}.eggs/
 
 :0
 * ^From: Massdrop <info@massdrop.com>
-* ^Subject: See What's New On Massdrop Today;.*
-${DEFAULT}.eggs/
-
-:0
-* ^From: Massdrop <info@massdrop.com>
-* ^Subject: They're Ending Soon; .*
+* ^Subject: (See What's New On Massdrop Today|They're Ending soon):.*
 ${DEFAULT}.eggs/

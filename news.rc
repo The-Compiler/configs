@@ -39,3 +39,8 @@ ${DEFAULT}.news/
 * ^From: Kickstarter Staff <no-reply@kickstarter.com>
 * ^Subject: Happening: .*
 ${DEFAULT}.news/
+
+:0
+* ^From: Kickstarter HQ <no-reply@kickstarter.com>
+* ^Subject: Projects We Love: .*
+${DEFAULT}.news/
