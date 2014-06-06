@@ -6,7 +6,7 @@ set realname      = "Florian Bruhin"
 set folder        = "imap://mehl.schokokeks.org"
 set ssl_starttls  = yes
 set spoolfile     = "+INBOX"
-mailboxes =INBOX =INBOX.lists =INBOX.news
+mailboxes =INBOX =INBOX.lists =INBOX.news =INBOX.jugend
 set postponed     = "=INBOX.Drafts"
 set record        = "=INBOX.Sent"
 set trash         = "=INBOX.Trash"
