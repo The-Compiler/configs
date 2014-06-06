@@ -56,6 +56,9 @@ INCLUDERC=${PMDIR}/news.rc
 # Sort ML mails
 INCLUDERC=${PMDIR}/lists.rc
 
+# Sort Jugendstammtisch mails
+INCLUDERC=${PMDIR}/jugend.rc
+
 #### Default ####
 
 :0:

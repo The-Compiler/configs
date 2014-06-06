@@ -1,0 +1,7 @@
+# vim: ft=sh
+
+# Sorts jugendstammi mails
+
+:0
+* ^X-Envelope-To: bdsm-jugend(-all)?@the-compiler.org
+${DEFAULT}.jugend/
