@@ -308,6 +308,10 @@ subscribe ubuntu-ch@lists.ubuntu.com
 subscribe soem-user@lists.berlios.de
 subscribe soem-dev@lists.berlios.de
 subscribe nut-upsuser@lists.alioth.debian.org
+subscribe wilhelmtux-announce@wilhelmtux.ch
+subscribe lugs@lugs.ch
+subscribe pyqt@riverbankcomputing.com
+subscribe eric@riverbankcomputing.com
 
 
 ### notmuch ###
