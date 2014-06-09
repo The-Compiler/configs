@@ -7,6 +7,10 @@
 * ^(X-Envelope-)?To: (.* )?<?(etpace|yourname|czmjp|compiler|florian|datawave|dani|esjay|emeryahn|agt|clb|love|bernardo|quassel|root|admin|example.com)@the-compiler.org>?
 ${DEFAULT}.Spam/
 
+:0
+* ^(X-Envelope-)?To: (.* )?<?hphb@cmpl.cc>?
+${DEFAULT}.Spam/
+
 # GMX Magazin
 :0
 * From: GMX Magazin <mailings@gmxnet.de>
@@ -49,4 +53,8 @@ ${DEFAULT}.Spam/
 :0
 * ^From: .*[Aa]rgos.*
 * ^Subject: Urgent Order
+${DEFAULT}.Spam/
+
+:0
+* ^Subject: Glückwunsch liebe Gewinner$
 ${DEFAULT}.Spam/
