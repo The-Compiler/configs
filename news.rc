@@ -44,3 +44,8 @@ ${DEFAULT}.news/
 * ^From: Kickstarter HQ <no-reply@kickstarter.com>
 * ^Subject: Projects We Love: .*
 ${DEFAULT}.news/
+
+:0
+* ^From: Bandcamp <noreply@bandcamp.com>
+* ^Subject: New release from .*
+${DEFAULT}.news/
