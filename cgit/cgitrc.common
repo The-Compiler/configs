@@ -14,6 +14,7 @@ commit-filter=/usr/lib/cgit/filters/commit-links.sh
 enable-gitweb-owner=1
 remove-suffix=1
 max-stats=year
+case-sensitive-sort=0
 
 # experiments
 enable-commit-graph=1
