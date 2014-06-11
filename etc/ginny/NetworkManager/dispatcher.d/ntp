@@ -1,2 +1,2 @@
 #!/bin/bash
-[[ "$2" == up ]] && sntp -s pool.ntp.org
+[[ "$2" == up ]] && /usr/bin/ntpd -q -g
