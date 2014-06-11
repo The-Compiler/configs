@@ -1,0 +1,6 @@
+# vim: ft=sh
+
+DEFAULT=${HOME}/mail/${MAILUSER}/
+MAILDIR=${DEFAULT}
+PMDIR=${HOME}/procmail/${MAILUSER}
+LOGFILE=${PMDIR}/procmail.log
