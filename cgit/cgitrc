@@ -1,6 +1,6 @@
 include=/etc/cgitrc.common
 root-title=g.cmpl.cc
 root-desc=The Compiler's public projects
-clone-url=http://git.the-compiler.org/$CGIT_REPO_URL/
+clone-url=git://the-compiler.org/$CGIT_REPO_URL/
 project-list=/srv/git/projects.list
 scan-path=/srv/git/repositories
