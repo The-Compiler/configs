@@ -1,0 +1,136 @@
+"hg6776
+
+loadplugins '\.(js|penta)$'
+group user
+
+" Clean conflicting/old bindings
+map -modes=n,v t <Nop>
+map -modes=n,v g <Nop>
+map -modes=n,v O <Nop>
+map -modes=n,v T <Nop>
+map -modes=n,v c <Nop>
+map -modes=n,v gh <Nop>
+map -modes=n,v w <Nop>
+map -modes=n,v a <Nop>
+map -modes=n,v A <Nop>
+map -modes=n,v M <Nop>
+map -modes=n,v b <Nop>
+map -modes=n,v <C-c> <Nop>
+map -modes=n,v s <Nop>
+map -modes=n,v gt <Nop>
+map -modes=n,v gT <Nop>
+map -modes=n,v y <Nop>
+map -modes=n,v p <Nop>
+map -modes=n,v Y <Nop>
+map -modes=n,v P <Nop>
+map -modes=n,v S <Nop>
+map -modes=n,v c <Nop>
+
+" Open in new tab (O)
+map -modes=n,v O -builtin t
+" Open based on current URL (go/gO)
+map -modes=n,v go -builtin O
+map -modes=n,v gO -builtin T
+" Open tab in background? (xo/xO)
+" Open in new window (wo)
+map -modes=n,v wo -builtin w
+" Back to normal mode (C-n)
+map -modes=i <C-n> <Esc>
+" New blank tab (ga)
+map -modes=n,v ga -ex tabopen about:blank
+" Close all other tabs (co)
+map -modes=n,v co -ex tabonly
+" Quit (C-q)
+map -modes=n,v <C-q> -ex quitall
+" Open homepage (C-h)
+map -modes=n,v <C-h> -builtin gh
+" Back in a new tab (th)
+map -modes=n,v th -ex tab back
+" Forward in a new tab (tl)
+map -modes=n,v tl -ex tab forward
+" Back in a new window (wh)
+map -modes=n,v wh -ex window back
+" Forward in a new window (wl)
+map -modes=n,v wh -ex window forward
+" Find forward, ignore case (c/)
+map -modes=n,v c/ -builtin /\c
+" Find backward, ignore case (c?)
+map -modes=n,v c? -builtin ?\c
+" Add bookmark (M)
+map -modes=n,v M -builtin a
+" Show bookmarks (gb)
+map -modes=n,v gb -ex bmarks
+" Show bookmarks in a new tab (gB)
+map -modes=n,v gB -ex tab bmarks
+" Show bookmarks in a new window (wB)
+map -modes=n,v wB -ex window bmarks
+" Add quickmark (m)
+map -modes=n,v m -builtin M
+" Open quickmark (b)
+map -modes=n,v b -builtin go
+" Open quickmark in a new tab (B)
+map -modes=n,v B -builtin gn
+" Stop loading page (C-s)
+map -modes=n,v <C-s> -builtin <C-c>
+" Safe configuration (sf)
+map -modes=n,v sf -ex mkpentadactylrc!
+" Cycle focus forward (J)
+map -modes=n,v -count J -builtin <count>gt
+" Cycle focus backwards (K)
+map -modes=n,v -count K -builtin <count>gT
+" Focus tab n (T)
+map -modes=n,v -count T -ex buffer <count>
+" Move tab to position n (gm)
+map -modes=n,v -count gm -ex tabmove <count>
+" Move tab n positions to the left (gl)
+map -modes=n,v -count gl -ex tabmove -<count>
+" Move tab n positions to the right (gr)
+map -modes=n,v -count gr -ex tabmove +<count>
+" Show all tabs (gt)
+map -modes=n,v gt -builtin B
+" Yank (yy / yY)
+map -modes=n,v yy -builtin y
+map -modes=n,v yY -builtin y
+" yank title (yt/yT)
+map -modes=n,v yt -ex yank document.title
+map -modes=n,v yT -ex yank document.title
+" Paste (pp / pP)
+map -modes=n,v pp -builtin p
+map -modes=n,v pP -builtin p
+" Paste in new tab (Pp/PP)
+map -modes=n,v Pp -builtin P
+map -modes=n,v PP -builtin P
+" Paste in new window (wp/wP)
+map -modes=n,v wp -builtin w<S-Ins><CR>
+map -modes=n,v wP -builtin w<S-Ins><CR>
+" Show bookmarks (Sb)
+map -modes=n,v Sb -ex bmarks
+" Show quickmarks (Sq)
+map -modes=n,v Sq -ex qmarks
+" Show history (Sh)
+map -modes=n,v Sh -ex history
+" Show downloads (Sd)
+map -modes=n,v Sd -ex downloads
+" Show settings (Ss)
+map -modes=n,v Ss -ex preferences
+" Show keys (Sk)
+map -modes=n,v Sk -ex map
+" Set setting (ss)
+map -modes=n,v ss :set 
+" Set local setting (sl)
+map -modes=n,v sl :setlocal 
+" Set key (sk)
+map -modes=n,v sk :map 
+" FIXME toggle proxy/scripts/plugins
+" FIXME open in new tab/window
+" FIXME webinspector
+" FIXME external editor
+" FIXME hidden files
+" FIXME toggle bars
+" Print (C-A-p)
+map -modes=n,v <C-A-p> -ex hardcopy
+" Copy
+map -modes=n,v <C-c> -builtin -silent Y
+
+
+" vim: set ft=pentadactyl:
