@@ -247,11 +247,5 @@ if [[ -n "$highlight" ]]; then
     ZSH_HIGHLIGHT_STYLES[path]='bold'
 fi
 
-### Perl on mehl ##
-if [[ $HOST == mehl.schokokeks.org ]]; then
-    eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
-    alias cpan='perl -MCPAN -Mlocal::lib -e shell'
-fi
-
 ### Humble bundle key ###
 [[ -f ~/.humblebundle ]] && source ~/.humblebundle
