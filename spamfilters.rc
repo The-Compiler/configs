@@ -4,41 +4,41 @@
 
 # Spam
 :0
-* ^(X-Envelope-)?To: (.* )?<?(etpace|yourname|czmjp|compiler|florian|datawave|dani|esjay|emeryahn|agt|clb|love|bernardo|quassel|root|admin|example.com)@the-compiler.org>?
+* ^(X-Envelope-)?To: (.* )?<?(etpace|yourname|czmjp|compiler|florian|datawave|dani|esjay|emeryahn|agt|clb|love|bernardo|quassel|root|admin|example.com)@the-compiler.org>?$
 ${DEFAULT}.Spam/
 
 :0
-* ^(X-Envelope-)?To: (.* )?<?hphb@cmpl.cc>?
+* ^(X-Envelope-)?To: (.* )?<?hphb@cmpl.cc>?$
 ${DEFAULT}.Spam/
 
 # GMX Magazin
 :0
-* From: GMX Magazin <mailings@gmxnet.de>
+* From: GMX Magazin <mailings@gmxnet.de>$
 ${DEFAULT}.Spam/
 
 # GMX stuff
 :0
-* ^TO_florian.bruhin@gmx.ch
+* ^TO_florian.bruhin@gmx.ch$
 ${DEFAULT}.Spam/
 
 # UBS shit
 :0
-* ^Subject: UBS (AG )?(Alarm|Benachrichtigung).*Internet-Banking
+* ^Subject: UBS (AG )?(Alarm|Benachrichtigung).*Internet-Banking.*
 ${DEFAULT}.Spam/
 
 :0
-* ^Subject: Warnalarm von der UBS
+* ^Subject: Warnalarm von der UBS$
 ${DEFAULT}.Spam/
 
 # Backscatter from forwarded GMX spammails
 :0
-* ^From: mailer-daemon@gmx.de
-* ^Subject: Mail delivery failed: returning message to sender
+* ^From: mailer-daemon@gmx.de$
+* ^Subject: Mail delivery failed: returning message to sender$
 ${DEFAULT}.Spam/
 
 # Misc. spam
 :0
-* ^Subject: Loan Offer\.*Apply Now
+* ^Subject: Loan Offer\.*Apply Now$
 ${DEFAULT}.Spam/
 
 :0
@@ -47,14 +47,18 @@ ${DEFAULT}.Spam/
 ${DEFAULT}.Spam/
 
 :0
-* ^Subject: (CasinoClub - 120 GRATiS SPiNS! Ohne Einzahlung erforderlich!|=\?UTF-8\?B\?Q2FzaW5vQ2x1YiAtIDEyMCBHUkFUaVMgU1BpTlMhIE9obmUgRWluemFobHVuZyBlcmZvcmRlcmxpY2gh\?=)
+* ^Subject: (CasinoClub - 120 GRATiS SPiNS! Ohne Einzahlung erforderlich!|=\?UTF-8\?B\?Q2FzaW5vQ2x1YiAtIDEyMCBHUkFUaVMgU1BpTlMhIE9obmUgRWluemFobHVuZyBlcmZvcmRlcmxpY2gh\?=)$
 ${DEFAULT}.Spam/
 
 :0
 * ^From: .*[Aa]rgos.*
-* ^Subject: Urgent Order
+* ^Subject: Urgent Order$
 ${DEFAULT}.Spam/
 
 :0
 * ^Subject: Glückwunsch liebe Gewinner$
+${DEFAULT}.Spam/
+
+:0
+* ^Subject: United Nations!!!$
 ${DEFAULT}.Spam/
