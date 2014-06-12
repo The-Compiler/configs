@@ -62,3 +62,7 @@ ${DEFAULT}.Spam/
 :0
 * ^Subject: United Nations!!!$
 ${DEFAULT}.Spam/
+
+:0
+* ^Subject: Grant Award\.$
+${DEFAULT}.Spam/
