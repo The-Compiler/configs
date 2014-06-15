@@ -18,7 +18,7 @@ Host lupin_proxy
 HostName lupin.the-compiler.org
 Port 2323
 User florian
-ProxyCommand ssh florian@diggory.the-compiler.org nc %h %p 2> /dev/null
+ProxyCommand ssh florian@diggory.the-compiler.org -W %h:%p 2> /dev/null
 
 
 Host git
@@ -65,10 +65,10 @@ Host draco_proxy
 HostName draco.the-compiler.org
 Port 2323
 User florian
-ProxyCommand ssh florian@diggory.the-compiler.org nc %h %p 2> /dev/null
+ProxyCommand ssh florian@diggory.the-compiler.org -W %h:%p 2> /dev/null
 
 Host draco_proplay
 HostName draco.the-compiler.org
 Port 2323
 User florian
-ProxyCommand ssh florian@hedwig.the-compiler.org -p 2323 nc %h %p 2> /dev/null
+ProxyCommand ssh florian@hedwig.the-compiler.org -p 2323 -W %h:%p 2> /dev/null
