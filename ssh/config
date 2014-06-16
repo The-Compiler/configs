@@ -72,3 +72,9 @@ HostName draco.the-compiler.org
 Port 2323
 User florian
 ProxyCommand ssh florian@hedwig.the-compiler.org -p 2323 -W %h:%p 2> /dev/null
+
+Host draco_krum
+HostName draco.the-compiler.org
+Port 2323
+User florian
+ProxyCommand ssh florian@192.121.170.110 nc %h %p 2> /dev/null
