@@ -47,7 +47,7 @@ ${DEFAULT}.Spam/
 ${DEFAULT}.Spam/
 
 :0
-* ^Subject: (CasinoClub - 120 GRATiS SPiNS! Ohne Einzahlung erforderlich!|=\?UTF-8\?B\?Q2FzaW5vQ2x1YiAtIDEyMCBHUkFUaVMgU1BpTlMhIE9obmUgRWluemFobHVuZyBlcmZvcmRlcmxpY2gh\?=)$
+* ^Subject: (Casino ?Club .* Einzahlung * * erforderlich.*|=\?UTF-8\?B\?Q2FzaW5vQ2x1YiAtIDEyMCBHUkFUaVMgU1BpTlMhIE9obmUgRWluemFobHVuZyBlcmZvcmRlcmxpY2gh\?=$|=\?UTF-8\?B\?Q2FzaW5vIENsdWIgLSAxNDAgRlJFSVNQSUVMRSAtIEtlaW5lIEVpbnphaGx1bmcgZXJmb3JkZXJsaWNoIQ==\?=)
 ${DEFAULT}.Spam/
 
 :0
