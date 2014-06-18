@@ -66,3 +66,7 @@ ${DEFAULT}.Spam/
 :0
 * ^Subject: Grant Award\.$
 ${DEFAULT}.Spam/
+
+:0
+* ^Subject: Humanitarian Development$
+${DEFAULT}.Spam/
