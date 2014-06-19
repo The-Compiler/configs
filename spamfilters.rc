@@ -42,8 +42,8 @@ ${DEFAULT}.Spam/
 ${DEFAULT}.Spam/
 
 :0
-* ^From: .*[Ss]unglasses.*
-* ^Subject: .*([Ss]unglasses|discount).*
+* ^From: .*[Ss]unglass(es)?.*
+* ^Subject: .*([Ss]unglass(es)?|discount).*
 ${DEFAULT}.Spam/
 
 :0
