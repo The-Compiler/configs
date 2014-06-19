@@ -43,6 +43,8 @@ else
     export PATH="$PATH:$HOME/bin"
     export VIEW_PDF="zathura" # for latex-makefile
     export PAGER="less"
+    export WORKON_HOME=~/.virtualenvs
+    source /usr/bin/virtualenvwrapper.sh
 fi
 
 ### Colors for ls ###
