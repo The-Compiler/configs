@@ -170,6 +170,25 @@ zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b:%r'
 zstyle ':vcs_info:*' enable git svn bzr hg
 zstyle ':vcs_info:*' formats '%F{blue}──[%f%F{red}%s/%b%c%u%m%F{blue}]%f'
 
+venv_prompt_info() {
+    if [[ -n "$VIRTUAL_ENV" ]]; then
+        if [[ -f "$VIRTUAL_ENV/__name__" ]]; then
+            local name=$(cat "$VIRTUAL_ENV/__name__")
+        elif [[ $(basename $VIRTUAL_ENV) = "__" ]]; then
+            local name=$(basename $(dirname "$VIRTUAL_ENV"))
+        else
+            local name=$(basename "$VIRTUAL_ENV")
+        fi
+        echo "${prompt_startsep}%F{red}venv:$name%f${prompt_endsep}"
+    fi
+}
+
+disp_prompt_info() {
+    if [[ -n "$DISPLAY" && "$DISPLAY" != ":0" ]]; then
+        echo "${prompt_startsep}%F{red}disp:$DISPLAY%f${prompt_endsep}"
+    fi
+}
+
 setprompt() {
     local reset="%{$reset_color%}"
     local upper_start='%F{blue}╭─[%f'
@@ -178,34 +197,30 @@ setprompt() {
     local other_end=']─╼ ${reset}'
     local userhost='%F{green}%n@%m%f'
     local sep='%F{blue}]──[%f'
-    local startsep='%F{blue}──[%f'
-    local endsep='%F{blue}]%f'
+    prompt_startsep='%F{blue}──[%f'
+    prompt_endsep='%F{blue}]%f'
     local fade='%F{blue}────┄%f'
     local dir='%F{red}%~%f'
     local date='%F{yellow}%D%f'
     local dtime='%F{yellow}%T%f'
-    local job="%(1j.${startsep}%F{red}%j job.)%(2j.s.)%(1j.${endsep}.)%f"
+    local job="%(1j.${prompt_startsep}%F{red}%j job.)%(2j.s.)%(1j.${prompt_endsep}.)%f"
     local vcs='${vcs_info_msg_0_}'
     if [[ -n $RANGER_LEVEL ]]; then
-        local ranger="${startsep}%F{red}ranger"
+        local ranger="${prompt_startsep}%F{red}ranger"
         (( RANGER_LEVEL > 1 )) && ranger+=":$RANGER_LEVEL"
-        ranger+="%f${endsep}"
+        ranger+="%f${prompt_endsep}"
     else
         local ranger=
-    fi
-    # FIXME this gets only evaluated if a terminal opens
-    if [[ -n "$DISPLAY" && "$DISPLAY" != ":0" ]]; then
-        local disp="${startsep}%F{red}disp $DISPLAY${endsep}"
-    else
-        local disp=
     fi
     local rootwarn='%(!.%F{blue}(%f%F{red}!%f%F{blue}).)%f'
     local promptchar='%F{blue}─╼ %f'
     local n=$'\n'
     local rstatus='%(?..%F{red}╾─[%F{blue}$?%F{red}]──┄)'
 
+    export VIRTUAL_ENV_DISABLE_PROMPT=1
     PROMPT="${upper_start}${userhost}${sep}${dir}${sep}${date}${sep}"
-    PROMPT+="${dtime}${endsep}${job}${vcs}${ranger}${disp}${fade}$n"
+    PROMPT+="${dtime}${prompt_endsep}${job}\$(venv_prompt_info)${vcs}${ranger}"
+    PROMPT+="\$(disp_prompt_info)${fade}$n"
 
     PROMPT+="${lower_start}${rootwarn}${promptchar}${reset}"
 
