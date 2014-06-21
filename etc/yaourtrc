@@ -12,12 +12,14 @@
 #FORCEENGLISH=0
 #FORCE=0
 #TMPDIR="/tmp"
+#NO_TESTDB=0
 
 # SUDO
 #SUDONOVERIF=0      # Avoid multiple sudo checks when timestamp_timeout=0
 #SUDOREDIRECT=1     # Define to 0 in case you use a fingerprint device
 
 # ABS
+#USE_GIT=0
 # If the package "abs" is installed, those var are parsed from abs.conf
 #REPOS=()           # REPOS available at $SYNCSERVER
 #SYNCSERVER=""
@@ -54,3 +56,8 @@ PU_NOCONFIRM=1     # Add --noconfirm to $PACMAN -U
 # Command
 #PACMAN="pacman"
 #DIFFEDITCMD="vimdiff"
+
+# pacdiffviewer
+#P_LOCATE=0         # Use locate instead of find
+#P_SEARCHDIR=(/etc/ /boot/)
+#P_SAVEDIR='/var/lib/yaourt/backupfiles'
