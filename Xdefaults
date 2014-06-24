@@ -62,7 +62,7 @@ URxvt.saveLines: 8000
 URxvt.termName: rxvt-256color
 URxvt.perl-ext-common:  default,url-select
 URxvt.url-select.autocopy:  true
-URxvt.url-select.launcher:  dwb -n
+URxvt.url-select.launcher:  qutebrowser
 #URxvt.url-select.launcher:  chromium
 URxvt.url-select.underline: false
 URxvt.keysym.M-u:           perl:url-select:select_next
