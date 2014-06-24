@@ -5,6 +5,7 @@
 :0
 * ^List-Id:
 * !^X-List-Administrivia: yes
+* !^User-Agent: Gerrit/.*
 ${DEFAULT}.lists/
 
 # Some non-Mailman mailing lists seem to use this
