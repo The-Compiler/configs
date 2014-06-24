@@ -37,3 +37,5 @@ tool = vimdiff
 	autosquash = true
 [push]
 	default = current
+[rerere]
+	enabled = true
