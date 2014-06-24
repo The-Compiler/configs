@@ -8,7 +8,7 @@ LOGABSTRACT=all
 SPAMBIN=/usr/bin/spamc
 
 # Decode base64 mails
-INCLUDERC=${PMDIR}/base64.rc
+#INCLUDERC=${PMDIR}/base64.rc
 
 # Remove advertisements in sourceforge messages
 # (do this here to avoid triggering spam filter)
