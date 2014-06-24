@@ -36,4 +36,4 @@ tool = vimdiff
 [rebase]
 	autosquash = true
 [push]
-	default = simple
+	default = current
