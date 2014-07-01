@@ -41,6 +41,11 @@ Hostname draco.the-compiler.org
 Port 2323
 User florian
 
+Host krum
+HostName 192.121.170.110
+Port 2323
+User florian
+
 Host mehl
 User thecompiler
 HostName mehl.schokokeks.org
