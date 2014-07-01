@@ -66,18 +66,6 @@ User compiler
 Hostname 91.219.237.161
 Port 20202
 
-Host draco_proxy
-HostName draco.the-compiler.org
-Port 2323
-User florian
-ProxyCommand ssh florian@diggory.the-compiler.org -W %h:%p 2> /dev/null
-
-Host draco_proplay
-HostName draco.the-compiler.org
-Port 2323
-User florian
-ProxyCommand ssh florian@hedwig.the-compiler.org -p 2323 -W %h:%p 2> /dev/null
-
 Host draco_krum
 HostName draco.the-compiler.org
 Port 2323
