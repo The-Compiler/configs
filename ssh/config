@@ -1,10 +1,10 @@
 Host home
-HostName the-compiler.dyndns.org
+HostName home.the-compiler.de
 Port 2323
 User florian
 
 Host home_proxy
-HostName the-compiler.dyndns.org
+HostName home.the-compiler.de
 Port 2323
 User florian
 ProxyCommand ssh florian@diggory.the-compiler.org nc %h %p 2> /dev/null
