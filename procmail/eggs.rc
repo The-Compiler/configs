@@ -35,11 +35,6 @@ ${DEFAULT}.eggs/
 ${DEFAULT}.eggs/
 
 :0
-* ^To: .*aur-general@archlinux.org>?
-* ^Subject: .*[Rr]equest.*
-${DEFAULT}.eggs/
-
-:0
 * ^From: .*nobody@archlinux.org>?
 * ^To: .*aur-general@archlinux.org>?
 * ^Subject: .*Signoff report for.*
