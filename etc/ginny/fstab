@@ -3,8 +3,8 @@
 #
 # <file system>	<dir>	<type>	<options>	<dump>	<pass>
 # /dev/sda2 LABEL=root
-UUID=01437767-50c9-4d0c-9b59-f66ccd0cd198	/         	btrfs     	rw,relatime,ssd,space_cache,subvol=__active	0 1
+/dev/mapper/rootfs	/         	ext4     	rw,relatime	0 1
 
 # /dev/sda1 LABEL=boot
-UUID=fe3a2b62-51c7-48a4-982f-0473dabf36a9	/boot     	ext3      	rw,relatime,data=ordered	0 2
+LABEL=boot	/boot     	ext3      	rw,relatime,data=ordered	0 2
 
