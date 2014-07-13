@@ -78,3 +78,7 @@ ${DEFAULT}.Spam/
 :0
 * ^Subject: Supply projector lamps from China$
 ${DEFAULT}.Spam/
+
+:0
+* ^From: Postmaster@126.com$
+${DEFAULT}.Spam/
