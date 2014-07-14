@@ -188,7 +188,11 @@ ignore Return-Path: Received: Message-ID: MIME-Version: Content-Type: \
   X-SG-EID: X-Sig: X-Proofpoint-Virus-Version: X-Proofpoint-Spam-Details: \
   X-Filter-ID: X-Report-Abuse-To: X-SpamExperts-Domain: \
   X-SpamExperts-Username: X-SpamExperts-Outgoing-Class: \
-  X-SpamExperts-Outgoing-Evidence: X-Recommended-Action:
+  X-SpamExperts-Outgoing-Evidence: X-Recommended-Action: X-ASG-Debug-ID: \
+  X-Barracuda-Envelope-From: X-Barracuda-Apparent-Source-IP: X-ASG-Orig-Subj: \
+  X-Barracuda-Connect: X-Barracuda-Start-Time: X-Barracuda-URL: \
+  X-Barracuda-BRTS-Status: X-Barracuda-Spam-Score: X-Barracuda-Spam-Status: \
+  X-Barracuda-Spam-Report: X-Spam-Level:
 hdr_order Date: From: List-Id: To: Cc: User-Agent: X-Mailer: Subject:
 
 ### Colors ###
