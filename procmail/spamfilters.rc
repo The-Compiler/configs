@@ -82,3 +82,7 @@ ${DEFAULT}.Spam/
 :0
 * ^From: Postmaster@126.com$
 ${DEFAULT}.Spam/
+
+:0
+* ^Subject: SV: funds donated to you$
+${DEFAULT}.Spam/
