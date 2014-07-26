@@ -80,7 +80,7 @@ ${DEFAULT}.Spam/
 ${DEFAULT}.Spam/
 
 :0
-* ^From: Postmaster@126.com$
+* ^From: Postmaster@(126|163).com$
 ${DEFAULT}.Spam/
 
 :0
