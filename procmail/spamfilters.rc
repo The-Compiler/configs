@@ -86,3 +86,8 @@ ${DEFAULT}.Spam/
 :0
 * ^Subject: SV: funds donated to you$
 ${DEFAULT}.Spam/
+
+:0
+* ^From: Euro Gewinnspiel.*
+* ^Subject: Achtung: Auszeichnung$
+${DEFAULT}.Spam/
