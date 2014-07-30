@@ -7,6 +7,7 @@
 * !^X-List-Administrivia: yes
 * !^User-Agent: Gerrit/.*
 * !^From: News OVH <kundendienst@ovh.de>$
+* !^From: .* <notifications@github.com>$
 ${DEFAULT}.lists/
 
 # Some non-Mailman mailing lists seem to use this
