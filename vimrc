@@ -318,9 +318,13 @@ endif
 """ cd to project root
 NeoBundle 'airblade/vim-rooter'
 
-""" Python autocompletion
-NeoBundle 'davidhalter/jedi-vim'
-let g:jedi#popup_on_dot = 0
+""" python-mode
+NeoBundle 'klen/python-mode'
+let g:pymode_lint_on_write = 0
+let g:pymode_folding = 0
+let g:pymode_options_max_line_length = 79
+let g:pymode_rope_complete_on_dot = 0
+let g:pymode_syntax_highlight_self = 0
 
 """ My own vimfiles
 NeoBundle 'git://cmpl.cc/vimfiles/'
