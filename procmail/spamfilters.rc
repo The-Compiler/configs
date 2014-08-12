@@ -91,3 +91,7 @@ ${DEFAULT}.Spam/
 * ^From: Euro Gewinnspiel.*
 * ^Subject: Achtung: Auszeichnung$
 ${DEFAULT}.Spam/
+
+:0
+* ^From: Ray-Ban .*
+${DEFAULT}.Spam/
