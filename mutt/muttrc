@@ -193,7 +193,8 @@ ignore Return-Path: Received: Message-ID: MIME-Version: Content-Type: \
   X-Barracuda-Envelope-From: X-Barracuda-Apparent-Source-IP: X-ASG-Orig-Subj: \
   X-Barracuda-Connect: X-Barracuda-Start-Time: X-Barracuda-URL: \
   X-Barracuda-BRTS-Status: X-Barracuda-Spam-Score: X-Barracuda-Spam-Status: \
-  X-Barracuda-Spam-Report: X-Spam-Level:
+  X-Barracuda-Spam-Report: X-Spam-Level: X-I7-Spam-score: \
+  X-I7-Spam-score_int: X-I7-Spam-bar: X-I7-Spam-report:
 hdr_order Date: From: List-Id: To: Cc: User-Agent: X-Mailer: Subject:
 
 ### Colors ###
