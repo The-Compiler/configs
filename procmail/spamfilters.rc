@@ -95,3 +95,7 @@ ${DEFAULT}.Spam/
 :0
 * ^From: Ray-Ban .*
 ${DEFAULT}.Spam/
+
+:0
+* ^From: Michael Kors .*
+${DEFAULT}.Spam/
