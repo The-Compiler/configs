@@ -97,5 +97,5 @@ ${DEFAULT}.Spam/
 ${DEFAULT}.Spam/
 
 :0
-* ^From: Michael Kors .*
+* ^From: "?Michael Kors"? .*
 ${DEFAULT}.Spam/
