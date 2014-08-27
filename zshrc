@@ -114,7 +114,6 @@ alias yq='yaourt -Si'
 alias yl='yaourt -Ql'
 alias tx='tmux -2 attach -d'
 # pseudo-functions
-alias clock='watch -t -n 0.5 "date +%T | toilet -f bigascii12"'
 alias pymath='bpython -i <(echo "from math import *")'
 alias newx='xinit /usr/bin/urxvt -- :1'
 alias nmapa='nmap -T Aggressive -P0 -sT -p 1-65535'
