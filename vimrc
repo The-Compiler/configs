@@ -426,6 +426,8 @@ nnoremap Q <nop>
 " column, so swap them
 nnoremap ' `
 nnoremap ` '
+" Remap * so it uses smartcase
+nnoremap * /\<<c-r><c-w>\><cr>
 " <leader><space>: Clear search highlighting
 nnoremap <silent> <leader><space> :nohlsearch<cr>
 " <leader>= / <leader>-: underlining
