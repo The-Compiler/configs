@@ -86,7 +86,7 @@ set sidebar_width   = 25
 set sidebar_visible = yes
 set sidebar_delim   = ' '
 set time_inc        = 250
-set display_filter  = "t-prot -cemt -M=mutt --spass"
+set display_filter  = "t-prot -cemtS -M=mutt --spass"
 
 ### Editing ###
 set editor       = "vim -c 'set filetype=mail' -c 'set fileencodings=' \
