@@ -327,6 +327,9 @@ let g:pymode_options_max_line_length = 79
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_syntax_highlight_self = 0
 
+""" jinja2 support
+NeoBundle 'mitsuhiko/vim-jinja'
+
 """ My own vimfiles
 NeoBundle 'git://cmpl.cc/vimfiles/'
 
