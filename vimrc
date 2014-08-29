@@ -299,6 +299,7 @@ let g:snippets_dir = vimfiles . "/bundle/vimfiles/snippets"
 
 """ Show trailing whitespace
 NeoBundle 'ShowTrailingWhitespace'
+hi ShowTrailingWhitespace ctermbg=237 guibg=#3a3a3a
 
 """ Vim-Wiki
 NeoBundle 'vimwiki'
