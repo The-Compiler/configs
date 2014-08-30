@@ -326,6 +326,7 @@ let g:pymode_folding = 0
 let g:pymode_options_max_line_length = 79
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_syntax_highlight_self = 0
+let g:pymode_rope = 0
 
 """ jinja2 support
 NeoBundle 'mitsuhiko/vim-jinja'
