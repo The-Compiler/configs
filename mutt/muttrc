@@ -327,12 +327,14 @@ subscribe linuxday-announce@lists.lugv.at
 subscribe python-dev@python.org
 subscribe mosh-users@mit.edu
 subscribe arch-security@archlinux.org
-subscribe swinog-li-wg@lists.swinog.ch
 subscribe swinog-jobs@lists.swinog.ch
 subscribe swinog@lists.swinog.ch
 subscribe quintessenz-list@quintessenz.at
 subscribe siug-announce@siug.ch
 subscribe bba-discuss@bigbrotherawards.ch
+subscribe qtwebengine@qt-project.org
+subscribe pyside@qt-project.org
+subscribe announce@qt-project.org
 
 
 ### notmuch ###
