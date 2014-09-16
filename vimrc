@@ -234,7 +234,7 @@ let NERDTreeShowHidden=1          " Show hidden files
 let NERDTreeHighlightCursorline=1 " Highlight the selected entry in the tree
 let NERDTreeMouseMode=3           " Use single-click
 let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
-            \ '\.o$', '\.so$', '\.egg$', '^\.git$' ]
+            \ '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.$', '^\.\.$' ]
 " <leader>n to toggle NERDtree
 nnoremap <leader>n :NERDTreeToggle<cr>
 
