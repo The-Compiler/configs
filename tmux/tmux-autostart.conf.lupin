@@ -1,6 +1,4 @@
-new -n irc weechat-curses
+new -n irc weechat
 neww mutt
-neww -n rss newsbeuter
-neww -n sys htop
-neww -n log 'journalctl -fb'
+neww zsh
 selectw -t 0
