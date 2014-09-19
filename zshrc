@@ -65,7 +65,7 @@ export LESSCOLORIZER=code2color
 
 ### general colors ###
 if which cope_path &>/dev/null; then
-    PATH="$(cope_path):$PATH"
+    export PATH="$(cope_path):$PATH"
 fi
 
 ### settings
