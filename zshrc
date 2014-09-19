@@ -68,6 +68,12 @@ if which cope_path &>/dev/null; then
     export PATH="$(cope_path):$PATH"
 fi
 
+### ccache ###
+export PATH="/usr/lib/ccache/bin/:$PATH"
+export CCACHE_COMPRESS=1
+export CCACHE_BASEDIR=$HOME
+export CCACHE_PREFIX=$(which cope)
+
 ### settings
 export ACK_COLOR_MATCH="bold red"
 export SUDO_PROMPT='[sudo] password for %u@%h (-> %U): '
