@@ -49,3 +49,8 @@ ${DEFAULT}.news/
 * ^From: Bandcamp <noreply@bandcamp.com>
 * ^Subject: New release from .*
 ${DEFAULT}.news/
+
+:0
+* ^List-Id: <gerrit-[^.]*\.codereview\.qt-project.org>$
+* ^X-Gerrit-MessageType: (newchange|newpatchset|comment|build-approved|abandon|merged)$
+${DEFAULT}.news/
