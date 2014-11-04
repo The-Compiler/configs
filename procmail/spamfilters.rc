@@ -4,7 +4,7 @@
 
 # Spam
 :0
-* ^(X-Envelope-)?To: (.* )?<?(etpace|yourname|czmjp|compiler|florian|datawave|dani|esjay|emeryahn|agt|clb|love|bernardo|quassel|root|admin|example.com)@the-compiler.org>?$
+* ^(X-Envelope-)?To: (.* )?<?(etpace|yourname|czmjp|compiler|florian|datawave|dani|esjay|emeryahn|agt|clb|love|bernardo|quassel|root|admin|example\.com|l3r\.de)@the-compiler.org>?$
 ${DEFAULT}.Spam/
 
 :0
