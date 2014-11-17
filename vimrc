@@ -44,7 +44,7 @@ endif
 if has('vim_starting')
     let &runtimepath .= ','. vimfiles .'/bundle/neobundle.vim/'
 endif
-call neobundle#rc(vimfiles . "/bundle/")
+call neobundle#begin(vimfiles . "/bundle/")
 " Update
 NeoBundleFetch 'Shougo/neobundle.vim'
 
@@ -157,10 +157,6 @@ NeoBundle 'xoria256.vim' " Color scheme
 set t_Co=256             " Number of terminal colors
 if has("syntax") | syn on | endif
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$' " highlight conflict markers
-if s:neobootstrapdone == 1
-    colorscheme xoria256
-endif
-highlight SignColumn ctermbg=237 guibg=#3a3a3a
 
 """ Repeat - repetition for plugins
 NeoBundle 'tpope/vim-repeat'
@@ -334,6 +330,8 @@ NeoBundle 'mitsuhiko/vim-jinja'
 """ My own vimfiles
 NeoBundle 'git://cmpl.cc/vimfiles/'
 
+call neobundle#end()
+
 """""" Statusline
 if has("statusline")
     function! Gitstatus()
@@ -460,9 +458,14 @@ if s:neobootstrapdone == 1
 endif
 " Write with sudo with :W
 com! W w<bang> !sudo tee % >/dev/null
+if s:neobootstrapdone == 1
+    colorscheme xoria256
+endif
+highlight SignColumn ctermbg=237 guibg=#3a3a3a
+set cc=+1
 " Highlight tw+1
 hi ColorColumn ctermbg=235 guibg=#262626
-set cc=+1
+
 
 """""" Finish NeoBundle Bootstrap
 if s:neobootstrapdone == 0
