@@ -122,7 +122,7 @@ alias tx='tmux -2 attach -d'
 # pseudo-functions
 alias pymath='bpython -i <(echo "from math import *")'
 alias newx='xinit /usr/bin/urxvt -- :1'
-alias nmapa='nmap -T Aggressive -P0 -sT -p 1-65535'
+alias nmapa='sudo nmap -T Aggressive -P0 -sT -p 1-65535'
 # functions
 sumcol() { awk 'BEGIN { sum=0 } { sum += $1 } END { print sum }' }
 xoj() { for f in "$@"; do xournal "$f" &>/dev/null & disown; done }
