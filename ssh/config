@@ -14,6 +14,11 @@ HostName lupin.the-compiler.org
 Port 2323
 User florian
 
+Host tonks
+HostName tonks.the-compiler.org
+Port 2323
+User florian
+
 Host lupin_proxy
 HostName lupin.the-compiler.org
 Port 2323
@@ -68,6 +73,12 @@ Port 20202
 
 Host draco_krum
 HostName draco.the-compiler.org
+Port 2323
+User florian
+ProxyCommand ssh florian@192.121.170.110 -p 2323 nc %h %p 2> /dev/null
+
+Host tonks_krum
+HostName tonks.the-compiler.org
 Port 2323
 User florian
 ProxyCommand ssh florian@192.121.170.110 -p 2323 nc %h %p 2> /dev/null
