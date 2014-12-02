@@ -121,7 +121,7 @@ hc keybind XF86Back use_index -1
 hc keybind XF86Forward use_index +1
 
 # Fn + F4
-hc keybind XF86ScreenSaver chain , spawn xset dpms force off , spawn xscreensaver-command -lock
+hc keybind XF86ScreenSaver chain , spawn xset dpms force off , spawn physlock -s
 
 # ThinkVantage-Key
 hc keybind XF86Launch1 spawn urxvtcd
