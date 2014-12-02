@@ -340,18 +340,6 @@ if has("statusline")
       endif
       return ' ' . fugitive#head(7) . ' '
     endfunction
-    " Git branch (red)
-    highlight User1 ctermbg=174 ctermfg=235 guibg=#df8787 guifg=#262626
-    " file name / cwd (green)
-    highlight User2 ctermbg=150 ctermfg=235 guibg=#afdf87 guifg=#262626
-    " encoding / percentage
-    highlight User3 ctermbg=247 ctermfg=235 guibg=#9e9e9e guifg=#262626
-    " CRLF / lines
-    highlight User4 ctermbg=245 ctermfg=235 guibg=#8a8a8a guifg=#262626
-    " filetype / columns
-    highlight User5 ctermbg=243 ctermfg=235 guibg=#767676 guifg=#262626
-    " flags / tab
-    highlight User6 ctermbg=241 ctermfg=235 guibg=#626262 guifg=#262626
     set statusline=
     set statusline+=%1*
     set statusline+=%{Gitstatus()}                      " git branch
@@ -465,7 +453,19 @@ highlight SignColumn ctermbg=237 guibg=#3a3a3a
 set cc=+1
 " Highlight tw+1
 hi ColorColumn ctermbg=235 guibg=#262626
-
+"" Statusbar highlights
+" Git branch (red)
+highlight User1 ctermbg=174 ctermfg=235 guibg=#df8787 guifg=#262626
+" file name / cwd (green)
+highlight User2 ctermbg=150 ctermfg=235 guibg=#afdf87 guifg=#262626
+" encoding / percentage
+highlight User3 ctermbg=247 ctermfg=235 guibg=#9e9e9e guifg=#262626
+" CRLF / lines
+highlight User4 ctermbg=245 ctermfg=235 guibg=#8a8a8a guifg=#262626
+" filetype / columns
+highlight User5 ctermbg=243 ctermfg=235 guibg=#767676 guifg=#262626
+" flags / tab
+highlight User6 ctermbg=241 ctermfg=235 guibg=#626262 guifg=#262626
 
 """""" Finish NeoBundle Bootstrap
 if s:neobootstrapdone == 0
