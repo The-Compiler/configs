@@ -44,7 +44,6 @@ macro index gs \
     "<change-folder>=INBOX.Spam<enter>" "Go to Spam"
 # Vi-like keybindings
 bind  generic        l select-entry
-bind  index          l display-message
 macro index          h '<change-folder>?'
 bind  index,pager    H display-toggle-weed
 bind  pager          h exit
