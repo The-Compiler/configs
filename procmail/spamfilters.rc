@@ -99,3 +99,7 @@ ${DEFAULT}.Spam/
 :0
 * ^From: "?Michael Kors"? .*
 ${DEFAULT}.Spam/
+
+:0
+* ^From: .* <.*@(buylvs|fundeal).com>
+${DEFAULT}.Spam/
