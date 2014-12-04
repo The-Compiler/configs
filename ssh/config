@@ -27,7 +27,7 @@ ProxyCommand ssh florian@diggory.the-compiler.org -W %h:%p 2> /dev/null
 
 
 Host git
-HostName lupin.the-compiler.org
+HostName tonks.the-compiler.org
 Port 2323
 User git
 
