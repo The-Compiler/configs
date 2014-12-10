@@ -101,5 +101,9 @@ ${DEFAULT}.Spam/
 ${DEFAULT}.Spam/
 
 :0
-* ^From: .* <.*@(buylvs|fundeal).com>
+* ^From: .* <.*@fundeal\.com>
+${DEFAULT}.Spam/
+
+:0
+* ^From: Louis Vuitton <service@.*lv.*\.com>
 ${DEFAULT}.Spam/
