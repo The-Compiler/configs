@@ -21,16 +21,12 @@ ExecStart=/sbin/ip -6 addr add ${address6}/${netmask6} dev ${interface}
 ExecStart=/sbin/ip -6 route add ${gateway6} dev eth0
 ExecStart=-/sbin/ip -6 route add default via ${gateway6}
 
-ExecStart=-/sbin/ip tuntap add dev ${tapinterface} mode tap user ${tapuser}
-ExecStart=-/sbin/ip link set dev ${tapinterface} up
-ExecStart=-/sbin/ip addr add ${tapaddress}/${tapnetmask} dev ${tapinterface}
+ExecStart=-/usr/local/bin/tapctl up
 
 ExecStop=/sbin/ip addr flush dev ${interface}
 ExecStop=/sbin/ip -6 addr flush dev ${interface}
 ExecStop=/sbin/ip link set dev ${interface} down
-ExecStop=/sbin/ip addr flush dev ${tapinterface}
-ExecStop=/sbin/ip link set dev ${tapinterface} down
-ExecStop=/sbin/ip tuntap del dev ${tapinterface}
+ExecStop=/usr/local/bin/tapctl down
 
 [Install]
 WantedBy=multi-user.target
