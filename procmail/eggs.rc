@@ -49,3 +49,7 @@ ${DEFAULT}.eggs/
 * ^From: Massdrop <info@massdrop.com>
 * ^Subject: ^=?utf-8?B?U2VlIFdoYXQncyBOZXcgT24gTWFzc2Ry.*
 ${DEFAULT}.eggs/
+
+:0
+* ^From: iMath <2281570025@qq.com>
+${DEFAULT}.eggs/
