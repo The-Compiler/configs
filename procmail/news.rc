@@ -53,3 +53,8 @@ ${DEFAULT}.news/
 :0
 * ^List-Id: <gerrit-[^.]*\.codereview\.qt-project.org>$
 ${DEFAULT}.news/
+
+:0
+* ^From: .* <notifications@github.com>
+* !^To: The-Compiler/qutebrowser .*
+${DEFAULT}.news/
