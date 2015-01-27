@@ -107,3 +107,7 @@ ${DEFAULT}.Spam/
 :0
 * ^From: Louis Vuitton <.*@.*lv.*\.com>
 ${DEFAULT}.Spam/
+
+:0
+* ^From: Hermes <outlets@cheaphermes.com>
+${DEFAULT}.Spam/
