@@ -25,6 +25,7 @@ ${DEFAULT}.lists-dev/
 * !^From: News OVH <kundendienst@ovh\.de>$
 * !^From: .* <notifications@github\.com>$
 * !^X-Dokuwiki-Server: .*
+* !^X-Mailer: MailChimp Mailer .*
 ${DEFAULT}.lists/
 
 # Some non-Mailman mailing lists seem to use this
