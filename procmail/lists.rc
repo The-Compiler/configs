@@ -3,6 +3,22 @@
 # Filters all mailing list messages to a different folder
 
 :0
+* ^List-Id: .*<([^.]*\.python\.org|pyqt\.riverbankcomputing\.com|pyside\.qt-project\.org)>$
+${DEFAULT}.lists-py/
+
+:0
+* ^List-Id: <[^.]*\.chaostreff\.ch>$
+${DEFAULT}.lists-ccc/
+
+:0
+* ^List-Id: .*<(fulldisclosure\.seclists\.org|arch-security\.archlinux\.org)>$
+${DEFAULT}.lists-sec/
+
+:0
+* ^List-Id: .*<(vimb-users\.lists\.sourceforge\.net|qtwebengine\.qt-project\.org>$
+${DEFAULT}.lists-dev/
+
+:0
 * ^List-Id:
 * !^X-List-Administrivia: yes
 * !^User-Agent: Gerrit/.*
