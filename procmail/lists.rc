@@ -22,8 +22,8 @@ ${DEFAULT}.lists-dev/
 * ^List-Id:
 * !^X-List-Administrivia: yes
 * !^User-Agent: Gerrit/.*
-* !^From: News OVH <kundendienst@ovh.de>$
-* !^From: .* <notifications@github.com>$
+* !^From: News OVH <kundendienst@ovh\.de>$
+* !^From: .* <notifications@github\.com>$
 * !^X-Dokuwiki-Server: .*
 ${DEFAULT}.lists/
 
