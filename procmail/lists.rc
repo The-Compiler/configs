@@ -26,6 +26,7 @@ ${DEFAULT}.lists-dev/
 * !^From: .* <notifications@github\.com>$
 * !^X-Dokuwiki-Server: .*
 * !^X-Mailer: MailChimp Mailer .*
+* !^X-Mailer: Redmine$
 ${DEFAULT}.lists/
 
 # Some non-Mailman mailing lists seem to use this
