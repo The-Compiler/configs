@@ -111,3 +111,7 @@ ${DEFAULT}.Spam/
 :0
 * ^From: Hermes <outlets@cheaphermes.com>
 ${DEFAULT}.Spam/
+
+:0
+* ^From: .*<info@probeens.com>$
+${DEFAULT}.Spam/
