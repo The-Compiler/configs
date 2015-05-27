@@ -123,6 +123,7 @@ alias tx='tmux -2 attach -d'
 alias pymath='bpython -i <(echo "from math import *")'
 alias newx='xinit /usr/bin/urxvt -- :1'
 alias nmapa='sudo nmap -T Aggressive -P0 -sT -p 1-65535'
+alias leech='wget -r -np -l inf -N -kK -E'
 # functions
 sumcol() { awk 'BEGIN { sum=0 } { sum += $1 } END { print sum }' }
 xoj() { for f in "$@"; do xournal "$f" &>/dev/null & disown; done }
