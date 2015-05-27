@@ -50,8 +50,8 @@ URxvt.cursorColor : #ffaf00
 URxvt.colorBD     : #afafdf
 URxvt.colorUL     : #dfdfaf
 
-URxvt*font: -*-proggytiny-*-*-*-*-10-*-*-*-*-*-*-*
-#URxvt*font: xft:Terminus
+URxvt*font: xft:ProggyTinyTT:size=12
+URxvt*boldFont: xft:ProggyTinyTT:size=12
 xterm*vt100.initialFont: 6
 
 URxvt.scrollBar: False
