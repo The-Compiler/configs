@@ -140,6 +140,9 @@ alias chown=' chown -c'
 alias shred=' shred -u -z'
 alias cp='cp -i'
 alias mv='mv -i'
+# the fuck
+#alias fuck=$(thefuck $(fc -ln -1))
+alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R' 
 
 ### completion ###
 # init completion
