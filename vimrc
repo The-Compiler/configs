@@ -316,13 +316,23 @@ endif
 NeoBundle 'airblade/vim-rooter'
 
 """ python-mode
-NeoBundle 'klen/python-mode'
-let g:pymode_lint_on_write = 0
-let g:pymode_folding = 0
-let g:pymode_options_max_line_length = 79
-let g:pymode_rope_complete_on_dot = 0
-let g:pymode_syntax_highlight_self = 0
-let g:pymode_rope = 0
+" NeoBundle 'klen/python-mode'
+" let g:pymode_lint_on_write = 0
+" let g:pymode_folding = 0
+" let g:pymode_options_max_line_length = 79
+" let g:pymode_rope_complete_on_dot = 0
+" let g:pymode_syntax_highlight_self = 0
+" let g:pymode_rope = 0
+
+" NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'Valloric/YouCompleteMe', {
+     \ 'build'      : {
+        \ 'mac'     : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+        \ 'unix'    : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+        \ 'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+        \ 'cygwin'  : './install.sh --clang-completer --system-libclang --omnisharp-completer'
+        \ }
+     \ }
 
 """ jinja2 support
 NeoBundle 'mitsuhiko/vim-jinja'
