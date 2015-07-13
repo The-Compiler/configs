@@ -316,15 +316,13 @@ endif
 NeoBundle 'airblade/vim-rooter'
 
 """ python-mode
-" NeoBundle 'klen/python-mode'
-" let g:pymode_lint_on_write = 0
-" let g:pymode_folding = 0
-" let g:pymode_options_max_line_length = 79
-" let g:pymode_rope_complete_on_dot = 0
-" let g:pymode_syntax_highlight_self = 0
-" let g:pymode_rope = 0
+NeoBundle 'klen/python-mode'
+let g:pymode_lint_on_write = 0
+let g:pymode_folding = 0
+let g:pymode_options_max_line_length = 79
+let g:pymode_syntax_highlight_self = 0
+let g:pymode_rope = 0
 
-" NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'Valloric/YouCompleteMe', {
      \ 'build'      : {
         \ 'mac'     : './install.sh --clang-completer --system-libclang --omnisharp-completer',
@@ -333,6 +331,14 @@ NeoBundle 'Valloric/YouCompleteMe', {
         \ 'cygwin'  : './install.sh --clang-completer --system-libclang --omnisharp-completer'
         \ }
      \ }
+NeoBundle 'rdnetto/YCM-Generator'
+let g:ycm_complete_in_strings = 0
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_extra_conf_globlist = ['~/proj/*','~/code/*']
+nnoremap <leader>G :YcmCompleter GoTo<cr>
 
 """ jinja2 support
 NeoBundle 'mitsuhiko/vim-jinja'
