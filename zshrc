@@ -130,7 +130,7 @@ xoj() { for f in "$@"; do xournal "$f" &>/dev/null & disown; done }
 pdf() { "$VIEW_PDF" "$@" &>/dev/null & disown }
 qr() { qrencode "$1" -o- -t ANSIUTF8; }
 genpwd() { tr -dc A-Za-z0-9 < /dev/urandom | head -c 8; echo }
-igitt() { git clone "ssh://git@lupin/$1" ;}
+igitt() { git clone "ssh://git@tonks/$1" ;}
 bashhelp() { bash -c "help -m '$1'" | $PAGER ;}
 pyedit() { vim "${1//.//}.py" }
 # ignore dangerous commands from history and make them safer
