@@ -342,6 +342,7 @@ nnoremap <leader>G :YcmCompleter GoTo<cr>
 
 """ jinja2 support
 NeoBundle 'mitsuhiko/vim-jinja'
+NeoBundle 'kchmck/vim-coffee-script'
 
 """ My own vimfiles
 NeoBundle 'git://cmpl.cc/vimfiles/'
@@ -419,6 +420,7 @@ if has("autocmd")
     au FocusLost * hi StatusLine guibg=#cccccc
     " Arduino ft for *.ino
     autocmd! BufNewFile,BufRead *.ino setlocal ft=cpp
+    autocmd! BufNewFile,BufRead *.coffee setlocal ft=coffee
 endif
 
 """""" Custom mappings
