@@ -86,3 +86,8 @@ ProxyCommand ssh florian@192.121.170.110 -p 2323 nc %h %p 2> /dev/null
 Host codereview.qt-project.org
 Port 29418
 User The-Compiler
+
+Host dragon
+HostName dragon.pibit.ch
+Port 107
+User florian
