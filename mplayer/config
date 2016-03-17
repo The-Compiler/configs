@@ -9,3 +9,4 @@ lavdopts=threads=2
 cache=8192
 cache-seek-min=50
 nolirc=1
+vo=xv
