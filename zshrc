@@ -37,7 +37,7 @@ if [[ "$OS" == Windows_NT ]]; then
     export TERM="cygwin"
     alias open='cygstart'
 else
-    export BROWSER="dwb"
+    export BROWSER="qutebrowser"
     export EDITOR="vim"
     export VISUAL="$EDITOR"
     export PATH="$PATH:$HOME/bin"
