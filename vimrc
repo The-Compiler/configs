@@ -264,7 +264,7 @@ nnoremap <leader>gr :Gread<cr>
 " gx: prompt to eXecute git command
 nnoremap <leader>gx :Git<Space>
 " gc: git commit
-nnoremap <leader>gc :Gcommit<cr>
+nnoremap <leader>gc :Gcommit -a<cr>
 " gC: git commit --amend
 nnoremap <leader>gC :Gcommit --amend<cr>
 " gp: git commit --patch
