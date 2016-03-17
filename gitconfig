@@ -41,3 +41,5 @@ tool = vimdiff
 	enabled = true
 [core]
 	excludesfile = ~/.gitignore
+[github]
+	user = The-Compiler
