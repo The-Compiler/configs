@@ -28,3 +28,5 @@ pulseaudio --start &
 xmodmap ~/.xmodmaprc &
 unclutter &
 ~/bin/panel2/panel2.sh &
+
+keynav &
