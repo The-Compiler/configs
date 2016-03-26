@@ -252,7 +252,9 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
   (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "qutebrowser")
-  )
+
+  (add-to-list 'auto-mode-alist (cons "\\.asciidoc\\'" 'adoc-mode))
+)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
