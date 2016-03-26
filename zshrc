@@ -280,3 +280,5 @@ fi
 
 ### Humble bundle key ###
 [[ -f ~/.humblebundle ]] && source ~/.humblebundle
+
+alias vim=emacs
