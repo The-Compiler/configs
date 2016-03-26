@@ -250,11 +250,15 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place you code here."
+
+  ;; Open URLs with qutebrowser
   (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "qutebrowser")
 
+  ;; Set adoc-mode for .asciidoc files
   (add-to-list 'auto-mode-alist (cons "\\.asciidoc\\'" 'adoc-mode))
 
+  ;; Wrap in column 79 for Python code
   (add-hook 'python-mode-hook (auto-fill-mode t))
   (add-hook 'python-mode-hook (set-fill-column 79))
   (add-hook 'python-mode-hook (spacemacs/toggle-fill-column-indicator-on))
