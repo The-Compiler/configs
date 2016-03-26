@@ -254,6 +254,10 @@ you should place you code here."
         browse-url-generic-program "qutebrowser")
 
   (add-to-list 'auto-mode-alist (cons "\\.asciidoc\\'" 'adoc-mode))
+
+  (add-hook 'python-mode-hook (auto-fill-mode t))
+  (add-hook 'python-mode-hook (set-fill-column 79))
+  (add-hook 'python-mode-hook (spacemacs/toggle-fill-column-indicator-on))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
