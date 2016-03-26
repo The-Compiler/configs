@@ -27,7 +27,8 @@ values."
      ;; better-defaults
      emacs-lisp
      git
-     ;; markdown
+     markdown
+     asciidoc
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
