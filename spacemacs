@@ -41,8 +41,8 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
-   ;; A list of packages and/or extensions that will not be install and loaded.
+   dotspacemacs-additional-packages '(feature-mode)
+   ;; A list of packages and/or exteesions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
@@ -257,6 +257,9 @@ you should place you code here."
   (add-hook 'python-mode-hook (auto-fill-mode t))
   (add-hook 'python-mode-hook (set-fill-column 79))
   (add-hook 'python-mode-hook (spacemacs/toggle-fill-column-indicator-on))
+
+  ;; Set up .feature mode
+  (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
